@@ -20,5 +20,4 @@ DUES, NO PRESENTATIONS, and NO PUSHY SALESPEOPLE!
 
 Meeting at Navigator Taproom, it has over 40 beers on tap, along
 with many great ciders, wines, and cocktails, all using a self-serve RFID
-system! Aside from that, they also have a small you-call-it bar, and you can even
-have food delivered. Several food options exist within walking distance as well!
+system! Aside from that, they also have a small you-call-it bar, and have on-site food through Paper Plane Pizza. Several food options exist within walking distance as well!
