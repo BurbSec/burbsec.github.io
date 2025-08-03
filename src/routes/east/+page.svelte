@@ -20,9 +20,9 @@
 	</p>
 	
 	<p>
-		Meeting at Navigator Taproom, it has over 40 beers on tap, along
-		with many great ciders, wines, and cocktails, all using a self-serve RFID
-		system! Aside from that, they also have a small you-call-it bar, and you can even
-		have food delivered. Several food options exist within walking distance as well!
+		Meeting at Navigator Taproom, it has over 50 beers, wine, and cocktails on tap, 
+		all using a self-serve RFID system! Aside from that, they also have a small 
+		you-call-it bar, and an incredible in-house pizza kitchen  (no outside food0!) 
+		Several food options exist within walking distance as well!
 	</p>
 </EventPage>
