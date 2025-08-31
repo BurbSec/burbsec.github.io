@@ -33,7 +33,7 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="/east">Chicago</a></li>
 						<li><a class="dropdown-item" href="/northwest">Crystal Lake</a></li>
-						<li><a class="dropdown-item" href="/north">Glenview</a></li>
+						<li><a class="dropdown-item" href="/north">Wheeling</a></li>
 						<li><a class="dropdown-item" href="/south">Hickory Hills</a></li>
 						<li><a class="dropdown-item" href="/west">Naperville</a></li>
 						<li><a class="dropdown-item" href="/prime">Schaumburg</a></li>
