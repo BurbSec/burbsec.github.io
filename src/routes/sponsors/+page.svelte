@@ -94,7 +94,7 @@
 											<strong>When:</strong> Every SECOND Thursday<br>
 											<strong>Attendance:</strong> 15-20 active and prospective IT and Infosec professionals and enthusiasts<br>
 											<strong>Crowd:</strong> Older, more experienced<br>
-											<strong>Location:</strong> D'Agostino's Pizzeria at The Glen in Glenview<br>
+											<strong>Location:</strong> D'Agostino's Pizzeria in Wheeling<br>
 											<strong>Average Sponsorship:</strong> $350
 										</p>
 									</div>

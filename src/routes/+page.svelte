@@ -147,8 +147,8 @@
 					<div class="card-body text-center">
 						<img src="/images/north_shield.png"
 							 srcset="/images/north_shield.png 1x"
-							 alt="Glenview" class="mb-3" width="80" height="80" loading="lazy">
-						<h5 class="card-title">Glenview</h5>
+							 alt="Wheeling" class="mb-3" width="80" height="80" loading="lazy">
+						<h5 class="card-title">Wheeling</h5>
 						<p class="card-text">Every Second Thursday</p>
 						<a href="/north" class="btn btn-outline-primary">Learn More</a>
 					</div>

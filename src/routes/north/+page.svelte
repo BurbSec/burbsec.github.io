@@ -5,10 +5,10 @@
 <EventPage
 	title="BurbSec|North"
 	subtitle="Meets Every Second Thursday of the Month"
-	location="Glenview, IL"
+	location="Wheeling, IL"
 	eventImage="/images/north_shield.png"
 	blueskyHandle="north.burbsec.com"
-	gmapsLink="https://maps.app.goo.gl/n6TiWbctnhxpeZhq9"
+	gmapsLink="https://maps.app.goo.gl/vKw3rXeF5XBbqDPk9"
 	irlImage="/images/irl/north.jpg"
 >
 	<p>
@@ -18,7 +18,7 @@
 	</p>
 	
 	<p>
-		Our Glenview location offers easy access for professionals throughout the northern Chicagoland area. 
+		Our Wheeling location offers easy access for professionals throughout the northern Chicagoland area. 
 		Whether you're a seasoned CISO or just starting your career in cybersecurity, you'll find a 
 		welcoming community ready to share knowledge and experiences.
 	</p>

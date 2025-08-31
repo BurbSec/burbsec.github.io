@@ -83,7 +83,7 @@ src/
     ├── east/             # Chicago event page
     ├── lasvegas/         # Las Vegas event page
     ├── galway/           # Galway event page
-    ├── north/            # Glenview event page
+    ├── north/            # Wheeling event page
     ├── south/            # Hickory Hills event page
     ├── west/             # Naperville event page
     ├── northwest/        # Crystal Lake event page
