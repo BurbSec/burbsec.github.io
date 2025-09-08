@@ -56,9 +56,14 @@
 				<div class="text-center mt-5">
 					<h3 class="text-center">Interested in Sponsoring?</h3>
 					<p>Contact us to learn more about sponsorship opportunities.</p>
-					<a href="mailto:sponsors@burbsec.com" class="btn btn-primary btn-lg">
-						<i class="fa fa-envelope"></i> Contact Us
-					</a>
+					<div>
+						<a href="https://www.meetup.com/burbsec/events/calendar/" class="btn btn-primary btn-lg me-2" target="_blank" rel="noopener noreferrer">
+							<i class="fa fa-calendar"></i> Find and Event to Sponsor
+						</a>  and then &nbsp;
+						<a href="mailto:sponsors@burbsec.com" class="btn btn-primary btn-lg">
+							<i class="fa fa-envelope"></i> Contact Us
+						</a>
+					</div>
 				</div>
 				
 				<div class="mt-5">
