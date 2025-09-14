@@ -59,11 +59,17 @@
 			"name": "BurbSec Network",
 			"url": "https://burbsec.github.io/"
 		},
+		"performer": {
+			"@type": "Organization",
+			"name": "BurbSec Network"
+		},
 		"offers": {
 			"@type": "Offer",
 			"price": "0",
 			"priceCurrency": "USD",
-			"availability": "https://schema.org/InStock"
+			"availability": "https://schema.org/InStock",
+			"validFrom": "2024-01-01T00:00:00-06:00",
+			"url": "https://www.meetup.com/burbsec/"
 		},
 		"audience": {
 			"@type": "Audience",
@@ -74,8 +80,6 @@
 	}
 	</script>`}
 	
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://burbsec.github.io/east" />
 </svelte:head>
 
 <EventPage

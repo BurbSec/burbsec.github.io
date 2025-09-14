@@ -61,11 +61,15 @@
 				"@type": "Event",
 				"name": "Burbsec Chicago Meetup",
 				"description": "Monthly information security meetup in Chicago",
+				"startDate": "2025-01-30T18:00:00-06:00",
+				"endDate": "2025-01-30T22:00:00-06:00",
 				"eventSchedule": {
 					"@type": "Schedule",
 					"repeatFrequency": "P1M",
 					"byDay": "Thursday"
 				},
+				"eventStatus": "https://schema.org/EventScheduled",
+				"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
 				"location": {
 					"@type": "Place",
 					"name": "Chicago",
@@ -78,8 +82,22 @@
 				},
 				"organizer": {
 					"@type": "Organization",
+					"name": "Burbsec Network",
+					"url": "https://burbsec.github.io/"
+				},
+				"performer": {
+					"@type": "Organization",
 					"name": "Burbsec Network"
-				}
+				},
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD",
+					"availability": "https://schema.org/InStock",
+					"validFrom": "2024-01-01T00:00:00-06:00",
+					"url": "https://www.meetup.com/burbsec/"
+				},
+				"image": "https://burbsec.github.io/images/hacker_shield.png"
 			}
 		],
 		"keywords": "information security, cybersecurity, hacking, infosec, meetup, chicago, security professionals, ethical hacking, penetration testing, cybersecurity community, security events, networking, CISSP, CEH, security training, vulnerability assessment, incident response, malware analysis, digital forensics, security awareness, chicago hacker meetup, chicago security community, defcon chicago, chicago infosec community"

@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	export let title;
 	export let subtitle;
 	export let location;
@@ -12,6 +13,8 @@
 <svelte:head>
 	<title>{title} | Burbsec</title>
 	<meta name="description" content="{title} - {subtitle}" />
+	<!-- Canonical URL -->
+	<link rel="canonical" href={`https://burbsec.github.io${$page.url.pathname}`} />
 </svelte:head>
 
 <div class="container-lg pb-3 flex-fill">

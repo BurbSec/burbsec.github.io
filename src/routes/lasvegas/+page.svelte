@@ -27,6 +27,8 @@
 		"@type": "Event",
 		"name": "BurbSec Las Vegas Information Security Meetup",
 		"description": "BurbSec Las Vegas brings the fun and networking of our signature meetup format to Sin City. Join fellow information security professionals for an evening of great conversation, networking, and community building.",
+		"startDate": "2025-01-30T18:00:00-08:00",
+		"endDate": "2025-01-30T22:00:00-08:00",
 		"eventSchedule": {
 			"@type": "Schedule",
 			"repeatFrequency": "P1M"
@@ -53,11 +55,17 @@
 			"name": "BurbSec Network",
 			"url": "https://burbsec.github.io/"
 		},
+		"performer": {
+			"@type": "Organization",
+			"name": "BurbSec Network"
+		},
 		"offers": {
 			"@type": "Offer",
 			"price": "0",
 			"priceCurrency": "USD",
-			"availability": "https://schema.org/InStock"
+			"availability": "https://schema.org/InStock",
+			"validFrom": "2024-01-01T00:00:00-08:00",
+			"url": "https://www.meetup.com/burbsecvegas/"
 		},
 		"audience": {
 			"@type": "Audience",
@@ -69,8 +77,6 @@
 	}
 	</script>`}
 	
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://burbsec.github.io/lasvegas" />
 </svelte:head>
 
 <EventPage
