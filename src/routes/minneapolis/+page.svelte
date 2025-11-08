@@ -76,7 +76,7 @@
 
 <EventPage
 	title="BurbSec|Minneapolis"
-	subtitle="Monthly Meetup"
+	subtitle="Meets every Third Thursday of the Month"
 	location="Minneapolis, MN"
 	eventImage="/images/hacker_shield.png"
 	discordLink="https://discord.gg/hmf7xZkG"
@@ -90,9 +90,9 @@
 	</p>
 	
 	<p>
-		Our Minneapolis location at Forgotten Star Brewing Co. offers a unique venue in the heart of Minnesota's 
+		Our MPLS location offers a unique venue in the heart of Minnesota's 
 		vibrant tech scene. Whether you're a seasoned CISO or just starting your career in cybersecurity, you'll 
-		find a welcoming community ready to share knowledge and experiences.
+		find a welcoming community ready to share knowledge and experiences!
 	</p>
 	
 	<p>
