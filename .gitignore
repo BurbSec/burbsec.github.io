@@ -3,6 +3,10 @@
 build/
 dist/
 
+# Build output (SvelteKit adapter-static output)
+_app/
+index.html
+
 # Node.js
 node_modules/
 npm-debug.log*
@@ -24,3 +28,13 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Design source files (not needed for hosting)
+creative_templates/
+
+# Duplicate assets (use static/ directory instead)
+/images/
+/videos/
+
+# Working files
+sponsors.txt
