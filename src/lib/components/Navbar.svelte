@@ -47,6 +47,7 @@
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="/galway">Galway, Ireland</a></li>
 						<li><a class="dropdown-item" href="/lasvegas">Las Vegas, NV</a></li>
+						<li><a class="dropdown-item" href="/minneapolis">Minneapolis, MN</a></li>
 					</ul>
 				</li>
 				<li class="nav-item dropdown">

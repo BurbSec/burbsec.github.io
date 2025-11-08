@@ -53,12 +53,12 @@
 				<div class="col-sm d-flex flex-column mb-2">
 					{#if eventbriteLink}
 						<a href={eventbriteLink} class="btn btn-warning" target="_blank" rel="noopener">
-							<i class="fa-brands fa-eventbrite fa-xl"></i>
+							<i class="fa-solid fa-calendar-days fa-xl"></i>
 							Next Meetups
 						</a>
 					{:else}
 						<a href={meetupPage} class="btn btn-warning" target="_blank" rel="noopener">
-							<i class="fa-brands fa-meetup fa-xl"></i>
+							<i class="fa-solid fa-calendar-days fa-xl"></i>
 							Next Meetups
 						</a>
 					{/if}
