@@ -4,9 +4,11 @@
 	export let subtitle;
 	export let location;
 	export let eventImage;
-	export let blueskyHandle;
+	export let blueskyHandle = null;
+	export let discordLink = null;
 	export let gmapsLink;
 	export let meetupPage = "https://www.meetup.com/burbsec/";
+	export let eventbriteLink = null;
 	export let irlImage = null;
 </script>
 
@@ -26,12 +28,22 @@
 			</div>
 			
 			<div class="row justify-content-center align-items-center mb-4">
-				<div class="col-sm d-flex flex-column mb-2">
-					<a href="https://bsky.app/profile/{blueskyHandle}" class="btn btn-primary" target="_blank" rel="noopener">
-						<img src="/images/bluesky.svg" alt="Bluesky" width="24" height="24" class="me-2 bluesky-icon">
-						Follow us on BlueSky!
-					</a>
-				</div>
+				{#if blueskyHandle}
+					<div class="col-sm d-flex flex-column mb-2">
+						<a href="https://bsky.app/profile/{blueskyHandle}" class="btn btn-primary" target="_blank" rel="noopener">
+							<img src="/images/bluesky.svg" alt="Bluesky" width="24" height="24" class="me-2 bluesky-icon">
+							Follow us on BlueSky!
+						</a>
+					</div>
+				{/if}
+				{#if discordLink}
+					<div class="col-sm d-flex flex-column mb-2">
+						<a href={discordLink} class="btn btn-primary" target="_blank" rel="noopener">
+							<i class="fa-brands fa-discord fa-xl"></i>
+							Join us on Discord!
+						</a>
+					</div>
+				{/if}
 				<div class="col-sm d-flex flex-column mb-2">
 					<a href={gmapsLink} class="btn btn-success" target="_blank" rel="noopener">
 						<i class="fa-solid fa-map-location-dot fa-xl"></i>
@@ -39,10 +51,17 @@
 					</a>
 				</div>
 				<div class="col-sm d-flex flex-column mb-2">
-					<a href={meetupPage} class="btn btn-warning" target="_blank" rel="noopener">
-						<i class="fa-brands fa-meetup fa-xl"></i>
-						Next Meetups
-					</a>
+					{#if eventbriteLink}
+						<a href={eventbriteLink} class="btn btn-warning" target="_blank" rel="noopener">
+							<i class="fa-brands fa-eventbrite fa-xl"></i>
+							Next Meetups
+						</a>
+					{:else}
+						<a href={meetupPage} class="btn btn-warning" target="_blank" rel="noopener">
+							<i class="fa-brands fa-meetup fa-xl"></i>
+							Next Meetups
+						</a>
+					{/if}
 				</div>
 			</div>
 			
