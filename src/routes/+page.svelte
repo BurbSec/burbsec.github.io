@@ -102,12 +102,15 @@
 							<i class="fa-brands fa-discord"></i> Join the discussion on Discord!
 						</a>
 						<a href="https://www.meetup.com/burbsec/" class="btn btn-warning btn-lg" target="_blank" rel="noopener">
-							<i class="fa-brands fa-meetup"></i> Find your weekly local event!
+							<i class="fa-brands fa-meetup"></i> Find your local Burbsec meet!
 						</a>
 					</div>
-					<div class="d-flex justify-content-center mt-3">
+					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
 						<a href="/sponsors" class="btn btn-success btn-lg">
 							<i class="fa-solid fa-hand-holding-medical"></i> Sponsor a night of fun!
+						</a>
+						<a href="https://chicagoinfosecevents.github.io/" class="btn btn-info btn-lg" target="_blank" rel="noopener">
+							<i class="fa-solid fa-calendar-days"></i> Full Chicagoland Infosec Calendar
 						</a>
 					</div>
 					<div class="text-center mt-5">
@@ -228,7 +231,7 @@
 							 srcset="/images/hacker_shield.png 1x"
 							 alt="Minneapolis" class="mb-3" width="80" height="80" loading="lazy">
 						<h5 class="card-title">Minneapolis, MN</h5>
-						<p class="card-text">Monthly Meetup</p>
+						<p class="card-text">Every Third Thursday</p>
 						<a href="/minneapolis" class="btn btn-outline-primary">Learn More</a>
 					</div>
 				</div>
