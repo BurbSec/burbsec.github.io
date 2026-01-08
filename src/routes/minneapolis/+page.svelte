@@ -78,7 +78,7 @@
 	title="BurbSec|Minneapolis"
 	subtitle="Meets every Third Thursday of the Month"
 	location="Minneapolis, MN"
-	eventImage="/images/hacker_shield.png"
+	eventImage="/images/mpls_shield.png"
 	discordLink="https://discord.gg/kV8A3JPfd6"
 	gmapsLink="https://maps.app.goo.gl/MqP9s8EGQvQefiMu9"
 	eventbriteLink="https://www.eventbrite.com/e/burbsec-mpls-networking-meetup-tickets-1749486103029?aff=oddtdtcreator"

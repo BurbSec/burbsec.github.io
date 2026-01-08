@@ -228,7 +228,7 @@
 				<div class="card event-card h-100">
 					<div class="card-body text-center">
 						<img src="/images/hacker_shield.png"
-							 srcset="/images/hacker_shield.png 1x"
+							 srcset="/images/mpls_shield.png 1x"
 							 alt="Minneapolis" class="mb-3" width="80" height="80" loading="lazy">
 						<h5 class="card-title">Minneapolis, MN</h5>
 						<p class="card-text">Every Third Thursday</p>
