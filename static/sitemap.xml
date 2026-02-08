@@ -2,139 +2,151 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://burbsec.github.io/</loc>
+    <loc>https://burbsec.com/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/hacker_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/hacker_shield.png</image:loc>
       <image:title>Burbsec Network Logo</image:title>
       <image:caption>The world's most fun information security meetup network</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/east</loc>
+    <loc>https://burbsec.com/east/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/east_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/east_shield.png</image:loc>
       <image:title>Chicago Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Chicago</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/north</loc>
+    <loc>https://burbsec.com/north/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/north_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/north_shield.png</image:loc>
       <image:title>Wheeling Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Wheeling</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/west</loc>
+    <loc>https://burbsec.com/west/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/west_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/west_shield.png</image:loc>
       <image:title>Naperville Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Naperville</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/south</loc>
+    <loc>https://burbsec.com/south/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/south_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/south_shield.png</image:loc>
       <image:title>Hickory Hills Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Hickory Hills</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/prime</loc>
+    <loc>https://burbsec.com/prime/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/prime_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/prime_shield.png</image:loc>
       <image:title>Schaumburg Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Schaumburg</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/northwest</loc>
+    <loc>https://burbsec.com/northwest/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/northwest_shield.jpg</image:loc>
+      <image:loc>https://burbsec.com/images/northwest_shield.jpg</image:loc>
       <image:title>Crystal Lake Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Crystal Lake</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/lasvegas</loc>
+    <loc>https://burbsec.com/lasvegas/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/vegas_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/vegas_shield.png</image:loc>
       <image:title>Las Vegas Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Las Vegas</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/galway</loc>
+    <loc>https://burbsec.com/galway/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/galway_road_sign.jpg</image:loc>
+      <image:loc>https://burbsec.com/images/galway_road_sign.jpg</image:loc>
       <image:title>Galway Burbsec Meetup</image:title>
       <image:caption>Information security meetup in Galway, Ireland</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/cigarsec</loc>
+    <loc>https://burbsec.com/cigarsec/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/cigar_shield.png</image:loc>
+      <image:loc>https://burbsec.com/images/cigar_shield.png</image:loc>
       <image:title>CigarSec Special Interest Group</image:title>
       <image:caption>Special interest group for cigar enthusiasts in information security</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/southeast</loc>
+    <loc>https://burbsec.com/southeast/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://burbsec.github.io/images/southeast_shield.jpg</image:loc>
+      <image:loc>https://burbsec.com/images/southeast_shield.jpg</image:loc>
       <image:title>South Bend Burbsec Meetup</image:title>
       <image:caption>Information security meetup in South Bend, IN</image:caption>
     </image:image>
   </url>
   
   <url>
-    <loc>https://burbsec.github.io/sponsors</loc>
+    <loc>https://burbsec.com/minneapolis/</loc>
+    <lastmod>2025-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://burbsec.com/images/mpls_shield.png</image:loc>
+      <image:title>Minneapolis Burbsec Meetup</image:title>
+      <image:caption>Information security meetup in Minneapolis, MN</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://burbsec.com/sponsors/</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

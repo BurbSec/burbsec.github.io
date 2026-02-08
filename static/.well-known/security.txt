@@ -1,0 +1,10 @@
+# BurbSec Security Contact Information
+# https://securitytxt.org/
+# For an InfoSec meetup network, we practice what we preach.
+
+Contact: mailto:security@burbsec.com
+Contact: https://tinyurl.com/burbchat
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://burbsec.com/.well-known/security.txt
+Policy: https://github.com/BurbSec/burbsec.github.io/blob/main/LICENSE

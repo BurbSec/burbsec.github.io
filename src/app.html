@@ -5,61 +5,67 @@
 		<title>%sveltekit.title% | Burbsec</title>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
+		<!-- Security: Content Security Policy -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://cdnjs.cloudflare.com; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+
 		<!-- SEO Meta Tags -->
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 		<meta name="author" content="Burbsec Network" />
 		<meta name="keywords" content="information security, cybersecurity, hacking, infosec, meetup, chicago, security professionals, ethical hacking, penetration testing, cybersecurity community, security events, networking, CISSP, CEH, security training, vulnerability assessment, incident response, malware analysis, digital forensics, security awareness, chicago hacker meetup, chicago security meetup, defcon chicago, 2600 chicago, dc312 alternative, dcg312 alternative, chicago 2600 alternative, chicago hacker community, chicago infosec community" />
 		<meta name="theme-color" content="#15202b" />
 		<meta name="msapplication-TileColor" content="#15202b" />
-		
-		<!-- Canonical URL -->
-		<link rel="canonical" href="https://burbsec.github.io/" />
-		
+
+		<!-- Canonical URL set per-page via svelte:head -->
+
 		<!-- Sitemap reference -->
 		<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-		
+
 		<!-- DNS prefetch for external resources -->
 		<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 		<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-		<link rel="dns-prefetch" href="//www.meetup.com">
-		
+
 		<!-- Preconnect for critical external resources -->
 		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-		
+
 		<!-- Open Graph Meta Tags -->
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Burbsec Network" />
 		<meta property="og:locale" content="en_US" />
-		<meta property="og:url" content="https://burbsec.github.io/" />
-		<meta property="og:image" content="https://burbsec.github.io/images/hacker_shield.png" />
+		<!-- og:url set per-page via svelte:head -->
+		<meta property="og:image" content="https://burbsec.com/images/hacker_shield.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="Burbsec - The World's Most Fun InfoSec Meetup Network" />
-		
+
 		<!-- Twitter Card Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@burbsec" />
 		<meta name="twitter:creator" content="@burbsec" />
-		<meta name="twitter:image" content="https://burbsec.github.io/images/hacker_shield.png" />
+		<meta name="twitter:image" content="https://burbsec.com/images/hacker_shield.png" />
 		<meta name="twitter:image:alt" content="Burbsec - The World's Most Fun InfoSec Meetup Network" />
-		
+
 		<!-- Additional SEO -->
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="geo.region" content="US-IL" />
 		<meta name="geo.placename" content="Chicago, Illinois" />
 		<meta name="geo.position" content="41.8781;-87.6298" />
 		<meta name="ICBM" content="41.8781, -87.6298" />
-		
+
 		<!-- Structured Data will be added via svelte:head in layout -->
-		
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+		<!-- Bootstrap 5.3.8 CSS (with SRI) -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<!-- Font Awesome 6.5.1 CSS (with SRI) -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div class="sveltekit-body">%sveltekit.body%</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap 5.3.8 JS Bundle (with SRI) -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	</body>
 </html>
