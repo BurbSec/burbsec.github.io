@@ -61,6 +61,7 @@
 					price: '0',
 					priceCurrency: 'USD',
 					availability: 'https://schema.org/InStock',
+					validFrom: `2010-06-01T00:00:00${structuredData.timezone || '-06:00'}`,
 					url: eventbriteLink ?? meetupPage
 				},
 				audience: {

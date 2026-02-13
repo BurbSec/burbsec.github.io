@@ -18,6 +18,7 @@
 				name: 'Cybersecurity Events',
 				itemListElement: allEvents.map((e) => ({
 					'@type': 'Offer',
+					validFrom: `2010-06-01T00:00:00${e.structuredData?.timezone || '-06:00'}`,
 					itemOffered: {
 						'@type': 'Event',
 						name: e.title,
