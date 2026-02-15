@@ -2,10 +2,6 @@
 
 A SvelteKit website for BurbSec information security meetups and events.
 
-## About
-
-BurbSec is an information security meetup network hosting events across multiple locations including the greater Chicagoland area, Las Vegas, Galway (Ireland), Minneapolis, and more. This site provides information about upcoming events, locations, and sponsors.
-
 ## Architecture
 
 This project uses a **data-driven architecture** where all event metadata lives in a single source of truth — `src/lib/data/events.js`. The homepage cards, navigation dropdowns, sponsors page, SEO meta tags, and structured data (JSON-LD) are all **auto-generated** from this file. Individual route pages only contain unique prose content.
@@ -18,7 +14,7 @@ This project uses a **data-driven architecture** where all event metadata lives 
 
 ### Other Pages
 
-- **Sponsors** (`/sponsors`) — auto-generated cards from events with sponsor data
+- **Sponsors** (`/sponsors`) — basic prospectus info 
 - **Error** (`+error.svelte`) — branded 404 / error page
 
 ## Development
@@ -39,7 +35,7 @@ This project uses a **data-driven architecture** where all event metadata lives 
    ```bash
    npm run dev
    ```
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser and navigate to the URL provided
 
 ### Building for Production
 
@@ -50,20 +46,12 @@ npm run preview  # Preview the production build locally
 
 ## Technology Stack
 
-- **Framework**: SvelteKit 2 + Svelte 4
-- **Build Tool**: Vite 5
+- **Framework**: SvelteKit 2 + Svelte 5
+- **Build Tool**: Vite 7
 - **Styling**: Bootstrap 5.3.8 (CDN with SRI) + Custom CSS
 - **Icons**: Font Awesome 6.5.1 (CDN with SRI)
 - **Deployment**: Static site generation → GitHub Pages (Node 22)
 - **Domain**: `burbsec.com` (via CNAME)
-
-### Security Features
-
-- **Subresource Integrity (SRI)** hashes on all CDN resources
-- **Content Security Policy (CSP)** meta tag
-- **Referrer Policy** (`strict-origin-when-cross-origin`)
-- **`security.txt`** at `/.well-known/security.txt`
-- Consistent `rel="noopener noreferrer"` on all external links
 
 ### Accessibility
 
@@ -82,8 +70,11 @@ src/
 ├── lib/
 │   ├── data/
 │   │   └── events.js       # ★ Single source of truth for all event data
+│   ├── server/
+│   │   └── gallery.js      # Build-time gallery image scanner
 │   └── components/
 │       ├── EventPage.svelte # Reusable event page (auto-generates SEO + JSON-LD)
+│       ├── ImageGallery.svelte # Auto-scrolling image gallery ribbon
 │       ├── Footer.svelte    # Site footer
 │       └── Navbar.svelte    # Data-driven navigation bar
 └── routes/
@@ -108,14 +99,54 @@ static/
 ├── .well-known/
 │   └── security.txt        # Security contact info (RFC 9116)
 ├── images/                 # Event shields and IRL photos
+│   └── irl/                # Gallery image folders (see "Adding Gallery Images")
+│       ├── cigarsec/
+│       ├── east/
+│       ├── galway/
+│       ├── lasvegas/
+│       ├── mpls/
+│       ├── north/
+│       ├── northwest/
+│       ├── prime/
+│       ├── south/
+│       ├── southeast/
+│       └── west/
 ├── videos/                 # Background video
 ├── sitemap.xml             # Site map for search engines
 └── robots.txt              # Crawler directives
 ```
 
+## Adding Gallery Images
+
+Each event location has an image gallery powered by `ImageGallery.svelte`. Gallery images are auto-discovered at build time by `gallery.js` — no code changes required.
+
+### How It Works
+
+1. Find the correct folder under `static/images/irl/` for the location where the photos were taken:
+
+   | Location | Gallery Folder |
+   |----------|---------------|
+   | Chicago (East) | `static/images/irl/east/` |
+   | Wheeling (North) | `static/images/irl/north/` |
+   | Hickory Hills (South) | `static/images/irl/south/` |
+   | Schaumburg (Prime) | `static/images/irl/prime/` |
+   | Crystal Lake (Northwest) | `static/images/irl/northwest/` |
+   | Naperville (West) | `static/images/irl/west/` |
+   | South Bend (Southeast) | `static/images/irl/southeast/` |
+   | Minneapolis | `static/images/irl/mpls/` |
+   | Las Vegas | `static/images/irl/lasvegas/` |
+   | Galway, Ireland | `static/images/irl/galway/` |
+   | CigarSec | `static/images/irl/cigarsec/` |
+
+2. Drop your image files (`.jpg`, `.jpeg`, `.png`, or `.webp`) into that folder. **`.webp` is strongly preferred** for file size.
+
+3. That's it! The next build will automatically pick up the new images and display them in that location's gallery ribbon. Images are sorted alphabetically by filename.
+
+> **Tip:** The gallery folder name for each event is set via the `galleryFolder` field in `src/lib/data/events.js`. When adding a brand-new event location, create a matching folder under `static/images/irl/` and set the `galleryFolder` field in the event data.
+
 ## Adding New Event Locations
 
-Adding a new event is now a **two-step process** (down from six):
+Adding a new event is now a **three-step process** (down from six):
 
 1. **Add the event to `src/lib/data/events.js`** in the appropriate array (`chicagolandEvents`, `elsewhereEvents`, or `specialEvents`). This automatically updates:
    - Homepage location cards
@@ -123,15 +154,32 @@ Adding a new event is now a **two-step process** (down from six):
    - Sponsors page (if `sponsor` data is provided)
    - SEO meta tags and structured data (if `seo`/`structuredData` fields are provided)
 
-2. **Create a minimal route page** at `src/routes/<slug>/+page.svelte`:
+2. **Create a minimal route** at `src/routes/<slug>/` with two files:
+
+   `+page.server.js` — loads gallery images at build time:
+   ```js
+   import { getGalleryImages } from '$lib/server/gallery.js';
+   import { getEvent } from '$lib/data/events.js';
+
+   export function load() {
+     const event = getEvent('your-slug');
+     return {
+       galleryImages: getGalleryImages(event?.galleryFolder)
+     };
+   }
+   ```
+
+   `+page.svelte` — renders the event page:
    ```svelte
    <script>
      import EventPage from '$lib/components/EventPage.svelte';
      import { getEventProps } from '$lib/data/events.js';
+
+     let { data } = $props();
      const event = getEventProps('your-slug');
    </script>
 
-   <EventPage {...event}>
+   <EventPage {...event} galleryImages={data.galleryImages}>
      <p>Your unique event description here.</p>
    </EventPage>
    ```
@@ -156,6 +204,7 @@ Adding a new event is now a **two-step process** (down from six):
 | `meetupPage` | No | Meetup.com page (defaults to main BurbSec) |
 | `eventbriteLink` | No | Eventbrite page link |
 | `irlImage` | No | Path to IRL photo |
+| `galleryFolder` | No | Subfolder name under `static/images/irl/` for gallery images |
 | `seo` | No | Custom SEO title, description, keywords, image |
 | `structuredData` | No | Venue details for JSON-LD schema |
 | `sponsor` | No | Sponsor page card data |
