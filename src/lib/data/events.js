@@ -346,6 +346,13 @@ export const elsewhereEvents = [
 			latitude: '44.9778',
 			longitude: '-93.2650',
 			timezone: '-06:00'
+		},
+		sponsor: {
+			when: 'Every THIRD Thursday',
+			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
+			crowd: null,
+			venueName: 'Forgotten Star Brewing Co. in Fridley, MN',
+			avgSponsorship: '$250'
 		}
 	},
 	{
