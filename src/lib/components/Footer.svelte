@@ -21,18 +21,3 @@
 		</div>
 	</div>
 </footer>
-
-<style>
-	footer {
-		margin-top: auto;
-	}
-	
-	footer a {
-		text-decoration: none;
-		transition: color 0.3s ease;
-	}
-	
-	footer a:hover {
-		color: #ffc107;
-	}
-</style>

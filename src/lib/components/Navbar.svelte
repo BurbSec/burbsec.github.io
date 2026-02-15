@@ -96,35 +96,3 @@
 	</div>
 </nav>
 
-<style>
-	.navbar-nav .nav-link,
-	.navbar-nav .dropdown-item {
-		padding-left: 0.75rem;
-		padding-right: 0.75rem;
-	}
-	
-	.navbar-nav .nav-link i {
-		font-size: 1rem;
-		margin-right: 0.5rem;
-	}
-	
-	.navbar-nav .btn-link {
-		border: none;
-		color: rgba(255, 255, 255, 0.55);
-		text-decoration: none;
-		padding: 0.5rem 1rem;
-	}
-	
-	.navbar-nav .btn-link:hover,
-	.navbar-nav .btn-link:focus {
-		color: rgba(255, 255, 255, 0.75);
-	}
-	
-	@media (max-width: 991px) {
-		.navbar-nav .nav-link,
-		.navbar-nav .dropdown-item {
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-	}
-</style>

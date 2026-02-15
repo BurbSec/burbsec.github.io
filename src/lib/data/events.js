@@ -30,6 +30,7 @@ const SITE_URL = 'https://burbsec.com';
  * @property {string}       [meetupPage]
  * @property {string|null} [eventbriteLink]
  * @property {string|null} [irlImage]
+ * @property {string|null} [galleryFolder] - Subfolder name under static/images/irl/ for gallery images
  * @property {Object}      [seo]           - Per-page SEO overrides
  * @property {Object}      [structuredData] - Extra JSON-LD fields
  * @property {Object|null} [sponsor]       - Sponsor page card data
@@ -48,7 +49,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/east.jpg',
+		irlImage: '/images/irl/east.webp',
+		galleryFolder: 'east',
 		cardTitle: 'Chicago',
 		cardSchedule: 'Every Last Thursday',
 		category: 'chicagoland',
@@ -90,7 +92,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/north.jpg',
+		irlImage: '/images/irl/north.webp',
+		galleryFolder: 'north',
 		cardTitle: 'Wheeling',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
@@ -127,7 +130,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/south.jpg',
+		irlImage: '/images/irl/south.webp',
+		galleryFolder: 'south',
 		cardTitle: 'Hickory Hills',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
@@ -164,7 +168,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/prime.jpg',
+		irlImage: '/images/irl/prime.webp',
+		galleryFolder: 'prime',
 		cardTitle: 'Schaumburg',
 		cardSchedule: 'Every First Thursday',
 		category: 'chicagoland',
@@ -201,7 +206,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/northwest.jpg',
+		irlImage: '/images/irl/northwest.webp',
+		galleryFolder: 'northwest',
 		cardTitle: 'Crystal Lake',
 		cardSchedule: 'Every Fourth Thursday',
 		category: 'chicagoland',
@@ -238,7 +244,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/west.jpg',
+		irlImage: '/images/irl/west.webp',
+		galleryFolder: 'west',
 		cardTitle: 'Naperville',
 		cardSchedule: 'Every Third Thursday',
 		category: 'chicagoland',
@@ -275,7 +282,8 @@ export const chicagolandEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/southeast.png',
+		irlImage: '/images/irl/southeast.webp',
+		galleryFolder: 'southeast',
 		cardTitle: 'South Bend, IN',
 		cardSchedule: 'Every First Monday',
 		category: 'chicagoland',
@@ -318,6 +326,7 @@ export const elsewhereEvents = [
 		eventbriteLink:
 			'https://www.eventbrite.com/e/burbsec-mpls-networking-meetup-tickets-1749486103029?aff=oddtdtcreator',
 		irlImage: null,
+		galleryFolder: 'mpls',
 		cardTitle: 'Minneapolis, MN',
 		cardSchedule: 'Every Third Thursday',
 		category: 'elsewhere',
@@ -350,7 +359,8 @@ export const elsewhereEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsecvegas/',
 		eventbriteLink: null,
-		irlImage: '/images/irl/vegas.jpg',
+		irlImage: '/images/irl/vegas.webp',
+		galleryFolder: 'lasvegas',
 		cardTitle: 'Las Vegas',
 		cardSchedule: 'Monthly Meetup',
 		category: 'elsewhere',
@@ -390,7 +400,8 @@ export const elsewhereEvents = [
 		discordLink: null,
 		meetupPage: 'https://www.meetup.com/burbsec-galway',
 		eventbriteLink: null,
-		irlImage: '/images/irl/galway.jpg',
+		irlImage: '/images/irl/galway.webp',
+		galleryFolder: 'galway',
 		cardTitle: 'Galway, Ireland',
 		cardSchedule: 'Monthly Meetup',
 		category: 'elsewhere',
@@ -460,13 +471,13 @@ export function getEvent(slug) {
  * Look up an event and return only the props that EventPage accepts.
  * This avoids Svelte "unused export property" warnings when spreading.
  * @param {string} slug
- * @returns {Omit<BurbSecEvent, 'slug'|'cardTitle'|'cardSchedule'|'category'|'sponsor'>}
+ * @returns {Omit<BurbSecEvent, 'slug'|'cardTitle'|'cardSchedule'|'category'|'sponsor'|'galleryFolder'>}
  */
 export function getEventProps(slug) {
-	const event = getEvent(slug);
-	if (!event) return undefined;
-	const { slug: _slug, cardTitle, cardSchedule, category, sponsor, ...props } = event;
-	return props;
+ const event = getEvent(slug);
+ if (!event) return undefined;
+ const { slug: _slug, cardTitle, cardSchedule, category, sponsor, galleryFolder, ...props } = event;
+ return props;
 }
 
 /**

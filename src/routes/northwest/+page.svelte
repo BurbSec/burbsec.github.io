@@ -2,10 +2,12 @@
 	import EventPage from '$lib/components/EventPage.svelte';
 	import { getEventProps } from '$lib/data/events.js';
 
+	export let data;
+
 	const event = getEventProps('northwest');
 </script>
 
-<EventPage {...event}>
+<EventPage {...event} galleryImages={data.galleryImages}>
 	<p>
 		BurbSec Northwest brings the fun and networking of our signature meetup format to the northwest suburbs.
 		Join fellow information security professionals for an evening of great conversation, networking,

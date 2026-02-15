@@ -2,10 +2,12 @@
 	import EventPage from '$lib/components/EventPage.svelte';
 	import { getEventProps } from '$lib/data/events.js';
 
+	export let data;
+
 	const event = getEventProps('east');
 </script>
 
-<EventPage {...event}>
+<EventPage {...event} galleryImages={data.galleryImages}>
 	<p>
 		Burbsec East is an informal meetup of Information Security enthusiasts,
 		engineers, hackers, and general geeks! Expect a night of great networking and

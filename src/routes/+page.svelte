@@ -1,5 +1,8 @@
 <script>
 	import { chicagolandEvents, elsewhereEvents, specialEvents, allEvents, SITE_URL } from '$lib/data/events.js';
+	import ImageGallery from '$lib/components/ImageGallery.svelte';
+
+	export let data;
 
 	const pageDescription = 'Join Burbsec, the premier information security meetup network! Weekly cybersecurity events in Chicago, Las Vegas, Galway & more. Connect with ethical hackers, security professionals, and infosec enthusiasts. Free networking events with hands-on training, CTFs, and industry talks.';
 
@@ -58,7 +61,7 @@
 		Your browser does not support the video tag.
 	</video>
 	<div class="hero-section">
-		<div class="container">
+		<div class="container hero-content">
 			<div class="row justify-content-center text-center">
 				<div class="col-lg-8">
 					<h1 class="display-3 fw-bold mb-4 landingpage-title text-white">Burbsec|Network</h1>
@@ -79,19 +82,25 @@
 							<i class="fa-solid fa-calendar-days"></i> Full Chicagoland Infosec Calendar
 						</a>
 					</div>
-					<div class="text-center mt-5">
-						<p class="text-white mb-2">Scroll for more!</p>
-						<img src="/images/scroll_down.png" alt="Scroll down" width="30" height="30" class="scroll-indicator" decoding="async">
-					</div>
 				</div>
 			</div>
+		</div>
+		{#if data.heroImages && data.heroImages.length > 0}
+			<div class="hero-gallery">
+				<ImageGallery images={data.heroImages} alt="BurbSec meetup" />
+			</div>
+		{/if}
+		<div class="scroll-section text-center">
+			<p class="text-white mb-2">Scroll for more!</p>
+			<img src="/images/scroll_down.png" alt="Scroll down" width="30" height="30" class="scroll-indicator" decoding="async">
 		</div>
 	</div>
 
 	<div class="container my-5">
+
 		<div class="row">
-			<div class="col-12 text-center mb-5">
-				<h2>Our Locations</h2>
+			<div class="col-12 text-center mb-5 mt-4">
+				<h2 class="display-3 fw-bold">Our Locations</h2>
 				<p class="lead">Join us at one of our many locations across the Chicagoland area and beyond!</p>
 			</div>
 		</div>
@@ -147,73 +156,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	/* Scoped styles for the homepage */
-	.home-page {
-		position: relative;
-		min-height: 100vh;
-		overflow: hidden;
-	}
-	
-	.background-video {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -2;
-	}
-	
-	.home-page::before {
-		content: '';
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.64));
-		z-index: -1;
-	}
-	
-	.home-page .hero-section {
-		background: none;
-		position: relative;
-		z-index: 1;
-	}
-	
-	/* Event card images - component-specific */
-	:global(.event-card img) {
-		object-fit: contain;
-		width: auto;
-		max-width: 100%;
-	}
-	
-	/* Scroll indicator animation */
-	.scroll-indicator {
-		animation: bounce 2s infinite;
-		filter: brightness(0) invert(1);
-	}
-	
-	@keyframes bounce {
-		0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-		40% { transform: translateY(-10px); }
-		60% { transform: translateY(-5px); }
-	}
-	
-	/* Responsive design */
-	@media (min-width: 992px) {
-		:global(.hero-section .display-3) { font-size: 5.4rem; }
-		:global(.hero-section .lead) { font-size: 1.5rem; }
-		:global(.hero-section .btn-lg) {
-			font-size: 1.5rem;
-			padding: 0.6rem 1.2rem;
-		}
-		:global(.hero-section p) { font-size: 1.2rem; }
-		.scroll-indicator {
-			width: 36px;
-			height: 36px;
-		}
-	}
-</style>

@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { SITE_URL } from '$lib/data/events.js';
+	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
 	export let title;
 	export let subtitle;
@@ -12,6 +13,8 @@
 	export let meetupPage = 'https://www.meetup.com/burbsec/';
 	export let eventbriteLink = null;
 	export let irlImage = null;
+	/** @type {string[]} */
+	export let galleryImages = [];
 	/** @type {import('$lib/data/events.js').BurbSecEvent['seo']|null} */
 	export let seo = null;
 	/** @type {import('$lib/data/events.js').BurbSecEvent['structuredData']|null} */
@@ -100,7 +103,7 @@
 	{/if}
 </svelte:head>
 
-<div class="container-lg pb-3 flex-fill">
+<div class="event-page container-lg pb-3 flex-fill">
 	<div class="row pt-2">
 		<article id="maincontent" class="col-lg-8 mt-3 mx-auto">
 			<div class="text-center mb-4">
@@ -151,10 +154,12 @@
 			</div>
 
 			<div class="text-center">
-				<img src={eventImage} alt={title} width="100" height="100" loading="lazy" decoding="async" />
+				<img src={eventImage} alt={title} class="event-image" loading="lazy" decoding="async" />
 			</div>
 
-			{#if irlImage}
+			{#if galleryImages.length > 0}
+				<ImageGallery images={galleryImages} alt="{title} IRL Photo" />
+			{:else if irlImage}
 				<div class="text-center mt-4">
 					<img src={irlImage} alt="{title} IRL Photo" class="img-fluid rounded-3 irl-photo" width="600" height="400" loading="lazy" decoding="async" />
 				</div>
@@ -162,23 +167,3 @@
 		</article>
 	</div>
 </div>
-
-<style>
-	.btn {
-		margin-bottom: 0.5rem;
-	}
-	
-	.bluesky-icon {
-		filter: brightness(0) invert(1);
-	}
-	
-	.irl-photo {
-		max-width: 600px;
-	}
-	
-	@media (max-width: 576px) {
-		.col-sm {
-			margin-bottom: 1rem;
-		}
-	}
-</style>

@@ -48,35 +48,3 @@
 	<slot />
 </main>
 <Footer />
-
-<style>
-	:global(body) {
-		background-color: #15202b;
-		min-height: 100vh;
-		color: white;
-	}
-
-	main {
-		min-height: calc(100vh - 200px);
-	}
-
-	/* Accessible skip-to-content link — visible only on focus */
-	.skip-link {
-		position: absolute;
-		top: -100%;
-		left: 50%;
-		transform: translateX(-50%);
-		background: #ffc107;
-		color: #000;
-		padding: 0.5rem 1.5rem;
-		border-radius: 0 0 0.375rem 0.375rem;
-		z-index: 9999;
-		font-weight: 600;
-		text-decoration: none;
-		transition: top 0.2s ease;
-	}
-
-	.skip-link:focus {
-		top: 0;
-	}
-</style>

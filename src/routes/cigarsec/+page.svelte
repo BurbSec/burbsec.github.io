@@ -2,10 +2,12 @@
 	import EventPage from '$lib/components/EventPage.svelte';
 	import { getEventProps } from '$lib/data/events.js';
 
+	export let data;
+
 	const event = getEventProps('cigarsec');
 </script>
 
-<EventPage {...event}>
+<EventPage {...event} galleryImages={data.galleryImages}>
 	<p>
 		CigarSec is our special interest group that combines the relaxed atmosphere of cigar smoking
 		with information security discussions. Join fellow security professionals for an afternoon of

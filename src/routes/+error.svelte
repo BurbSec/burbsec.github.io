@@ -7,7 +7,7 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<div class="container text-center py-5">
+<div class="error-page container text-center py-5">
 	<div class="row justify-content-center">
 		<div class="col-lg-6">
 			<h1 class="display-1 fw-bold mb-3">{$page.status}</h1>
@@ -39,15 +39,3 @@
 	</div>
 </div>
 
-<style>
-	.display-1 {
-		font-size: 8rem;
-		opacity: 0.3;
-	}
-
-	@media (max-width: 576px) {
-		.display-1 {
-			font-size: 5rem;
-		}
-	}
-</style>
