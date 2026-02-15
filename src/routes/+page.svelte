@@ -70,7 +70,7 @@
 						<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
 							<i class="fa-brands fa-discord"></i> Join the discussion on Discord!
 						</a>
-						<a href="https://www.meetup.com/burbsec/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
+						<a href="https://www.meetup.com/burbsec/events//" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
 							<i class="fa-brands fa-meetup"></i> Find your local Burbsec meet!
 						</a>
 					</div>

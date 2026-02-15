@@ -11,7 +11,7 @@
 		blueskyHandle = null,
 		discordLink = null,
 		gmapsLink,
-		meetupPage = 'https://www.meetup.com/burbsec/',
+		meetupPage = 'https://www.meetup.com/burbsec/events//',
 		eventbriteLink = null,
 		irlImage = null,
 		/** @type {string[]} */

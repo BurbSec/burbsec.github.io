@@ -207,7 +207,21 @@ Adding a new event is now a **three-step process** (down from six):
 | `galleryFolder` | No | Subfolder name under `static/images/irl/` for gallery images |
 | `seo` | No | Custom SEO title, description, keywords, image |
 | `structuredData` | No | Venue details for JSON-LD schema |
-| `sponsor` | No | Sponsor page card data |
+| `sponsor` | No | Sponsor page card data (see below) |
+
+### Sponsor Data Fields
+
+The `/sponsors` page cards are auto-generated from the `sponsor` object on each event in `src/lib/data/events.js`. The `getSponsorEvents()` helper filters for events that have this field. Each `sponsor` object contains:
+
+| Sub-field | Description | Example |
+|-----------|-------------|---------|
+| `when` | Meeting cadence (nullable) | `'Every LAST (Fourth or Fifth) Thursday'` |
+| `attendance` | Typical turnout | `'30-100 (usually 30-50) active and prospective IT and Infosec professionals and enthusiasts'` |
+| `crowd` | Audience profile (nullable) | `'Younger crowd, some students'` |
+| `venueName` | Venue + city for the card | `'Navigator Taproom in Chicago'` |
+| `avgSponsorship` | Suggested sponsorship amount | `'$1000'` |
+
+These are all manually maintained strings — no external API or dynamic calculation is involved. To update the metrics, edit the `sponsor` object on the relevant event entry directly.
 
 ## Contributing
 
