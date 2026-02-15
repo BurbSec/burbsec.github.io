@@ -4,6 +4,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { SITE_URL } from '$lib/data/events.js';
 
+	let { children } = $props();
+
 	const orgJsonLd = JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'Organization',
@@ -45,6 +47,6 @@
 
 <Navbar />
 <main id="maincontent" tabindex="-1">
-	<slot />
+	{@render children()}
 </main>
 <Footer />

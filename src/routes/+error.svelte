@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 </script>
 
 <svelte:head>
@@ -10,18 +10,18 @@
 <div class="error-page container text-center py-5">
 	<div class="row justify-content-center">
 		<div class="col-lg-6">
-			<h1 class="display-1 fw-bold mb-3">{$page.status}</h1>
+			<h1 class="display-1 fw-bold mb-3">{page.status}</h1>
 			<h2 class="mb-4">
-				{#if $page.status === 404}
+				{#if page.status === 404}
 					Page Not Found
 				{:else}
 					Something Went Wrong
 				{/if}
 			</h2>
 			<p class="lead mb-4">
-				{#if $page.error?.message}
-					{$page.error.message}
-				{:else if $page.status === 404}
+				{#if page.error?.message}
+					{page.error.message}
+				{:else if page.status === 404}
 					The page you're looking for doesn't exist or has been moved.
 				{:else}
 					An unexpected error occurred. Please try again later.
@@ -38,4 +38,3 @@
 		</div>
 	</div>
 </div>
-

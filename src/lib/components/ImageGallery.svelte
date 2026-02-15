@@ -1,12 +1,12 @@
 <script>
-	/** @type {string[]} */
-	export let images = [];
-
-	/** @type {string} */
-	export let alt = 'Gallery image';
+	/** @type {{ images?: string[], alt?: string }} */
+	let {
+		images = [],
+		alt = 'Gallery image'
+	} = $props();
 
 	/** @type {string|null} */
-	let modalImage = null;
+	let modalImage = $state(null);
 
 	/** Duration in seconds per image — controls scroll speed */
 	const SECONDS_PER_IMAGE = 4;
@@ -18,8 +18,8 @@
 	 */
 	const LOOP_THRESHOLD = 4;
 
-	$: shouldLoop = images.length >= LOOP_THRESHOLD;
-	$: duration = images.length * SECONDS_PER_IMAGE;
+	let shouldLoop = $derived(images.length >= LOOP_THRESHOLD);
+	let duration = $derived(images.length * SECONDS_PER_IMAGE);
 
 	function openModal(src) {
 		modalImage = src;
@@ -38,7 +38,7 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 {#if images.length > 0}
 	<div class="gallery-ribbon" class:static-ribbon={!shouldLoop}>
@@ -50,7 +50,7 @@
 			{#each images as src, i}
 				<button
 					class="gallery-item"
-					on:click={() => openModal(src)}
+					onclick={() => openModal(src)}
 					type="button"
 					aria-label="View full image {i + 1}"
 				>
@@ -62,7 +62,7 @@
 				{#each images as src, i}
 					<button
 						class="gallery-item"
-						on:click={() => openModal(src)}
+						onclick={() => openModal(src)}
 						type="button"
 						aria-label="View full image {i + 1}"
 						aria-hidden="true"
@@ -77,18 +77,19 @@
 {/if}
 
 {#if modalImage}
-	<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+	<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_noninteractive_element_interactions -->
 	<div
 		class="gallery-modal-backdrop"
-		on:click={handleBackdropClick}
+		onclick={handleBackdropClick}
+		onkeydown={handleKeydown}
 		role="dialog"
 		aria-modal="true"
 		aria-label="Full size image"
+		tabindex="-1"
 	>
-		<button class="gallery-modal-close" on:click={closeModal} aria-label="Close image" type="button">
+		<button class="gallery-modal-close" onclick={closeModal} aria-label="Close image" type="button">
 			<i class="fa-solid fa-xmark"></i>
 		</button>
 		<img src={modalImage} alt="{alt} full size" class="gallery-modal-image" />
 	</div>
 {/if}
-

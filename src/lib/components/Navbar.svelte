@@ -1,7 +1,7 @@
 <script>
 	import { chicagolandEvents, elsewhereEvents, specialEvents } from '$lib/data/events.js';
 
-	let isMenuOpen = false;
+	let isMenuOpen = $state(false);
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
@@ -23,7 +23,7 @@
 		<button
 			class="navbar-toggler"
 			type="button"
-			on:click={toggleMenu}
+			onclick={toggleMenu}
 			aria-controls="navbarNav"
 			aria-expanded={isMenuOpen}
 			aria-label="Toggle navigation"
@@ -40,7 +40,7 @@
 					</button>
 					<ul class="dropdown-menu">
 						{#each chicagolandEvents as event (event.slug)}
-							<li><a class="dropdown-item" href="/{event.slug}" on:click={closeMenu}>{event.cardTitle}</a></li>
+							<li><a class="dropdown-item" href="/{event.slug}" onclick={closeMenu}>{event.cardTitle}</a></li>
 						{/each}
 					</ul>
 				</li>
@@ -52,7 +52,7 @@
 					</button>
 					<ul class="dropdown-menu">
 						{#each elsewhereEvents as event (event.slug)}
-							<li><a class="dropdown-item" href="/{event.slug}" on:click={closeMenu}>{event.cardTitle}</a></li>
+							<li><a class="dropdown-item" href="/{event.slug}" onclick={closeMenu}>{event.cardTitle}</a></li>
 						{/each}
 					</ul>
 				</li>
@@ -65,7 +65,7 @@
 						</button>
 						<ul class="dropdown-menu">
 							{#each specialEvents as event (event.slug)}
-								<li><a class="dropdown-item" href="/{event.slug}" on:click={closeMenu}>{event.cardTitle}</a></li>
+								<li><a class="dropdown-item" href="/{event.slug}" onclick={closeMenu}>{event.cardTitle}</a></li>
 							{/each}
 						</ul>
 					</li>
@@ -87,7 +87,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/sponsors" on:click={closeMenu}>
+					<a class="nav-link" href="/sponsors" onclick={closeMenu}>
 						<i class="fa-solid fa-hand-holding-medical"></i> Sponsor Us!
 					</a>
 				</li>
@@ -95,4 +95,3 @@
 		</div>
 	</div>
 </nav>
-

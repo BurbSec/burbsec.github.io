@@ -2,7 +2,7 @@
 	import { chicagolandEvents, elsewhereEvents, specialEvents, allEvents, SITE_URL } from '$lib/data/events.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
-	export let data;
+	let { data } = $props();
 
 	const pageDescription = 'Join Burbsec, the premier information security meetup network! Weekly cybersecurity events in Chicago, Las Vegas, Galway & more. Connect with ethical hackers, security professionals, and infosec enthusiasts. Free networking events with hands-on training, CTFs, and industry talks.';
 

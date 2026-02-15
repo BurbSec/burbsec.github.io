@@ -2,7 +2,7 @@
 	import EventPage from '$lib/components/EventPage.svelte';
 	import { getEventProps } from '$lib/data/events.js';
 
-	export let data;
+	let { data } = $props();
 
 	const event = getEventProps('north');
 </script>

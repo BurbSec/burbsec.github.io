@@ -1,81 +1,86 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { SITE_URL } from '$lib/data/events.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
-	export let title;
-	export let subtitle;
-	export let location;
-	export let eventImage;
-	export let blueskyHandle = null;
-	export let discordLink = null;
-	export let gmapsLink;
-	export let meetupPage = 'https://www.meetup.com/burbsec/';
-	export let eventbriteLink = null;
-	export let irlImage = null;
-	/** @type {string[]} */
-	export let galleryImages = [];
-	/** @type {import('$lib/data/events.js').BurbSecEvent['seo']|null} */
-	export let seo = null;
-	/** @type {import('$lib/data/events.js').BurbSecEvent['structuredData']|null} */
-	export let structuredData = null;
+	let {
+		title,
+		subtitle,
+		location,
+		eventImage,
+		blueskyHandle = null,
+		discordLink = null,
+		gmapsLink,
+		meetupPage = 'https://www.meetup.com/burbsec/',
+		eventbriteLink = null,
+		irlImage = null,
+		/** @type {string[]} */
+		galleryImages = [],
+		/** @type {import('$lib/data/events.js').BurbSecEvent['seo']|null} */
+		seo = null,
+		/** @type {import('$lib/data/events.js').BurbSecEvent['structuredData']|null} */
+		structuredData = null,
+		children
+	} = $props();
 
-	$: canonicalUrl = `${SITE_URL}${$page.url.pathname}`;
-	$: pageTitle = seo?.title ?? `${title} | Burbsec`;
-	$: pageDescription = seo?.description ?? `${title} - ${subtitle}`;
-	$: ogImage = seo?.image ?? `${SITE_URL}${eventImage}`;
+	let canonicalUrl = $derived(`${SITE_URL}${page.url.pathname}`);
+	let pageTitle = $derived(seo?.title ?? `${title} | Burbsec`);
+	let pageDescription = $derived(seo?.description ?? `${title} - ${subtitle}`);
+	let ogImage = $derived(seo?.image ?? `${SITE_URL}${eventImage}`);
 
-	$: jsonLd = structuredData
-		? JSON.stringify({
-				'@context': 'https://schema.org',
-				'@type': 'Event',
-				name: `${title} Information Security Meetup`,
-				description: pageDescription,
-				eventSchedule: {
-					'@type': 'Schedule',
-					repeatFrequency: 'P1M'
-				},
-				eventStatus: 'https://schema.org/EventScheduled',
-				eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-				location: {
-					'@type': 'Place',
-					name: structuredData.venueName,
-					address: {
-						'@type': 'PostalAddress',
-						...(structuredData.streetAddress && { streetAddress: structuredData.streetAddress }),
-						addressLocality: structuredData.addressLocality,
-						addressRegion: structuredData.addressRegion,
-						...(structuredData.postalCode && { postalCode: structuredData.postalCode }),
-						addressCountry: structuredData.addressCountry
+	let jsonLd = $derived(
+		structuredData
+			? JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'Event',
+					name: `${title} Information Security Meetup`,
+					description: pageDescription,
+					eventSchedule: {
+						'@type': 'Schedule',
+						repeatFrequency: 'P1M'
 					},
-					geo: {
-						'@type': 'GeoCoordinates',
-						latitude: structuredData.latitude,
-						longitude: structuredData.longitude
-					}
-				},
-				organizer: {
-					'@type': 'Organization',
-					name: 'BurbSec Network',
-					url: SITE_URL
-				},
-				offers: {
-					'@type': 'Offer',
-					price: '0',
-					priceCurrency: 'USD',
-					availability: 'https://schema.org/InStock',
-					validFrom: `2010-06-01T00:00:00${structuredData.timezone || '-06:00'}`,
-					url: eventbriteLink ?? meetupPage
-				},
-				audience: {
-					'@type': 'Audience',
-					audienceType:
-						'Information Security Professionals, Cybersecurity Enthusiasts, Ethical Hackers, IT Professionals'
-				},
-				image: ogImage,
-				url: canonicalUrl
-			})
-		: null;
+					eventStatus: 'https://schema.org/EventScheduled',
+					eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+					location: {
+						'@type': 'Place',
+						name: structuredData.venueName,
+						address: {
+							'@type': 'PostalAddress',
+							...(structuredData.streetAddress && { streetAddress: structuredData.streetAddress }),
+							addressLocality: structuredData.addressLocality,
+							addressRegion: structuredData.addressRegion,
+							...(structuredData.postalCode && { postalCode: structuredData.postalCode }),
+							addressCountry: structuredData.addressCountry
+						},
+						geo: {
+							'@type': 'GeoCoordinates',
+							latitude: structuredData.latitude,
+							longitude: structuredData.longitude
+						}
+					},
+					organizer: {
+						'@type': 'Organization',
+						name: 'BurbSec Network',
+						url: SITE_URL
+					},
+					offers: {
+						'@type': 'Offer',
+						price: '0',
+						priceCurrency: 'USD',
+						availability: 'https://schema.org/InStock',
+						validFrom: `2010-06-01T00:00:00${structuredData.timezone || '-06:00'}`,
+						url: eventbriteLink ?? meetupPage
+					},
+					audience: {
+						'@type': 'Audience',
+						audienceType:
+							'Information Security Professionals, Cybersecurity Enthusiasts, Ethical Hackers, IT Professionals'
+					},
+					image: ogImage,
+					url: canonicalUrl
+				})
+			: null
+	);
 </script>
 
 <svelte:head>
@@ -150,7 +155,7 @@
 			</div>
 
 			<div class="content mb-4">
-				<slot />
+				{@render children()}
 			</div>
 
 			<div class="text-center">
