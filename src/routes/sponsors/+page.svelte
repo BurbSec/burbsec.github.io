@@ -17,9 +17,9 @@
 	<meta name="twitter:description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network. Get brand visibility with cybersecurity professionals across multiple locations." />
 </svelte:head>
 
-<div class="container-lg pb-3 flex-fill">
+<div class="container-xl pb-3 flex-fill">
 	<div class="row pt-2">
-		<article id="maincontent" class="col-lg-8 mt-3 mx-auto">
+		<article id="maincontent" class="col-lg-10 mt-3 mx-auto">
 			<div class="text-center mb-5">
 				<h1>Sponsor BurbSec</h1>
 				<p class="lead">Support the World's Most Fun InfoSec Meetup Network</p>
@@ -76,7 +76,7 @@
 					<!-- Sponsor cards (auto-generated from events data) -->
 					<div class="row g-4 mt-4">
 						{#each sponsorEvents as event (event.slug)}
-							<div class="col-lg-6">
+							<div class="col-lg-6 col-xl-4">
 								<a href="/{event.slug}" class="text-decoration-none">
 									<div class="card h-100 card-hover">
 										<div class="card-body">
