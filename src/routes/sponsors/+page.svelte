@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>Sponsors | Burbsec</title>
-	<meta name="description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network" />
+	<meta name="description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network!" />
 	<link rel="canonical" href={`${SITE_URL}/sponsors/`} />
 	<meta property="og:title" content="Sponsor BurbSec | Support the InfoSec Community" />
 	<meta property="og:description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network. Get brand visibility with cybersecurity professionals across multiple locations." />
@@ -41,31 +41,18 @@
 					<li>Support for the next generation of security professionals</li>
 				</ul>
 
-				<h3 class="text-center">Sponsorship Opportunities</h3>
-				<div class="row g-4 mt-3">
-					<div class="col-md-6">
-						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Event Sponsorship</h5>
-								<p class="card-text">
-									Sponsor individual meetup events and get your brand in front of up to 100
-									security professionals at each event!
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Network Sponsorship</h5>
-								<p class="card-text">
-									Become a network-wide sponsor and get visibility across all BurbSec
-									locations and events!
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				<h3 class="text-center">Sponsorship Flexibility</h3>
+				<p>
+					What exactly is being sponsored is completely up to you. Most choose to just set a tab limit with the wait staff, sometimes only covering drinks. Some sponsors also choose to pick up a few orders of finger foods, whereas others simply pick up the full tabs of whomever was in attendance until a set time. Completely up to you and what your sponsorship budget looks like. Be sure to take into consideration the location of the event you wish to sponsor as the costs can vary greatly.
+				</p>
+				<p>
+					Be sure to bring something to make your team memorable! Here are some ideas that have gone over well in the past:
+				</p>
+				<ul>
+					<li>Cool stickers (not just boring vendor logo ones)</li>
+					<li>An awesome item to raffle (big Lego sets or other tactile hobby items go over well)</li>
+					<li><em>Useful</em> swag such as nice USB chargers, socks, or coffee mugs</li>
+				</ul>
 
 				<div class="text-center mt-5">
 					<h3 class="text-center">Interested in Sponsoring?</h3>
@@ -112,13 +99,7 @@
 						{/each}
 					</div>
 
-					<div class="mt-4">
-						<h4 class="text-center">Sponsorship Flexibility</h4>
-						<p>
-							What exactly is being sponsored is completely up to you. Most choose to just set a tab limit with the wait staff, sometimes only covering drinks. Some sponsors also choose to pick up a few orders of finger foods, whereas others simply pick up the full tabs of whomever was in attendance until a set time. Completely up to you and what your sponsorship budget looks like. Be sure to take into consideration the location of the event you wish to sponsor as the costs can vary greatly.
-						</p>
 					</div>
-				</div>
 			</div>
 		</article>
 	</div>
