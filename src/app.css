@@ -220,6 +220,19 @@ main {
   }
 }
 
+/* Fix background-attachment: fixed on iOS/mobile (not supported) */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 /* -------------------------------------------------------
    Footer  (Footer.svelte)
    ------------------------------------------------------- */
