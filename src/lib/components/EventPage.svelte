@@ -111,9 +111,12 @@
 <div class="event-page container-lg pb-3 flex-fill">
 	<div class="row pt-2">
 		<article id="maincontent" class="col-lg-8 mt-3 mx-auto">
-			<div class="text-center mb-4">
-				<h1>{title}</h1>
-				<p class="lead">{subtitle}</p>
+			<div class="event-header d-flex align-items-center justify-content-center mb-4">
+				<div class="text-center">
+					<h1>{title}</h1>
+					<p class="lead">{subtitle}</p>
+				</div>
+				<img src={eventImage} alt={title} class="event-image ms-3" loading="lazy" decoding="async" />
 			</div>
 
 			<div class="row justify-content-center align-items-center mb-4">
@@ -154,12 +157,10 @@
 				</div>
 			</div>
 
-			<div class="content mb-4">
-				{@render children()}
-			</div>
-
-			<div class="text-center">
-				<img src={eventImage} alt={title} class="event-image" loading="lazy" decoding="async" />
+			<div class="event-content-card">
+				<div class="content mb-0">
+					{@render children()}
+				</div>
 			</div>
 
 			{#if galleryImages.length > 0}

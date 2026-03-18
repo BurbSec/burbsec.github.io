@@ -87,7 +87,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/sponsors" onclick={closeMenu}>
+					<a class="nav-link nav-sponsor-pulse" href="/sponsors" onclick={closeMenu}>
 						<i class="fa-solid fa-hand-holding-medical"></i> Sponsor Us!
 					</a>
 				</li>

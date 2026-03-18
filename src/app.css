@@ -38,10 +38,12 @@
 .event-card:hover,
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow:
+    0 0 10px rgba(255, 40, 40, 0.4),
+    0 0 30px rgba(255, 40, 40, 0.2);
 }
 
-/* Force card text to remain dark in hyperlinks */
+/* Keep card text white on dark backgrounds */
 a.text-decoration-none .card-hover,
 a.text-decoration-none .card-hover:hover,
 a.text-decoration-none .card-hover:visited,
@@ -51,7 +53,7 @@ a.text-decoration-none .card-hover .card-title,
 a.text-decoration-none .card-hover .card-text,
 a.text-decoration-none .card-hover .card-title:hover,
 a.text-decoration-none .card-hover .card-text:hover {
-  color: #212529;
+  color: white;
 }
 
 /* Accessible focus indicators for dark theme */
@@ -97,9 +99,16 @@ button:focus-visible,
    ------------------------------------------------------- */
 
 body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+              url('/images/neon_bg.jpg') center / cover no-repeat fixed;
   background-color: #15202b;
   min-height: 100vh;
   color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 }
 
 main {
@@ -130,10 +139,39 @@ main {
    Navbar  (Navbar.svelte)
    ------------------------------------------------------- */
 
+.navbar-brand {
+  color: #00d4ff !important;
+}
+
+.dropdown-menu {
+  background: rgba(20, 20, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+  color: white !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff !important;
+}
+
 .navbar-nav .nav-link,
 .navbar-nav .dropdown-item {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  color: white !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+  color: #00d4ff !important;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 .navbar-nav .nav-link i {
@@ -143,14 +181,35 @@ main {
 
 .navbar-nav .btn-link {
   border: none;
-  color: rgba(255, 255, 255, 0.55);
+  color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
 
 .navbar-nav .btn-link:hover,
 .navbar-nav .btn-link:focus {
-  color: rgba(255, 255, 255, 0.75);
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Pulsing blue glow on Sponsor Us link */
+.nav-sponsor-pulse {
+  animation: sponsor-pulse 2s ease-in-out infinite;
+}
+
+.nav-sponsor-pulse:hover {
+  animation: none;
+}
+
+@keyframes sponsor-pulse {
+  0%, 100% {
+    color: white !important;
+    text-shadow: 0 0 4px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    color: #00d4ff !important;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 1), 0 0 30px rgba(0, 212, 255, 0.8), 0 0 50px rgba(0, 212, 255, 0.5);
+  }
 }
 
 @media (max-width: 991px) {
@@ -194,14 +253,48 @@ footer a:hover {
   max-width: 600px;
 }
 
+/* Event header — title + shield side by side */
+.event-header {
+  gap: 0.5rem;
+}
+
 .event-image {
-  max-width: 100px;
+  max-width: 80px;
   height: auto;
+}
+
+/* Translucent content card with red hover glow */
+.event-content-card {
+  background: rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-content-card:hover {
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow:
+    0 0 10px rgba(255, 40, 40, 0.4),
+    0 0 30px rgba(255, 40, 40, 0.2);
 }
 
 @media (max-width: 576px) {
   .event-page .col-sm {
     margin-bottom: 1rem;
+  }
+
+  .event-content-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .event-header {
+    flex-direction: column;
+  }
+
+  .event-image {
+    margin-left: 0 !important;
   }
 }
 
@@ -294,7 +387,7 @@ footer a:hover {
   top: 1rem;
   right: 1rem;
   z-index: 10000;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.30);
   border: none;
   color: white;
   font-size: 1.5rem;
@@ -350,24 +443,80 @@ footer a:hover {
    Sponsors Page  (sponsors/+page.svelte)
    ------------------------------------------------------- */
 
+/* Glowing buttons */
+.btn-primary {
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.4), 0 0 20px rgba(13, 110, 253, 0.2);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.6), 0 0 30px rgba(13, 110, 253, 0.3);
+}
+
+.btn-warning {
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4), 0 0 20px rgba(255, 193, 7, 0.2);
+}
+.btn-warning:hover {
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.6), 0 0 30px rgba(255, 193, 7, 0.3);
+}
+
+.btn-success {
+  box-shadow: 0 0 10px rgba(25, 135, 84, 0.4), 0 0 20px rgba(25, 135, 84, 0.2);
+}
+.btn-success:hover {
+  box-shadow: 0 0 15px rgba(25, 135, 84, 0.6), 0 0 30px rgba(25, 135, 84, 0.3);
+}
+
+.btn-info {
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.4), 0 0 20px rgba(13, 202, 240, 0.2);
+}
+.btn-info:hover {
+  box-shadow: 0 0 15px rgba(13, 202, 240, 0.6), 0 0 30px rgba(13, 202, 240, 0.3);
+}
+
+.btn-danger {
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.4), 0 0 20px rgba(220, 53, 69, 0.2);
+}
+.btn-danger:hover {
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.6), 0 0 30px rgba(220, 53, 69, 0.3);
+}
+
+.btn-outline-primary {
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+}
+.btn-outline-primary:hover {
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.6), 0 0 30px rgba(13, 110, 253, 0.3);
+}
+
+.btn-outline-light {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.btn-outline-light:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Neon color utilities */
+.neon-blue { color: #00d4ff !important; }
+.neon-red { color: #ff3058 !important; }
+.neon-green { color: #39ff14 !important; }
+
 .sponsor-hero {
   background: linear-gradient(135deg, rgba(13, 110, 253, 0.15), rgba(255, 193, 7, 0.1));
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 6rem !important; /* account for navbar */
 }
 
-.sponsor-feature {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.2s ease;
-}
-
-.sponsor-feature:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
+.sponsor-feature,
 .sponsor-card {
-  border-left: 3px solid #0d6efd;
+  background: rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sponsor-feature:hover,
+.sponsor-card:hover {
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow:
+    0 0 10px rgba(255, 40, 40, 0.4),
+    0 0 30px rgba(255, 40, 40, 0.2);
 }
 
 .sponsor-card .card-body img {
@@ -375,7 +524,7 @@ footer a:hover {
 }
 
 .sponsor-amount {
-  color: #198754;
+  color: #00d4ff;
   font-weight: 600;
 }
 
@@ -432,10 +581,13 @@ footer a:hover {
 
 .hero-gallery {
   flex: 0 0 auto;
-  width: 60vw;
+  width: 100%;
+  max-width: 1140px;
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: var(--bs-gutter-x, 0.75rem);
 }
 
 /* Override gallery-ribbon margin when inside hero */
@@ -445,8 +597,8 @@ footer a:hover {
 
 /* Smaller gallery images in the hero */
 .hero-gallery .gallery-item {
-  width: 120px;
-  height: 180px;
+  width: 188px;
+  height: 281px;
 }
 
 .scroll-section {

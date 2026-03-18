@@ -38,3 +38,7 @@ creative_templates/
 
 # Working files
 sponsors.txt
+
+# Claude Code
+CLAUDE.md
+.claude/
