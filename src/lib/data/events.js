@@ -239,7 +239,7 @@ export const chicagolandEvents = [
 		subtitle: 'Meets Every Third Thursday of the Month',
 		location: 'Naperville, IL',
 		eventImage: '/images/west_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/5DSpKdaxWddCLGL49',
+		gmapsLink: 'https://maps.app.goo.gl/PzHrLb5qNxooVLDg8',
 		blueskyHandle: 'west.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events//',
@@ -251,23 +251,24 @@ export const chicagolandEvents = [
 		category: 'chicagoland',
 		seo: {
 			title: 'BurbSec West Naperville | Information Security Meetup Every Third Thursday',
-			description: 'Join BurbSec West in Naperville, IL - an informal information security meetup at Old Town Pour House. Every third Thursday. Network with cybersecurity professionals in the western suburbs.',
+			description: 'Join BurbSec West in Naperville, IL - an informal information security meetup at Granite City Food & Brewery. Every third Thursday. Network with cybersecurity professionals in the western suburbs.',
 			keywords: 'naperville information security, naperville cybersecurity meetup, west suburbs infosec, dupage county tech meetup, cybersecurity networking naperville, naperville security professionals',
 			image: `${SITE_URL}/images/west_shield.png`
 		},
 		structuredData: {
-			venueName: 'Old Town Pour House',
+			venueName: 'Granite City Food & Brewery',
+			streetAddress: '1828 Abriter Ct',
 			addressLocality: 'Naperville',
 			addressRegion: 'IL',
 			addressCountry: 'US',
-			latitude: '41.7711',
-			longitude: '-88.1535'
+			latitude: '41.7508',
+			longitude: '-88.2120'
 		},
 		sponsor: {
 			when: 'Every THIRD Thursday',
 			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Moderately experienced',
-			venueName: 'Old Town Pour House in Naperville',
+			venueName: 'Granite City Food & Brewery in Naperville',
 			avgSponsorship: '$500'
 		}
 	},
