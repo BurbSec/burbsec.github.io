@@ -305,7 +305,7 @@ export const chicagolandEvents = [
 		sponsor: {
 			when: 'Every FIRST Monday',
 			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
-			crowd: 'Younger, early career',
+			crowd: 'Experienced, mid-career',
 			venueName: 'NW Indiana',
 			avgSponsorship: '$250'
 		}
