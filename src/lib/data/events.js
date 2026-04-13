@@ -122,38 +122,38 @@ export const chicagolandEvents = [
 	{
 		slug: 'south',
 		title: 'BurbSec|South',
-		subtitle: 'Meets Every Second Thursday of the Month',
-		location: 'Hickory Hills, IL',
+		subtitle: 'Meets Every Second Monday of the Month',
+		location: 'Mishawaka, IN',
 		eventImage: '/images/south_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/7TwUErotFbsUHMXu8',
+		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
 		blueskyHandle: 'south.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events//',
 		eventbriteLink: null,
 		irlImage: '/images/irl/south.webp',
 		galleryFolder: 'south',
-		cardTitle: 'Hickory Hills',
-		cardSchedule: 'Every Second Thursday',
+		cardTitle: 'Mishawaka, IN',
+		cardSchedule: 'Every Second Monday',
 		category: 'chicagoland',
 		seo: {
-			title: 'BurbSec South Hickory Hills | Information Security Meetup Every Second Thursday',
-			description: 'Join BurbSec South in Hickory Hills, IL - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Thursday at Prime Time Restaurant.',
-			keywords: 'hickory hills information security, south suburbs cybersecurity meetup, chicagoland infosec, hickory hills tech meetup, south side security meetup, cybersecurity networking south suburbs',
+			title: 'BurbSec South Mishawaka | Information Security Meetup Every Second Monday',
+			description: 'Join BurbSec South in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Monday at Hop Station.',
+			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
 			image: `${SITE_URL}/images/south_shield.png`
 		},
 		structuredData: {
-			venueName: 'Prime Time Restaurant',
-			addressLocality: 'Hickory Hills',
-			addressRegion: 'IL',
+			venueName: 'Hop Station',
+			addressLocality: 'Mishawaka',
+			addressRegion: 'IN',
 			addressCountry: 'US',
-			latitude: '41.7253',
-			longitude: '-87.8256'
+			latitude: '41.6614',
+			longitude: '-86.1586'
 		},
 		sponsor: {
-			when: 'Also meets every SECOND Thursday',
+			when: 'Also meets every SECOND Monday',
 			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students',
-			venueName: 'Prime Time Restaurant in Hickory Hills',
+			venueName: 'Hop Station in Mishawaka',
 			avgSponsorship: '$600'
 		}
 	},
