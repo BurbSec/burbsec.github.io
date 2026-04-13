@@ -15,8 +15,8 @@
 	</p>
 
 	<p>
-		Our Mishawaka location at Hop Station offers a welcoming spot for professionals throughout the
-		northern Indiana and surrounding area. Whether you're a seasoned CISO or just starting your
-		career in cybersecurity, you'll find a community ready to share knowledge and experiences.
+		Our Hickory Hills location offers easy access for professionals throughout the southern Chicagoland area.
+		Whether you're a seasoned CISO or just starting your career in cybersecurity, you'll find a
+		welcoming community ready to share knowledge and experiences.
 	</p>
 </EventPage>

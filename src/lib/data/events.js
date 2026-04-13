@@ -122,38 +122,38 @@ export const chicagolandEvents = [
 	{
 		slug: 'south',
 		title: 'BurbSec|South',
-		subtitle: 'Meets Every Second Monday of the Month',
-		location: 'Mishawaka, IN',
+		subtitle: 'Meets Every Second Thursday of the Month',
+		location: 'Hickory Hills, IL',
 		eventImage: '/images/south_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
+		gmapsLink: 'https://maps.app.goo.gl/7TwUErotFbsUHMXu8',
 		blueskyHandle: 'south.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events//',
 		eventbriteLink: null,
 		irlImage: '/images/irl/south.webp',
 		galleryFolder: 'south',
-		cardTitle: 'Mishawaka, IN',
-		cardSchedule: 'Every Second Monday',
+		cardTitle: 'Hickory Hills',
+		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
 		seo: {
-			title: 'BurbSec South Mishawaka | Information Security Meetup Every Second Monday',
-			description: 'Join BurbSec South in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Monday at Hop Station.',
-			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
+			title: 'BurbSec South Hickory Hills | Information Security Meetup Every Second Thursday',
+			description: 'Join BurbSec South in Hickory Hills, IL - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Thursday at Prime Time Restaurant.',
+			keywords: 'hickory hills information security, south suburbs cybersecurity meetup, chicagoland infosec, hickory hills tech meetup, south side security meetup, cybersecurity networking south suburbs',
 			image: `${SITE_URL}/images/south_shield.png`
 		},
 		structuredData: {
-			venueName: 'Hop Station',
-			addressLocality: 'Mishawaka',
-			addressRegion: 'IN',
+			venueName: 'Prime Time Restaurant',
+			addressLocality: 'Hickory Hills',
+			addressRegion: 'IL',
 			addressCountry: 'US',
-			latitude: '41.6614',
-			longitude: '-86.1586'
+			latitude: '41.7253',
+			longitude: '-87.8256'
 		},
 		sponsor: {
-			when: 'Also meets every SECOND Monday',
+			when: 'Also meets every SECOND Thursday',
 			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students',
-			venueName: 'Hop Station in Mishawaka',
+			venueName: 'Prime Time Restaurant in Hickory Hills',
 			avgSponsorship: '$600'
 		}
 	},
@@ -275,38 +275,38 @@ export const chicagolandEvents = [
 	{
 		slug: 'southeast',
 		title: 'BurbSec|Southeast',
-		subtitle: 'Meets Every First Monday of the Month',
-		location: 'South Bend, IN',
+		subtitle: 'Meets Every Second Monday of the Month',
+		location: 'Mishawaka, IN',
 		eventImage: '/images/southeast_shield.jpg',
-		gmapsLink: 'https://maps.app.goo.gl/HNuZoxi129o6UFsF9',
+		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
 		blueskyHandle: 'southeast.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events//',
 		eventbriteLink: null,
 		irlImage: '/images/irl/southeast.webp',
 		galleryFolder: 'southeast',
-		cardTitle: 'South Bend, IN',
-		cardSchedule: 'Every First Monday',
+		cardTitle: 'Mishawaka, IN',
+		cardSchedule: 'Every Second Monday',
 		category: 'chicagoland',
 		seo: {
-			title: 'BurbSec Southeast South Bend | Information Security Meetup Every First Monday',
-			description: 'Join BurbSec Southeast in South Bend, IN - an informal information security meetup for cybersecurity enthusiasts in Northwest Indiana. Every first Monday. Great for early-career professionals.',
-			keywords: 'south bend information security, indiana cybersecurity meetup, northwest indiana infosec, south bend tech meetup, indiana security professionals, cybersecurity networking indiana',
+			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Monday',
+			description: 'Join BurbSec Southeast in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts in Northern Indiana. Every second Monday at Hop Station.',
+			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
 			image: `${SITE_URL}/images/southeast_shield.jpg`
 		},
 		structuredData: {
-			venueName: 'South Bend Venue',
-			addressLocality: 'South Bend',
+			venueName: 'Hop Station',
+			addressLocality: 'Mishawaka',
 			addressRegion: 'IN',
 			addressCountry: 'US',
-			latitude: '41.6764',
-			longitude: '-86.2520'
+			latitude: '41.6614',
+			longitude: '-86.1586'
 		},
 		sponsor: {
-			when: 'Every FIRST Monday',
+			when: 'Every SECOND Monday',
 			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Experienced, mid-career',
-			venueName: 'NW Indiana',
+			venueName: 'Hop Station in Mishawaka',
 			avgSponsorship: '$250'
 		}
 	}

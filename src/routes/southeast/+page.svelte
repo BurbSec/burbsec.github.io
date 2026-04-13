@@ -15,8 +15,8 @@
 	</p>
 
 	<p>
-		Our South Bend location offers easy access for professionals throughout the southeast Chicagoland area,
-		as well as Northeast Indiana! Whether you're a seasoned CISO or just starting your career in cybersecurity,
+		Our Mishawaka location at Hop Station offers easy access for professionals throughout Northern Indiana
+		and the surrounding area. Whether you're a seasoned CISO or just starting your career in cybersecurity,
 		you'll find a welcoming community ready to share knowledge and experiences.
 	</p>
 </EventPage>
