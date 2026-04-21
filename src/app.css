@@ -568,6 +568,21 @@ footer a:hover {
   height: 100%;
   object-fit: cover;
   z-index: -2;
+  /* Ensure video fills viewport properly */
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* Ensure video doesn't overlap navbar */
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-section {
+  position: relative;
+  z-index: 1;
 }
 
 .home-page::before {

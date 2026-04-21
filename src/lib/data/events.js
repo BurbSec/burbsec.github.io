@@ -365,7 +365,7 @@ export const elsewhereEvents = [
 		gmapsLink: 'https://maps.app.goo.gl/FiRoGYPdMi1nB5SeA',
 		blueskyHandle: 'lasvegas.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
-		meetupPage: 'https://www.meetup.com/burbsec/events/vegas/',
+		meetupPage: 'https://www.meetup.com/burbsecvegas/',
 		eventbriteLink: null,
 		irlImage: '/images/irl/vegas.webp',
 		galleryFolder: 'lasvegas',
@@ -381,7 +381,7 @@ export const elsewhereEvents = [
 			image: `${SITE_URL}/images/vegas_shield.png`
 		},
 		structuredData: {
-			venueName: 'Las Vegas',
+			venueName: 'Various Locations',
 			addressLocality: 'Las Vegas',
 			addressRegion: 'NV',
 			addressCountry: 'US',
@@ -390,9 +390,9 @@ export const elsewhereEvents = [
 			timezone: '-08:00'
 		},
 		sponsor: {
-			when: null,
+			when: 'Monthly',
 			attendance: '20-40 active and prospective IT and Infosec professionals and enthusiasts',
-			crowd: null,
+			crowd: 'Experienced, diverse mix of professionals',
 			venueName: 'Various locations in Las Vegas, NV',
 			avgSponsorship: '$250'
 		}
