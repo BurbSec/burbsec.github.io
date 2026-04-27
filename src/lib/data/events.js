@@ -275,7 +275,7 @@ export const chicagolandEvents = [
 	{
 		slug: 'southeast',
 		title: 'BurbSec|Southeast',
-		subtitle: 'Meets Every Second Monday of the Month',
+		subtitle: 'Meets Every Second Thursday of the Month',
 		location: 'Mishawaka, IN',
 		eventImage: '/images/southeast_shield.jpg',
 		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
@@ -286,11 +286,11 @@ export const chicagolandEvents = [
 		irlImage: '/images/irl/southeast.webp',
 		galleryFolder: 'southeast',
 		cardTitle: 'Mishawaka, IN',
-		cardSchedule: 'Every Second Monday',
+		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
 		seo: {
-			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Monday',
-			description: 'Join BurbSec Southeast in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts in Northern Indiana. Every second Monday at Hop Station.',
+			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Thursday',
+			description: 'Join BurbSec Southeast in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts in Northern Indiana. Every second Thursday at Hop Station.',
 			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
 			image: `${SITE_URL}/images/southeast_shield.jpg`
 		},
@@ -303,7 +303,7 @@ export const chicagolandEvents = [
 			longitude: '-86.1586'
 		},
 		sponsor: {
-			when: 'Every SECOND Monday',
+			when: 'Every SECOND Thursday',
 			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Experienced, mid-career',
 			venueName: 'Hop Station in Mishawaka',
