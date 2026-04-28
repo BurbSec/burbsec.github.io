@@ -11,10 +11,12 @@
 	<meta property="og:title" content="Sponsor BurbSec | Support the InfoSec Community" />
 	<meta property="og:description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network. Get brand visibility with cybersecurity professionals across multiple locations." />
 	<meta property="og:url" content={`${SITE_URL}/sponsors/`} />
+	<meta property="og:image" content={`${SITE_URL}/images/hacker_shield.png`} />
 
 	<!-- Twitter Card Tags -->
 	<meta name="twitter:title" content="Sponsor BurbSec | Support the InfoSec Community" />
 	<meta name="twitter:description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network. Get brand visibility with cybersecurity professionals across multiple locations." />
+	<meta name="twitter:image" content={`${SITE_URL}/images/hacker_shield.png`} />
 </svelte:head>
 
 <div class="sponsor-page">

@@ -1,5 +1,5 @@
 <script>
-	import { chicagolandEvents, elsewhereEvents, specialEvents, allEvents, SITE_URL } from '$lib/data/events.js';
+	import { allEvents, SITE_URL } from '$lib/data/events.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
 	let { data } = $props();
@@ -47,10 +47,16 @@
 	<meta property="og:title" content="Burbsec | The World's Most Fun InfoSec Meetup Events!" />
 	<meta property="og:description" content={pageDescription} />
 	<meta property="og:url" content={SITE_URL} />
+	<meta property="og:image" content={`${SITE_URL}/images/hacker_shield.png`} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Burbsec - The World's Most Fun InfoSec Meetup Network" />
 
 	<!-- Page-specific Twitter Card Tags -->
 	<meta name="twitter:title" content="Burbsec | The World's Most Fun InfoSec Meetup Events!" />
 	<meta name="twitter:description" content={pageDescription} />
+	<meta name="twitter:image" content={`${SITE_URL}/images/hacker_shield.png`} />
+	<meta name="twitter:image:alt" content="Burbsec - The World's Most Fun InfoSec Meetup Network" />
 
 	{@html `<script type="application/ld+json">${webPageJsonLd}</script>`}
 </svelte:head>
@@ -70,7 +76,7 @@
 						<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
 							<i class="fa-brands fa-discord"></i> Join the discussion on Discord!
 						</a>
-						<a href="https://www.meetup.com/burbsec/events//" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
+						<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
 							<i class="fa-brands fa-meetup"></i> Find your local Burbsec meet!
 						</a>
 					</div>
@@ -105,41 +111,8 @@
 			</div>
 		</div>
 
-		<!-- Chicagoland Events (auto-generated) -->
 		<div class="row g-4">
-			{#each chicagolandEvents as event (event.slug)}
-				<div class="col-md-6 col-lg-4">
-					<div class="card event-card h-100">
-						<div class="card-body text-center">
-							<img src={event.eventImage}
-								 alt="{event.cardTitle} shield"
-								 class="mb-3" width="80" height="80" loading="lazy" decoding="async">
-							<h5 class="card-title">{event.cardTitle}</h5>
-							<p class="card-text">{event.cardSchedule}</p>
-							<a href="/{event.slug}" class="btn btn-outline-primary">Learn More</a>
-						</div>
-					</div>
-				</div>
-			{/each}
-
-			<!-- Elsewhere Events (auto-generated) -->
-			{#each elsewhereEvents as event (event.slug)}
-				<div class="col-md-6 col-lg-4">
-					<div class="card event-card h-100">
-						<div class="card-body text-center">
-							<img src={event.eventImage}
-								 alt="{event.cardTitle} shield"
-								 class="mb-3" width="80" height="80" loading="lazy" decoding="async">
-							<h5 class="card-title">{event.cardTitle}</h5>
-							<p class="card-text">{event.cardSchedule}</p>
-							<a href="/{event.slug}" class="btn btn-outline-primary">Learn More</a>
-						</div>
-					</div>
-				</div>
-			{/each}
-
-			<!-- Special Interest Groups (auto-generated) -->
-			{#each specialEvents as event (event.slug)}
+			{#each allEvents as event (event.slug)}
 				<div class="col-md-6 col-lg-4">
 					<div class="card event-card h-100">
 						<div class="card-body text-center">

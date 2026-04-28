@@ -17,7 +17,7 @@
 		image: `${SITE_URL}/images/hacker_shield.png`,
 		foundingDate: '2020',
 		sameAs: [
-			'https://www.meetup.com/burbsec/events//',
+			'https://www.meetup.com/burbsec/events/',
 			'https://tinyurl.com/burbchat',
 			'https://www.linkedin.com/groups/4081253/',
 			'https://github.com/BurbSec/burbsec.github.io'

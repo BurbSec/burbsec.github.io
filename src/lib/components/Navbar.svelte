@@ -77,7 +77,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://www.meetup.com/burbsec/events//" target="_blank" rel="noopener noreferrer">
+					<a class="nav-link" href="https://www.meetup.com/burbsec/events/" target="_blank" rel="noopener noreferrer">
 						<i class="fa-brands fa-meetup"></i> Next Meetups
 					</a>
 				</li>
