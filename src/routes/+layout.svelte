@@ -1,7 +1,9 @@
 <script>
 	import '../app.css';
+	import { page } from '$app/state';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import LaserLinesBackground from '$lib/components/LaserLinesBackground.svelte';
 	import { SITE_URL } from '$lib/data/events.js';
 
 	let { children } = $props();
@@ -44,6 +46,12 @@
 
 <!-- Skip to content link for keyboard / screen-reader users -->
 <a href="#maincontent" class="skip-link">Skip to main content</a>
+
+<!-- Laser-lines background on every page EXCEPT the home page, which has
+     its own background video. -->
+{#if page.url.pathname !== '/'}
+	<LaserLinesBackground />
+{/if}
 
 <Navbar />
 <main id="maincontent" tabindex="-1">
