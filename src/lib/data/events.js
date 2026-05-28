@@ -76,7 +76,7 @@ export const chicagolandEvents = [
 			attendance: '30-100 (usually 30-50) active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students. Many looking to begin or switch careers',
 			venueName: 'Navigator Taproom in Chicago',
-			avgSponsorship: '$1000'
+			avgSponsorship: '$1500'
 		}
 	},
 	{
@@ -113,7 +113,7 @@ export const chicagolandEvents = [
 			attendance: '15-20 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Older, more experienced',
 			venueName: "D'Agostino's Pizzeria in Wheeling",
-			avgSponsorship: '$350'
+			avgSponsorship: '$400'
 		}
 	},
 	{
@@ -150,7 +150,7 @@ export const chicagolandEvents = [
 			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students',
 			venueName: 'Prime Time Restaurant in Hickory Hills',
-			avgSponsorship: '$600'
+			avgSponsorship: '$700'
 		}
 	},
 	{
@@ -187,7 +187,7 @@ export const chicagolandEvents = [
 			attendance: '20-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Experienced',
 			venueName: 'Enterrium in the Woodfield Mall, Schaumburg',
-			avgSponsorship: '$700'
+			avgSponsorship: '$800'
 		}
 	},
 	{
@@ -224,7 +224,7 @@ export const chicagolandEvents = [
 			attendance: '5-10 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: null,
 			venueName: 'Crystal Lake Brewing in Crystal Lake',
-			avgSponsorship: '$250'
+			avgSponsorship: '$300'
 		}
 	},
 	{
@@ -262,7 +262,7 @@ export const chicagolandEvents = [
 			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Moderately experienced',
 			venueName: 'Granite City Food & Brewery in Naperville',
-			avgSponsorship: '$500'
+			avgSponsorship: '$600'
 		}
 	},
 	{
@@ -299,7 +299,7 @@ export const chicagolandEvents = [
 			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Experienced, mid-career',
 			venueName: 'Hop Station in Mishawaka',
-			avgSponsorship: '$250'
+			avgSponsorship: '$300'
 		}
 	}
 ];
@@ -344,7 +344,7 @@ export const elsewhereEvents = [
 			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: null,
 			venueName: 'Forgotten Star Brewing Co. in Fridley, MN',
-			avgSponsorship: '$250'
+			avgSponsorship: '$300'
 		}
 	},
 	{
@@ -384,7 +384,7 @@ export const elsewhereEvents = [
 			attendance: '20-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Experienced, diverse mix of professionals',
 			venueName: 'Various locations in Las Vegas, NV',
-			avgSponsorship: '$250'
+			avgSponsorship: '$300'
 		}
 	},
 	{
