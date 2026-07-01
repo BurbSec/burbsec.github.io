@@ -122,7 +122,7 @@ export const chicagolandEvents = [
 		subtitle: 'Meets Every Second Thursday of the Month',
 		location: 'Hickory Hills, IL',
 		eventImage: '/images/south_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/7TwUErotFbsUHMXu8',
+		gmapsLink: 'https://maps.app.goo.gl/syJjTgWhhWprAThq9',
 		blueskyHandle: 'south.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
@@ -138,12 +138,12 @@ export const chicagolandEvents = [
 			image: `${SITE_URL}/images/south_shield.png`
 		},
 		structuredData: {
-			venueName: 'Prime Time Restaurant',
+			venueName: 'The Sock Bar and Grill',
 			addressLocality: 'Hickory Hills',
 			addressRegion: 'IL',
 			addressCountry: 'US',
-			latitude: '41.7253',
-			longitude: '-87.8256'
+			latitude: '41.7221',
+			longitude: '-87.8184'
 		},
 		sponsor: {
 			when: 'Also meets every SECOND Thursday',
