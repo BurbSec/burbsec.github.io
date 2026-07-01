@@ -73,10 +73,10 @@ export const chicagolandEvents = [
 		},
 		sponsor: {
 			when: 'Every LAST (Fourth or Fifth) Thursday',
-			attendance: '30-100 (usually 30-50) active and prospective IT and Infosec professionals and enthusiasts',
+			attendance: '70-100 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students. Many looking to begin or switch careers',
 			venueName: 'Navigator Taproom in Chicago',
-			avgSponsorship: '$1500'
+			avgSponsorship: '$2000'
 		}
 	},
 	{
@@ -259,10 +259,10 @@ export const chicagolandEvents = [
 		},
 		sponsor: {
 			when: 'Every THIRD Thursday',
-			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
+			attendance: '25-50 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Moderately experienced',
 			venueName: 'Granite City Food & Brewery in Naperville',
-			avgSponsorship: '$600'
+			avgSponsorship: '$500'
 		}
 	},
 	{
