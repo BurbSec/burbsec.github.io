@@ -19,13 +19,20 @@ jobs:
 
       - name: Check for unsigned workflow commits since last week
         id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           SINCE=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v-7d +%Y-%m-%dT%H:%M:%SZ)
           ISSUES=""
           while IFS= read -r sha; do
             [ -z "$sha" ] && continue
-            VERIFIED=$(git verify-commit "$sha" 2>/dev/null && echo "yes" || echo "no")
+            # Ask the GitHub API for signature verification rather than running
+            # git verify-commit in the runner's empty GPG keyring, which would
+            # flag every signed commit (including GitHub web-flow merges) as
+            # unverifiable.
+            VERIFIED=$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${sha}" --jq '.commit.verification.verified')
+            [ "$VERIFIED" = "true" ] && VERIFIED="yes" || VERIFIED="no"
             AUTHOR_EMAIL=$(git log -1 --format='%ae' "$sha")
             FILES=$(git diff-tree --no-commit-id -r --name-only "$sha" | grep '^\.github/' || true)
             if [ -n "$FILES" ] && [ "$VERIFIED" = "no" ]; then
