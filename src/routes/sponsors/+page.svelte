@@ -28,10 +28,10 @@
 			<h1 class="display-4 fw-bold">Sponsor BurbSec</h1>
 			<p class="lead mb-4">Support the World's Most Fun InfoSec Meetup Network</p>
 			<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-				<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
+				<a href="https://www.meetup.com/burbsec/events/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
 					<Icon name="calendar" /> Find an Event to Sponsor
 				</a>
-				<a href="mailto:sponsors@burbsec.com" class="btn btn-outline-light btn-lg">
+				<a href="mailto:sponsors@burbsec.com" class="btn btn-danger btn-lg">
 					<Icon name="envelope" /> Contact Us
 				</a>
 			</div>
@@ -43,7 +43,7 @@
 
 			<!-- Why Sponsor — feature cards -->
 			<section class="my-5">
-				<h2 class="text-center mb-4">Why Sponsor BurbSec?</h2>
+				<h2 class="section-heading text-center mb-4">Why Sponsor BurbSec?</h2>
 				<p class="text-center mb-4">
 					BurbSec is a unique network of information security meetups that brings together professionals,
 					enthusiasts, and students from across the Chicagoland area and beyond. Our events are known for
@@ -83,7 +83,7 @@
 
 			<!-- Sponsorship Flexibility -->
 			<section class="my-5">
-				<h2 class="text-center mb-4">Sponsorship Flexibility</h2>
+				<h2 class="section-heading text-center mb-4">Sponsorship Flexibility</h2>
 				<div class="row g-4">
 					<div class="col-lg-6">
 						<div class="sponsor-feature p-4 rounded-3 h-100">
@@ -108,7 +108,7 @@
 
 			<!-- Meetup Details -->
 			<section class="my-5">
-				<h2 class="text-center mb-3">Meetup Details & Sponsorship Information</h2>
+				<h2 class="section-heading text-center mb-3">Meetup Details & Sponsorship Information</h2>
 				<p class="text-center mb-4">
 					Here's a brief rundown of all our gatherings and their stats so you can easily choose who you'd like to help:
 				</p>
@@ -149,10 +149,10 @@
 				<h3 class="mb-3">Ready to Sponsor?</h3>
 				<p class="mb-4">Pick an event that fits your goals and budget, then reach out!</p>
 				<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-					<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.meetup.com/burbsec/events/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
 						<Icon name="calendar" /> Find an Event
 					</a>
-					<a href="mailto:sponsors@burbsec.com" class="btn btn-primary btn-lg">
+					<a href="mailto:sponsors@burbsec.com" class="btn btn-danger btn-lg">
 						<Icon name="envelope" /> Contact Us
 					</a>
 				</div>

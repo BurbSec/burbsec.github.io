@@ -170,19 +170,19 @@
 					</div>
 				{/if}
 				<div class="col-sm d-flex flex-column mb-2">
-					<a href={gmapsLink} class="btn btn-success" target="_blank" rel="noopener noreferrer">
+					<a href={gmapsLink} class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
 						<Icon name="map-location-dot" size="xl" />
 						{location}
 					</a>
 				</div>
 				<div class="col-sm d-flex flex-column mb-2">
 					{#if eventbriteLink}
-						<a href={eventbriteLink} class="btn btn-warning" target="_blank" rel="noopener noreferrer">
+						<a href={eventbriteLink} class="btn btn-danger" target="_blank" rel="noopener noreferrer">
 							<Icon name="calendar-days" size="xl" />
 							Next Meetups
 						</a>
 					{:else}
-						<a href={meetupPage} class="btn btn-warning" target="_blank" rel="noopener noreferrer">
+						<a href={meetupPage} class="btn btn-danger" target="_blank" rel="noopener noreferrer">
 							<Icon name="calendar-days" size="xl" />
 							Next Meetups
 						</a>
@@ -190,7 +190,7 @@
 				</div>
 				{#if schedule && slug}
 					<div class="col-sm d-flex flex-column mb-2">
-						<a href="/calendar/{slug}.ics" class="btn btn-info" download>
+						<a href="/calendar/{slug}.ics" class="btn btn-outline-primary" download>
 							<Icon name="calendar" size="xl" />
 							Add to Calendar
 						</a>

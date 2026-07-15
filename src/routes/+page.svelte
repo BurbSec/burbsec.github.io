@@ -112,15 +112,15 @@
 						<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
 							<Icon name="discord" /> Join the discussion on Discord!
 						</a>
-						<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
+						<a href="https://www.meetup.com/burbsec/events/" class="btn btn-danger btn-lg" target="_blank" rel="noopener noreferrer">
 							<Icon name="meetup" /> Find your local Burbsec meet!
 						</a>
 					</div>
 					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
-						<a href="/sponsors" class="btn btn-success btn-lg">
+						<a href="/sponsors" class="btn btn-outline-primary btn-lg">
 							<Icon name="hand-holding-medical" /> Sponsor a night of fun!
 						</a>
-						<a href="https://chicagoinfosecevents.github.io/" class="btn btn-info btn-lg" target="_blank" rel="noopener noreferrer">
+						<a href="https://chicagoinfosecevents.github.io/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
 							<Icon name="calendar-days" /> Full Chicagoland Infosec Calendar
 						</a>
 					</div>
@@ -134,15 +134,16 @@
 		{/if}
 		<div class="scroll-section text-center">
 			<p class="text-white mb-2">Scroll for more!</p>
-			<img src="/images/scroll_down.png" alt="Scroll down" width="30" height="30" class="scroll-indicator" decoding="async">
+			<span class="scroll-indicator" aria-hidden="true"><span class="scroll-chevron"></span></span>
 		</div>
 	</div>
 
+	<div class="content-band">
 	<div class="container my-5">
 
 		<div class="row">
 			<div class="col-12 text-center mb-5 mt-4">
-				<h2 class="display-3 fw-bold">Our Locations</h2>
+				<h2 class="section-heading">Our Locations</h2>
 				<p class="lead">Join us at one of our many locations across the Chicagoland area and beyond!</p>
 			</div>
 		</div>
@@ -172,7 +173,7 @@
 		<div class="row mt-5" id="faq">
 			<div class="col-lg-8 mx-auto">
 				<div class="text-center mb-4">
-					<h2 class="display-6 fw-bold">First Time? FAQ</h2>
+					<h2 class="section-heading">First Time? FAQ</h2>
 				</div>
 				{#each faqs as faq (faq.q)}
 					<div class="faq-item">
@@ -187,5 +188,6 @@
 				</p>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>

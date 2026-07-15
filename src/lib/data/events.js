@@ -203,7 +203,7 @@ export const chicagolandEvents = [
 		title: 'BurbSec|Northwest',
 		subtitle: 'Meets Every Fourth Thursday of the Month',
 		location: 'Crystal Lake, IL',
-		eventImage: '/images/northwest_shield.jpg',
+		eventImage: '/images/northwest_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/3sPARGKDgtfDEUct7',
 		blueskyHandle: 'northwest.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
@@ -218,7 +218,7 @@ export const chicagolandEvents = [
 			title: 'BurbSec Northwest Crystal Lake | Information Security Meetup Every Fourth Thursday',
 			description: 'Join BurbSec Northwest in Crystal Lake, IL - an informal information security meetup at Crystal Lake Brewing. Every fourth Thursday. Connect with cybersecurity professionals in the northwest suburbs.',
 			keywords: 'crystal lake information security, crystal lake cybersecurity meetup, northwest suburbs infosec, mchenry county tech meetup, cybersecurity networking crystal lake',
-			image: `${SITE_URL}/images/northwest_shield.jpg`
+			image: `${SITE_URL}/images/northwest_shield.png`
 		},
 		structuredData: {
 			venueName: 'Crystal Lake Brewing',
@@ -280,7 +280,7 @@ export const chicagolandEvents = [
 		title: 'BurbSec|Southeast',
 		subtitle: 'Meets Every Second Thursday of the Month',
 		location: 'Mishawaka, IN',
-		eventImage: '/images/southeast_shield.jpg',
+		eventImage: '/images/southeast_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
 		blueskyHandle: 'southeast.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
@@ -295,7 +295,7 @@ export const chicagolandEvents = [
 			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Thursday',
 			description: 'Join BurbSec Southeast in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts in Northern Indiana. Every second Thursday at Hop Station.',
 			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
-			image: `${SITE_URL}/images/southeast_shield.jpg`
+			image: `${SITE_URL}/images/southeast_shield.png`
 		},
 		structuredData: {
 			venueName: 'Hop Station',

@@ -250,6 +250,12 @@ footer {
   margin-top: auto;
 }
 
+/* Match the site theme instead of Bootstrap's stock bg-dark grey */
+footer.bg-dark {
+  background-color: #0f1822 !important;
+  border-top: 1px solid rgba(0, 212, 255, 0.25);
+}
+
 footer a {
   text-decoration: none;
   transition: color 0.3s ease;
@@ -267,8 +273,9 @@ footer a:hover {
   margin-bottom: 0.5rem;
 }
 
+/* Dark icon to match btn-primary's dark text on the neon-blue fill */
 .bluesky-icon {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) opacity(0.85);
 }
 
 .irl-photo {
@@ -329,6 +336,9 @@ footer a:hover {
   width: 100%;
   overflow: hidden;
   margin-top: 1.5rem;
+  /* Fade the scrolling images out at the edges instead of hard-clipping */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 60px, #000 calc(100% - 60px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 60px, #000 calc(100% - 60px), transparent);
 }
 
 /* When not looping, center the images */
@@ -466,40 +476,47 @@ footer a:hover {
    Sponsors Page  (sponsors/+page.svelte)
    ------------------------------------------------------- */
 
-/* Glowing buttons */
+/* Glowing buttons — the site uses three button styles:
+   .btn-primary (filled neon blue), .btn-danger (filled neon red, one key
+   action per page), .btn-outline-primary (ghost, secondary actions). */
 .btn-primary {
-  box-shadow: 0 0 10px rgba(13, 110, 253, 0.4), 0 0 20px rgba(13, 110, 253, 0.2);
+  --bs-btn-bg: #00d4ff;
+  --bs-btn-border-color: #00d4ff;
+  --bs-btn-color: #0a1620;
+  --bs-btn-hover-bg: #4ae0ff;
+  --bs-btn-hover-border-color: #4ae0ff;
+  --bs-btn-hover-color: #0a1620;
+  --bs-btn-active-bg: #00b8e6;
+  --bs-btn-active-border-color: #00b8e6;
+  --bs-btn-active-color: #0a1620;
+  --bs-btn-disabled-bg: #00d4ff;
+  --bs-btn-disabled-border-color: #00d4ff;
+  --bs-btn-disabled-color: #0a1620;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4), 0 0 20px rgba(0, 212, 255, 0.2);
 }
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(13, 110, 253, 0.6), 0 0 30px rgba(13, 110, 253, 0.3);
-}
-
-.btn-warning {
-  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4), 0 0 20px rgba(255, 193, 7, 0.2);
-}
-.btn-warning:hover {
-  box-shadow: 0 0 15px rgba(255, 193, 7, 0.6), 0 0 30px rgba(255, 193, 7, 0.3);
-}
-
-.btn-success {
-  box-shadow: 0 0 10px rgba(25, 135, 84, 0.4), 0 0 20px rgba(25, 135, 84, 0.2);
-}
-.btn-success:hover {
-  box-shadow: 0 0 15px rgba(25, 135, 84, 0.6), 0 0 30px rgba(25, 135, 84, 0.3);
-}
-
-.btn-info {
-  box-shadow: 0 0 10px rgba(13, 202, 240, 0.4), 0 0 20px rgba(13, 202, 240, 0.2);
-}
-.btn-info:hover {
-  box-shadow: 0 0 15px rgba(13, 202, 240, 0.6), 0 0 30px rgba(13, 202, 240, 0.3);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 212, 255, 0.3);
 }
 
 .btn-danger {
-  box-shadow: 0 0 10px rgba(220, 53, 69, 0.4), 0 0 20px rgba(220, 53, 69, 0.2);
+  --bs-btn-bg: #ff3058;
+  --bs-btn-border-color: #ff3058;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #ff5677;
+  --bs-btn-hover-border-color: #ff5677;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: #e62950;
+  --bs-btn-active-border-color: #e62950;
+  --bs-btn-active-color: #fff;
+  --bs-btn-disabled-bg: #ff3058;
+  --bs-btn-disabled-border-color: #ff3058;
+  --bs-btn-disabled-color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(255, 48, 88, 0.4), 0 0 20px rgba(255, 48, 88, 0.2);
 }
 .btn-danger:hover {
-  box-shadow: 0 0 15px rgba(220, 53, 69, 0.6), 0 0 30px rgba(220, 53, 69, 0.3);
+  box-shadow: 0 0 15px rgba(255, 48, 88, 0.6), 0 0 30px rgba(255, 48, 88, 0.3);
 }
 
 /* Lighter blue than Bootstrap's default #0d6efd — reads better on the dark cards */
@@ -523,6 +540,39 @@ footer a:hover {
 }
 .btn-outline-light:hover {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Section headings — smaller than the hero, with a neon underline bar */
+.section-heading {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+}
+.section-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00d4ff, #ff3058);
+}
+
+/* Darker band behind the below-the-hero homepage sections so they read as
+   separate chapters over the fixed video background */
+.content-band {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 16, 24, 0) 0%,
+    rgba(10, 16, 24, 0.55) 6rem,
+    rgba(10, 16, 24, 0.55) 100%
+  );
 }
 
 /* Neon color utilities */
@@ -693,8 +743,23 @@ footer a:hover {
 
 /* Scroll indicator animation */
 .scroll-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   animation: bounce 2s infinite;
-  filter: brightness(0) invert(1);
+}
+
+/* CSS chevron (replaces the old scroll_down.png) — crisp at any DPI */
+.scroll-chevron {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px; /* optically center the down-pointing chevron */
+  border-right: 3px solid #00d4ff;
+  border-bottom: 3px solid #00d4ff;
+  transform: rotate(45deg);
 }
 
 @keyframes bounce {
