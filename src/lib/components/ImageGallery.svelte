@@ -1,5 +1,6 @@
 <script>
-	/** @type {{ images?: string[], alt?: string }} */
+	import Icon from '$lib/components/Icon.svelte';
+	/** @type {{ images?: Array<{ thumb: string, full: string }>, alt?: string }} */
 	let {
 		images = [],
 		alt = 'Gallery image'
@@ -47,28 +48,28 @@
 			class:animate={shouldLoop}
 			style={shouldLoop ? `animation-duration: ${duration}s;` : ''}
 		>
-			{#each images as src, i}
+			{#each images as image, i}
 				<button
 					class="gallery-item"
-					onclick={() => openModal(src)}
+					onclick={() => openModal(image.full)}
 					type="button"
 					aria-label="View full image {i + 1}"
 				>
-					<img {src} alt="{alt} {i + 1}" loading="lazy" decoding="async" />
+					<img src={image.thumb} alt="{alt} {i + 1}" loading="lazy" decoding="async" />
 				</button>
 			{/each}
 			{#if shouldLoop}
 				<!-- Duplicate set for seamless loop -->
-				{#each images as src, i}
+				{#each images as image, i}
 					<button
 						class="gallery-item"
-						onclick={() => openModal(src)}
+						onclick={() => openModal(image.full)}
 						type="button"
 						aria-label="View full image {i + 1}"
 						aria-hidden="true"
 						tabindex="-1"
 					>
-						<img {src} alt="" loading="lazy" decoding="async" />
+						<img src={image.thumb} alt="" loading="lazy" decoding="async" />
 					</button>
 				{/each}
 			{/if}
@@ -88,7 +89,7 @@
 		tabindex="-1"
 	>
 		<button class="gallery-modal-close" onclick={closeModal} aria-label="Close image" type="button">
-			<i class="fa-solid fa-xmark"></i>
+			<Icon name="xmark" />
 		</button>
 		<img src={modalImage} alt="{alt} full size" class="gallery-modal-image" />
 	</div>

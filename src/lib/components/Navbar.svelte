@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/Icon.svelte';
 	import { chicagolandEvents, elsewhereEvents, specialEvents } from '$lib/data/events.js';
 
 	let isMenuOpen = $state(false);
@@ -73,22 +74,22 @@
 
 				<li class="nav-item">
 					<a class="nav-link" href="https://tinyurl.com/burbchat" target="_blank" rel="noopener noreferrer">
-						<i class="fa-brands fa-discord"></i> Discord
+						<Icon name="discord" /> Discord
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="https://www.meetup.com/burbsec/events/" target="_blank" rel="noopener noreferrer">
-						<i class="fa-brands fa-meetup"></i> Next Meetups
+						<Icon name="meetup" /> Next Meetups
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="https://www.linkedin.com/groups/4081253/" target="_blank" rel="noopener noreferrer">
-						<i class="fa-brands fa-linkedin"></i> LinkedIn
+						<Icon name="linkedin" /> LinkedIn
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link nav-sponsor-pulse" href="/sponsors" onclick={closeMenu}>
-						<i class="fa-solid fa-hand-holding-medical"></i> Sponsor Us!
+						<Icon name="hand-holding-medical" /> Sponsor Us!
 					</a>
 				</li>
 			</ul>

@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/Icon.svelte';
 	import { getSponsorEvents, SITE_URL } from '$lib/data/events.js';
 
 	const sponsorEvents = getSponsorEvents();
@@ -28,10 +29,10 @@
 			<p class="lead mb-4">Support the World's Most Fun InfoSec Meetup Network</p>
 			<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
 				<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
-					<i class="fa fa-calendar"></i> Find an Event to Sponsor
+					<Icon name="calendar" /> Find an Event to Sponsor
 				</a>
 				<a href="mailto:sponsors@burbsec.com" class="btn btn-outline-light btn-lg">
-					<i class="fa fa-envelope"></i> Contact Us
+					<Icon name="envelope" /> Contact Us
 				</a>
 			</div>
 		</div>
@@ -51,28 +52,28 @@
 				<div class="row g-4">
 					<div class="col-sm-6 col-lg-3">
 						<div class="sponsor-feature text-center p-4 rounded-3 h-100">
-							<i class="fa-solid fa-users fa-2x mb-3 neon-blue"></i>
+							<Icon name="users" size="2x" class="mb-3 neon-blue" />
 							<h5>Diverse Community</h5>
 							<p class="mb-0 small">Access active and prospective InfoSec professionals across multiple locations</p>
 						</div>
 					</div>
 					<div class="col-sm-6 col-lg-3">
 						<div class="sponsor-feature text-center p-4 rounded-3 h-100">
-							<i class="fa-solid fa-bullhorn fa-2x mb-3 neon-blue"></i>
+							<Icon name="bullhorn" size="2x" class="mb-3 neon-blue" />
 							<h5>Brand Visibility</h5>
 							<p class="mb-0 small">Get your brand in front of security professionals at events across the network</p>
 						</div>
 					</div>
 					<div class="col-sm-6 col-lg-3">
 						<div class="sponsor-feature text-center p-4 rounded-3 h-100">
-							<i class="fa-solid fa-handshake fa-2x mb-3 neon-blue"></i>
+							<Icon name="handshake" size="2x" class="mb-3 neon-blue" />
 							<h5>Networking</h5>
 							<p class="mb-0 small">Connect directly with industry leaders and rising talent in cybersecurity</p>
 						</div>
 					</div>
 					<div class="col-sm-6 col-lg-3">
 						<div class="sponsor-feature text-center p-4 rounded-3 h-100">
-							<i class="fa-solid fa-graduation-cap fa-2x mb-3 neon-blue"></i>
+							<Icon name="graduation-cap" size="2x" class="mb-3 neon-blue" />
 							<h5>Next Generation</h5>
 							<p class="mb-0 small">Support students and career-changers entering the security field</p>
 						</div>
@@ -93,12 +94,12 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="sponsor-feature p-4 rounded-3 h-100">
-							<h5 class="mb-3"><i class="fa-solid fa-lightbulb neon-blue me-2"></i>Make It Memorable</h5>
+							<h5 class="mb-3"><Icon name="lightbulb" class="neon-blue me-2" />Make It Memorable</h5>
 							<p>Bring something to make your team stand out! Ideas that have gone over well:</p>
 							<ul class="sponsor-tips mb-0">
-								<li><i class="fa-solid fa-note-sticky neon-blue me-2"></i>Cool stickers (not just boring vendor logo ones)</li>
-								<li><i class="fa-solid fa-gift neon-blue me-2"></i>An awesome item to raffle (big Lego sets or other tactile hobby items go over well)</li>
-								<li><i class="fa-solid fa-mug-hot neon-blue me-2"></i><em>Useful</em> swag such as nice USB chargers, socks, or coffee mugs</li>
+								<li><Icon name="note-sticky" class="neon-blue me-2" />Cool stickers (not just boring vendor logo ones)</li>
+								<li><Icon name="gift" class="neon-blue me-2" />An awesome item to raffle (big Lego sets or other tactile hobby items go over well)</li>
+								<li><Icon name="mug-hot" class="neon-blue me-2" /><em>Useful</em> swag such as nice USB chargers, socks, or coffee mugs</li>
 							</ul>
 						</div>
 					</div>
@@ -122,14 +123,14 @@
 											<h5 class="card-title mb-2">{event.title}</h5>
 											<p class="card-text small mb-0">
 												{#if event.sponsor.when}
-													<i class="fa-regular fa-calendar me-1 neon-blue"></i> {event.sponsor.when}<br>
+													<Icon name="calendar-outline" class="me-1 neon-blue" /> {event.sponsor.when}<br>
 												{/if}
-												<i class="fa-solid fa-user-group me-1 neon-blue"></i> {event.sponsor.attendance}<br>
+												<Icon name="user-group" class="me-1 neon-blue" /> {event.sponsor.attendance}<br>
 												{#if event.sponsor.crowd}
-													<i class="fa-solid fa-people-group me-1 neon-blue"></i> {event.sponsor.crowd}<br>
+													<Icon name="people-group" class="me-1 neon-blue" /> {event.sponsor.crowd}<br>
 												{/if}
-												<i class="fa-solid fa-location-dot me-1 neon-red"></i> {event.sponsor.venueName}<br>
-												<span class="sponsor-amount"><i class="fa-solid fa-hand-holding-dollar me-1"></i> {event.sponsor.avgSponsorship}</span>
+												<Icon name="location-dot" class="me-1 neon-red" /> {event.sponsor.venueName}<br>
+												<span class="sponsor-amount"><Icon name="hand-holding-dollar" class="me-1" /> {event.sponsor.avgSponsorship}</span>
 											</p>
 										</div>
 										<div class="text-center mt-auto pt-3">
@@ -149,10 +150,10 @@
 				<p class="mb-4">Pick an event that fits your goals and budget, then reach out!</p>
 				<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
 					<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
-						<i class="fa fa-calendar"></i> Find an Event
+						<Icon name="calendar" /> Find an Event
 					</a>
 					<a href="mailto:sponsors@burbsec.com" class="btn btn-primary btn-lg">
-						<i class="fa fa-envelope"></i> Contact Us
+						<Icon name="envelope" /> Contact Us
 					</a>
 				</div>
 			</section>

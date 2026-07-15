@@ -42,3 +42,6 @@ sponsors.txt
 # Claude Code
 CLAUDE.md
 .claude/
+
+# Generated gallery thumbnails (rebuilt by scripts/generate-thumbnails.mjs)
+static/images/irl-thumbs/

@@ -510,6 +510,15 @@ footer a:hover {
 .neon-blue { color: #00d4ff !important; }
 .neon-red { color: #ff3058 !important; }
 
+/* Inline SVG icons (Icon.svelte) — sized like the Font Awesome classes they replaced */
+.icon {
+  height: 1em;
+  width: auto;
+  vertical-align: -0.125em;
+}
+.icon-xl { height: 1.5em; }
+.icon-2x { height: 2em; }
+
 .sponsor-hero {
   background: linear-gradient(135deg, rgba(13, 110, 253, 0.15), rgba(255, 193, 7, 0.1));
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);

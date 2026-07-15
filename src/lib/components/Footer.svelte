@@ -1,3 +1,7 @@
+<script>
+	import Icon from '$lib/components/Icon.svelte';
+</script>
+
 <footer class="bg-dark text-light py-4 mt-5">
 	<div class="container">
 		<div class="row align-items-center">
@@ -8,7 +12,7 @@
 			<div class="col-md-6">
 				<div class="d-flex justify-content-md-end justify-content-start mt-3 mt-md-0">
 					<a href="https://github.com/BurbSec/burbsec.github.io" class="text-light" target="_blank" rel="noopener noreferrer" aria-label="BurbSec source code on GitHub">
-						<i class="fab fa-github"></i> Repo on GitHub
+						<Icon name="github" /> Repo on GitHub
 					</a>
 				</div>
 			</div>

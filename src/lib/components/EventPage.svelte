@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
 	import { SITE_URL } from '$lib/data/events.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
@@ -14,7 +15,7 @@
 		meetupPage = 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink = null,
 		irlImage = null,
-		/** @type {string[]} */
+		/** @type {import('$lib/server/gallery.js').GalleryImage[]} */
 		galleryImages = [],
 		/** @type {import('$lib/data/events.js').BurbSecEvent['seo']|null} */
 		seo = null,
@@ -131,26 +132,26 @@
 				{#if discordLink}
 					<div class="col-sm d-flex flex-column mb-2">
 						<a href={discordLink} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-							<i class="fa-brands fa-discord fa-xl"></i>
+							<Icon name="discord" size="xl" />
 							Join us on Discord!
 						</a>
 					</div>
 				{/if}
 				<div class="col-sm d-flex flex-column mb-2">
 					<a href={gmapsLink} class="btn btn-success" target="_blank" rel="noopener noreferrer">
-						<i class="fa-solid fa-map-location-dot fa-xl"></i>
+						<Icon name="map-location-dot" size="xl" />
 						{location}
 					</a>
 				</div>
 				<div class="col-sm d-flex flex-column mb-2">
 					{#if eventbriteLink}
 						<a href={eventbriteLink} class="btn btn-warning" target="_blank" rel="noopener noreferrer">
-							<i class="fa-solid fa-calendar-days fa-xl"></i>
+							<Icon name="calendar-days" size="xl" />
 							Next Meetups
 						</a>
 					{:else}
 						<a href={meetupPage} class="btn btn-warning" target="_blank" rel="noopener noreferrer">
-							<i class="fa-solid fa-calendar-days fa-xl"></i>
+							<Icon name="calendar-days" size="xl" />
 							Next Meetups
 						</a>
 					{/if}

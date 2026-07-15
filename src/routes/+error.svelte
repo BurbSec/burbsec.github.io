@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
 </script>
 
@@ -29,10 +30,10 @@
 			</p>
 			<div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
 				<a href="/" class="btn btn-primary btn-lg">
-					<i class="fa-solid fa-house"></i> Back to Home
+					<Icon name="house" /> Back to Home
 				</a>
 				<a href="https://tinyurl.com/burbchat" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener noreferrer">
-					<i class="fa-brands fa-discord"></i> Get Help on Discord
+					<Icon name="discord" /> Get Help on Discord
 				</a>
 			</div>
 		</div>

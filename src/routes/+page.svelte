@@ -1,4 +1,5 @@
 <script>
+	import Icon from '$lib/components/Icon.svelte';
 	import { allEvents, SITE_URL } from '$lib/data/events.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
@@ -74,18 +75,18 @@
 					<p class="lead mb-5 landingpage-subtitle text-white">The World's Most Fun InfoSec Meetup Events!</p>
 					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
 						<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
-							<i class="fa-brands fa-discord"></i> Join the discussion on Discord!
+							<Icon name="discord" /> Join the discussion on Discord!
 						</a>
 						<a href="https://www.meetup.com/burbsec/events/" class="btn btn-warning btn-lg" target="_blank" rel="noopener noreferrer">
-							<i class="fa-brands fa-meetup"></i> Find your local Burbsec meet!
+							<Icon name="meetup" /> Find your local Burbsec meet!
 						</a>
 					</div>
 					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
 						<a href="/sponsors" class="btn btn-success btn-lg">
-							<i class="fa-solid fa-hand-holding-medical"></i> Sponsor a night of fun!
+							<Icon name="hand-holding-medical" /> Sponsor a night of fun!
 						</a>
 						<a href="https://chicagoinfosecevents.github.io/" class="btn btn-info btn-lg" target="_blank" rel="noopener noreferrer">
-							<i class="fa-solid fa-calendar-days"></i> Full Chicagoland Infosec Calendar
+							<Icon name="calendar-days" /> Full Chicagoland Infosec Calendar
 						</a>
 					</div>
 				</div>
