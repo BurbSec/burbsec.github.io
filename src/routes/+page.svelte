@@ -181,7 +181,7 @@
 					</div>
 				{/each}
 				<p class="text-center mt-4 mb-0">
-					<a href="/calendar/burbsec.ics" class="btn btn-outline-primary" download>
+					<a href="/calendar/burbsec.ics" class="btn btn-primary btn-lg" download>
 						<Icon name="calendar" /> Add all meetups to your calendar
 					</a>
 				</p>
