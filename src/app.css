@@ -35,6 +35,15 @@
   cursor: pointer;
 }
 
+/* Homepage location cards — same dark translucent panel as the FAQ cards
+   (overrides Bootstrap's default white card background) */
+.event-card {
+  background: rgba(21, 32, 43, 0.64);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.12);
+  color: #fff;
+}
+
 .event-card:hover,
 .card-hover:hover {
   transform: translateY(-5px);
@@ -278,16 +287,17 @@ footer a:hover {
 
 /* Translucent content card with red hover glow */
 .event-content-card {
-  background: rgba(255, 255, 255, 0.30);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(21, 32, 43, 0.64);
+  border: 1px solid rgba(0, 212, 255, 0.35);
   border-radius: 0.75rem;
   padding: 1.75rem 2rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.12);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .event-content-card:hover {
-  background: rgba(255, 255, 255, 0.36);
+  background: rgba(21, 32, 43, 0.78);
   box-shadow:
     0 0 10px rgba(255, 40, 40, 0.4),
     0 0 30px rgba(255, 40, 40, 0.2);
@@ -536,7 +546,7 @@ footer a:hover {
 
 /* Homepage FAQ — solid panels so they stand out against the dark video background */
 .faq-item {
-  background: rgba(21, 32, 43, 0.92);
+  background: rgba(21, 32, 43, 0.64);
   border: 1px solid rgba(0, 212, 255, 0.35);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
@@ -562,14 +572,15 @@ footer a:hover {
 
 .sponsor-feature,
 .sponsor-card {
-  background: rgba(255, 255, 255, 0.30);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(21, 32, 43, 0.64);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.12);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .sponsor-feature:hover,
 .sponsor-card:hover {
-  background: rgba(255, 255, 255, 0.36);
+  background: rgba(21, 32, 43, 0.78);
   box-shadow:
     0 0 10px rgba(255, 40, 40, 0.4),
     0 0 30px rgba(255, 40, 40, 0.2);
