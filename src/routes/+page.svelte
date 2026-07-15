@@ -1,9 +1,43 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
 	import { allEvents, SITE_URL } from '$lib/data/events.js';
+	import { nextOccurrence, formatShort } from '$lib/utils/schedule.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
 	let { data } = $props();
+
+	const faqs = [
+		{
+			q: 'Do I need to RSVP or buy a ticket?',
+			a: 'No — just show up. There are no tickets, no registration, and no waiting list. Walk in whenever you can make it and leave whenever you need to.'
+		},
+		{
+			q: 'How much does it cost?',
+			a: 'Nothing. There are no dues or cover charges — you only pay for your own food and drinks (and when a sponsor is on board, some of that gets covered too).'
+		},
+		{
+			q: 'What actually happens at a meetup?',
+			a: 'No presentations, no vendor pitches, no CPE sign-in sheets — just a few hours of informal networking with information security professionals, students, and enthusiasts over food and drinks.'
+		},
+		{
+			q: "I'm new and don't know anyone. How do I find the group?",
+			a: "Look for the BurbSec sign at the table, ask the venue staff where BurbSec is sitting, or hop into our Discord and say you're at the door — someone will come find you."
+		},
+		{
+			q: 'Is there an age restriction?',
+			a: 'It depends on the venue. Some of our locations are family-friendly restaurants and taprooms, others are 21+ bars — check with the specific venue before bringing anyone under drinking age.'
+		}
+	];
+
+	const faqJsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqs.map((f) => ({
+			'@type': 'Question',
+			name: f.q,
+			acceptedAnswer: { '@type': 'Answer', text: f.a }
+		}))
+	});
 
 	const pageDescription = 'Join Burbsec, the premier information security meetup network! Weekly cybersecurity events in Chicago, Las Vegas, Galway & more. Connect with ethical hackers, security professionals, and infosec enthusiasts. Free networking events with hands-on training, CTFs, and industry talks.';
 
@@ -60,6 +94,7 @@
 	<meta name="twitter:image:alt" content="Burbsec - The World's Most Fun InfoSec Meetup Network" />
 
 	{@html `<script type="application/ld+json">${webPageJsonLd}</script>`}
+	{@html `<script type="application/ld+json">${faqJsonLd}</script>`}
 </svelte:head>
 
 <div class="home-page">
@@ -121,12 +156,36 @@
 								 alt="{event.cardTitle} shield"
 								 class="mb-3" width="80" height="80" loading="lazy" decoding="async">
 							<h5 class="card-title">{event.cardTitle}</h5>
-							<p class="card-text">{event.cardSchedule}</p>
+							<p class="card-text mb-1">{event.cardSchedule}</p>
+							{#if event.schedule}
+								<p class="card-next-date">Next: {formatShort(nextOccurrence(event.schedule))}</p>
+							{:else}
+								<p class="card-next-date">See Discord for dates</p>
+							{/if}
 							<a href="/{event.slug}" class="btn btn-outline-primary">Learn More</a>
 						</div>
 					</div>
 				</div>
 			{/each}
+		</div>
+
+		<div class="row mt-5" id="faq">
+			<div class="col-lg-8 mx-auto">
+				<div class="text-center mb-4">
+					<h2 class="display-6 fw-bold">First Time? FAQ</h2>
+				</div>
+				{#each faqs as faq (faq.q)}
+					<div class="faq-item">
+						<h3 class="faq-question h5">{faq.q}</h3>
+						<p class="faq-answer mb-0">{faq.a}</p>
+					</div>
+				{/each}
+				<p class="text-center mt-4 mb-0">
+					<a href="/calendar/burbsec.ics" class="btn btn-outline-primary" download>
+						<Icon name="calendar" /> Add all meetups to your calendar
+					</a>
+				</p>
+			</div>
 		</div>
 	</div>
 </div>

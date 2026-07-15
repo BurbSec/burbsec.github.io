@@ -2,9 +2,11 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
 	import { SITE_URL } from '$lib/data/events.js';
+	import { nextOccurrence, formatLong, formatTime } from '$lib/utils/schedule.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
 	let {
+		slug = null,
 		title,
 		subtitle,
 		location,
@@ -15,6 +17,8 @@
 		meetupPage = 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink = null,
 		irlImage = null,
+		/** @type {import('$lib/data/events.js').BurbSecEvent['schedule']|null} */
+		schedule = null,
 		/** @type {import('$lib/server/gallery.js').GalleryImage[]} */
 		galleryImages = [],
 		/** @type {import('$lib/data/events.js').BurbSecEvent['seo']|null} */
@@ -25,6 +29,17 @@
 	} = $props();
 
 	let canonicalUrl = $derived(`${SITE_URL}${page.url.pathname}`);
+	let nextMeetup = $derived(schedule ? nextOccurrence(schedule) : null);
+	let venueAddress = $derived.by(() => {
+		if (!structuredData?.venueName || structuredData.venueName === 'Various Locations') return null;
+		return [
+			structuredData.venueName,
+			structuredData.streetAddress,
+			`${structuredData.addressLocality}, ${structuredData.addressRegion}`
+		]
+			.filter(Boolean)
+			.join(' · ');
+	});
 	let pageTitle = $derived(seo?.title ?? `${title} | Burbsec`);
 	let pageDescription = $derived(seo?.description ?? `${title} - ${subtitle}`);
 	let ogImage = $derived(seo?.image ?? `${SITE_URL}${eventImage}`);
@@ -120,6 +135,23 @@
 				<img src={eventImage} alt={title} class="event-image ms-3" loading="lazy" decoding="async" />
 			</div>
 
+			{#if nextMeetup || venueAddress}
+				<div class="text-center mb-4">
+					{#if nextMeetup}
+						<p class="next-meetup mb-1">
+							<Icon name="calendar-days" class="me-1 neon-blue" />
+							Next meetup: <strong>{formatLong(nextMeetup)}</strong> at {formatTime(schedule.time)}
+						</p>
+					{/if}
+					{#if venueAddress}
+						<p class="venue-address mb-0">
+							<Icon name="location-dot" class="me-1 neon-red" />
+							{venueAddress}
+						</p>
+					{/if}
+				</div>
+			{/if}
+
 			<div class="row justify-content-center align-items-center mb-4">
 				{#if blueskyHandle}
 					<div class="col-sm d-flex flex-column mb-2">
@@ -156,6 +188,14 @@
 						</a>
 					{/if}
 				</div>
+				{#if schedule && slug}
+					<div class="col-sm d-flex flex-column mb-2">
+						<a href="/calendar/{slug}.ics" class="btn btn-info" download>
+							<Icon name="calendar" size="xl" />
+							Add to Calendar
+						</a>
+					</div>
+				{/if}
 			</div>
 
 			<div class="event-content-card">

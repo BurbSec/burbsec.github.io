@@ -25,6 +25,10 @@ const SITE_URL = 'https://burbsec.com';
  * @property {string} cardTitle     - Short name for homepage card
  * @property {string} cardSchedule  - Short schedule for homepage card
  * @property {EventCategory} category
+ * @property {{week: number|'last', weekday: number, time: string, tz: string}} [schedule]
+ *                                  - Recurring rule: nth (or last) weekday of the month.
+ *                                    weekday uses Date.getDay() numbering (4 = Thursday);
+ *                                    time is 24h local wall time; tz is an IANA zone name.
  * @property {string|null} [blueskyHandle]
  * @property {string|null} [discordLink]
  * @property {string}       [meetupPage]
@@ -52,6 +56,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Chicago',
 		cardSchedule: 'Every Last Thursday',
 		category: 'chicagoland',
+		schedule: { week: 'last', weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec East Chicago | Information Security Meetup Every Last Thursday',
 			description:
@@ -94,6 +99,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Wheeling',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
+		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec North Wheeling | Information Security Meetup Every Second Thursday',
 			description: 'Join BurbSec North in Wheeling, IL - an informal information security meetup for cybersecurity enthusiasts and IT professionals. Every second Thursday at D\'Agostino\'s Pizzeria. No dues, no presentations, just great networking!',
@@ -131,6 +137,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Hickory Hills',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
+		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec South Hickory Hills | Information Security Meetup Every Second Thursday',
 			description: 'Join BurbSec South in Hickory Hills, IL - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Thursday at Prime Time Restaurant.',
@@ -168,6 +175,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Schaumburg',
 		cardSchedule: 'Every First Thursday',
 		category: 'chicagoland',
+		schedule: { week: 1, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec Prime Schaumburg | Information Security Meetup Every First Thursday',
 			description: 'Join BurbSec Prime in Schaumburg, IL - the flagship information security meetup at Enterrium in Woodfield Mall. Every first Thursday. Connect with experienced cybersecurity professionals.',
@@ -205,6 +213,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Crystal Lake',
 		cardSchedule: 'Every Fourth Thursday',
 		category: 'chicagoland',
+		schedule: { week: 4, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec Northwest Crystal Lake | Information Security Meetup Every Fourth Thursday',
 			description: 'Join BurbSec Northwest in Crystal Lake, IL - an informal information security meetup at Crystal Lake Brewing. Every fourth Thursday. Connect with cybersecurity professionals in the northwest suburbs.',
@@ -242,6 +251,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Naperville',
 		cardSchedule: 'Every Third Thursday',
 		category: 'chicagoland',
+		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec West Naperville | Information Security Meetup Every Third Thursday',
 			description: 'Join BurbSec West in Naperville, IL - an informal information security meetup at Granite City Food & Brewery. Every third Thursday. Network with cybersecurity professionals in the western suburbs.',
@@ -280,6 +290,7 @@ export const chicagolandEvents = [
 		cardTitle: 'Mishawaka, IN',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
+		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/New_York' },
 		seo: {
 			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Thursday',
 			description: 'Join BurbSec Southeast in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts in Northern Indiana. Every second Thursday at Hop Station.',
@@ -322,6 +333,7 @@ export const elsewhereEvents = [
 		cardTitle: 'Minneapolis, MN',
 		cardSchedule: 'Every Third Thursday',
 		category: 'elsewhere',
+		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec Minneapolis | Information Security Meetup in Minnesota',
 			description:
@@ -467,12 +479,12 @@ export function getEvent(slug) {
  * Look up an event and return only the props that EventPage accepts.
  * This avoids Svelte "unused export property" warnings when spreading.
  * @param {string} slug
- * @returns {Omit<BurbSecEvent, 'slug'|'cardTitle'|'cardSchedule'|'category'|'sponsor'|'galleryFolder'>}
+ * @returns {Omit<BurbSecEvent, 'cardTitle'|'cardSchedule'|'category'|'sponsor'|'galleryFolder'>}
  */
 export function getEventProps(slug) {
  const event = getEvent(slug);
  if (!event) return undefined;
- const { slug: _slug, cardTitle, cardSchedule, category, sponsor, galleryFolder, ...props } = event;
+ const { cardTitle, cardSchedule, category, sponsor, galleryFolder, ...props } = event;
  return props;
 }
 
