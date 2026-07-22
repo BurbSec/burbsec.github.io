@@ -56,6 +56,19 @@ export function formatLong(date) {
 }
 
 /**
+ * UTC offset string (e.g. "-05:00") for an IANA zone on a given date, DST-aware.
+ * @param {string} tz - IANA zone name, e.g. 'America/Chicago'
+ * @param {Date} [date]
+ */
+export function utcOffset(tz, date = new Date()) {
+	const name = new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'longOffset' })
+		.formatToParts(date)
+		.find((p) => p.type === 'timeZoneName')?.value;
+	const match = name?.match(/GMT([+-]\d{2}:\d{2})/);
+	return match ? match[1] : '+00:00';
+}
+
+/**
  * 12-hour display for a 24h "HH:MM" wall time, e.g. "6:00 PM".
  * @param {string} time
  */

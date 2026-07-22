@@ -35,7 +35,9 @@ const SITE_URL = 'https://burbsec.com';
  * @property {string|null} [eventbriteLink]
  * @property {string|null} [galleryFolder] - Subfolder name under static/images/irl/ for gallery images
  * @property {Object}      [seo]           - Per-page SEO overrides
- * @property {Object}      [structuredData] - Extra JSON-LD fields
+ * @property {Object}      [structuredData] - Extra JSON-LD fields. `tz` (IANA zone) is only
+ *                                            needed when the event has no `schedule`;
+ *                                            events default to America/Chicago otherwise.
  * @property {Object|null} [sponsor]       - Sponsor page card data
  */
 
@@ -47,7 +49,7 @@ export const chicagolandEvents = [
 		subtitle: 'Meets Every Last Thursday of the Month',
 		location: 'Chicago, IL',
 		eventImage: '/images/east_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/r8nxdKddizJqfU4u9',
+		gmapsLink: 'https://maps.app.goo.gl/1xS3JNrfDjvBfLoeA',
 		blueskyHandle: 'east.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
@@ -60,27 +62,26 @@ export const chicagolandEvents = [
 		seo: {
 			title: 'BurbSec East Chicago | Information Security Meetup Every Last Thursday',
 			description:
-				'Join BurbSec East Chicago - an informal information security meetup for cybersecurity enthusiasts, ethical hackers, and IT professionals. Every last Thursday at Navigator Taproom. A welcoming community for Chicago\'s infosec professionals seeking networking opportunities. No dues, no presentations, just networking!',
+				'Join BurbSec East Chicago - an informal information security meetup for cybersecurity enthusiasts, ethical hackers, and IT professionals. Every last Thursday at Gracie O\'Malley\'s in Wicker Park. A welcoming community for Chicago\'s infosec professionals seeking networking opportunities. No dues, no presentations, just networking!',
 			keywords:
-				'chicago information security, chicago cybersecurity meetup, chicago infosec, chicago hacking meetup, chicago security professionals, navigator taproom, chicago tech meetup, cybersecurity networking chicago, ethical hacking chicago, IT security chicago, dc312 chicago, dcg312 chicago, chicago 2600, defcon chicago, chicago hacker community, chicago security community, chicago infosec networking',
+				'chicago information security, chicago cybersecurity meetup, chicago infosec, chicago hacking meetup, chicago security professionals, gracie omalleys wicker park, chicago tech meetup, cybersecurity networking chicago, ethical hacking chicago, IT security chicago, dc312 chicago, dcg312 chicago, chicago 2600, defcon chicago, chicago hacker community, chicago security community, chicago infosec networking',
 			image: `${SITE_URL}/images/east_shield.png`
 		},
 		structuredData: {
-			venueName: 'Navigator Taproom',
-			streetAddress: '5062 N Lincoln Ave',
+			venueName: "Gracie O'Malley's",
+			streetAddress: '1635 N Milwaukee Ave',
 			addressLocality: 'Chicago',
 			addressRegion: 'IL',
-			postalCode: '60625',
+			postalCode: '60647',
 			addressCountry: 'US',
-			latitude: '41.9742',
-			longitude: '-87.6892',
-			timezone: '-06:00'
+			latitude: '41.9113',
+			longitude: '-87.6785'
 		},
 		sponsor: {
 			when: 'Every LAST (Fourth or Fifth) Thursday',
 			attendance: '70-100 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students. Many looking to begin or switch careers',
-			venueName: 'Navigator Taproom in Chicago',
+			venueName: "Gracie O'Malley's in Wicker Park, Chicago",
 			avgSponsorship: '$2000'
 		}
 	},
@@ -108,11 +109,13 @@ export const chicagolandEvents = [
 		},
 		structuredData: {
 			venueName: "D'Agostino's Pizzeria",
+			streetAddress: '241 S Milwaukee Ave',
 			addressLocality: 'Wheeling',
 			addressRegion: 'IL',
+			postalCode: '60090',
 			addressCountry: 'US',
-			latitude: '42.1392',
-			longitude: '-87.9290'
+			latitude: '42.1364',
+			longitude: '-87.9043'
 		},
 		sponsor: {
 			when: 'Every SECOND Thursday',
@@ -140,23 +143,25 @@ export const chicagolandEvents = [
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec South Hickory Hills | Information Security Meetup Every Second Thursday',
-			description: 'Join BurbSec South in Hickory Hills, IL - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Thursday at Prime Time Restaurant.',
+			description: 'Join BurbSec South in Hickory Hills, IL - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Thursday at The Sock Bar & Grill.',
 			keywords: 'hickory hills information security, south suburbs cybersecurity meetup, chicagoland infosec, hickory hills tech meetup, south side security meetup, cybersecurity networking south suburbs',
 			image: `${SITE_URL}/images/south_shield.png`
 		},
 		structuredData: {
-			venueName: 'The Sock Bar and Grill',
+			venueName: 'The Sock Bar & Grill',
+			streetAddress: '9300 S Roberts Rd',
 			addressLocality: 'Hickory Hills',
 			addressRegion: 'IL',
+			postalCode: '60457',
 			addressCountry: 'US',
-			latitude: '41.7221',
+			latitude: '41.7220',
 			longitude: '-87.8184'
 		},
 		sponsor: {
 			when: 'Also meets every SECOND Thursday',
 			attendance: '20-30 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students',
-			venueName: 'Prime Time Restaurant in Hickory Hills',
+			venueName: 'The Sock Bar & Grill in Hickory Hills',
 			avgSponsorship: '$700'
 		}
 	},
@@ -184,11 +189,13 @@ export const chicagolandEvents = [
 		},
 		structuredData: {
 			venueName: 'Enterrium at Woodfield Mall',
+			streetAddress: '2 Woodfield Mall, Unit A',
 			addressLocality: 'Schaumburg',
 			addressRegion: 'IL',
+			postalCode: '60173',
 			addressCountry: 'US',
-			latitude: '42.0451',
-			longitude: '-88.0340'
+			latitude: '42.0458',
+			longitude: '-88.0352'
 		},
 		sponsor: {
 			when: 'Every FIRST Thursday',
@@ -222,11 +229,13 @@ export const chicagolandEvents = [
 		},
 		structuredData: {
 			venueName: 'Crystal Lake Brewing',
+			streetAddress: '150 N Main St',
 			addressLocality: 'Crystal Lake',
 			addressRegion: 'IL',
+			postalCode: '60014',
 			addressCountry: 'US',
-			latitude: '42.2411',
-			longitude: '-88.3162'
+			latitude: '42.2455',
+			longitude: '-88.3165'
 		},
 		sponsor: {
 			when: 'Every FOURTH Thursday',
@@ -263,9 +272,10 @@ export const chicagolandEvents = [
 			streetAddress: '1828 Abriter Ct',
 			addressLocality: 'Naperville',
 			addressRegion: 'IL',
+			postalCode: '60563',
 			addressCountry: 'US',
-			latitude: '41.7508',
-			longitude: '-88.2120'
+			latitude: '41.8049',
+			longitude: '-88.1282'
 		},
 		sponsor: {
 			when: 'Every THIRD Thursday',
@@ -299,11 +309,13 @@ export const chicagolandEvents = [
 		},
 		structuredData: {
 			venueName: 'Hop Station',
+			streetAddress: '318 Union St',
 			addressLocality: 'Mishawaka',
 			addressRegion: 'IN',
+			postalCode: '46544',
 			addressCountry: 'US',
-			latitude: '41.6614',
-			longitude: '-86.1586'
+			latitude: '41.6584',
+			longitude: '-86.1764'
 		},
 		sponsor: {
 			when: 'Every SECOND Thursday',
@@ -344,12 +356,13 @@ export const elsewhereEvents = [
 		},
 		structuredData: {
 			venueName: 'Forgotten Star Brewing Co.',
+			streetAddress: '38 Northern Stacks Dr',
 			addressLocality: 'Fridley',
 			addressRegion: 'MN',
+			postalCode: '55421',
 			addressCountry: 'US',
-			latitude: '44.9778',
-			longitude: '-93.2650',
-			timezone: '-06:00'
+			latitude: '45.0557',
+			longitude: '-93.2735'
 		},
 		sponsor: {
 			when: 'Every THIRD Thursday',
@@ -389,7 +402,7 @@ export const elsewhereEvents = [
 			addressCountry: 'US',
 			latitude: '36.1699',
 			longitude: '-115.1398',
-			timezone: '-08:00'
+			tz: 'America/Los_Angeles'
 		},
 		sponsor: {
 			when: 'Monthly',
@@ -408,7 +421,7 @@ export const elsewhereEvents = [
 		gmapsLink: 'https://maps.app.goo.gl/xQZRj9i17up8gyQ49',
 		blueskyHandle: 'galway.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
-		meetupPage: 'https://www.meetup.com/burbsec/events/-galway',
+		meetupPage: 'https://www.meetup.com/burbsec-galway/',
 		eventbriteLink: null,
 		galleryFolder: 'galway',
 		cardTitle: 'Galway, Ireland',
@@ -421,18 +434,21 @@ export const elsewhereEvents = [
 			image: `${SITE_URL}/images/galway_road_sign.jpg`
 		},
 		structuredData: {
-			venueName: 'Keanes Oranmore',
+			venueName: "Murty Rabbitt's",
+			streetAddress: '23-25 Forster Street',
 			addressLocality: 'Galway',
-			addressRegion: 'Connacht',
+			addressRegion: 'Co. Galway',
+			postalCode: 'H91 W1WK',
 			addressCountry: 'IE',
-			latitude: '53.2707',
-			longitude: '-9.0568'
+			latitude: '53.2748',
+			longitude: '-9.0470',
+			tz: 'Europe/Dublin'
 		},
 		sponsor: {
 			when: null,
 			attendance: '5-7 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: null,
-			venueName: "Keanes Oranmore in Galway, Ireland (Yes, Ireland)",
+			venueName: "Murty Rabbitt's in Galway, Ireland (Yes, Ireland)",
 			avgSponsorship: '€200'
 		}
 	}
@@ -451,6 +467,7 @@ export const specialEvents = [
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
+		galleryFolder: 'cigarsec',
 		cardTitle: 'CigarSec',
 		cardSchedule: 'Special Interest Group',
 		category: 'special',

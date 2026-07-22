@@ -17,9 +17,8 @@
 	</p>
 
 	<p>
-		Meeting at Navigator Taproom, it has over 40 beers on tap, along
-		with many great ciders, wines, and cocktails, all using a self-serve RFID
-		system! Aside from that, they also have a small you-call-it bar, and you can even
-		have food delivered. Several food options exist within walking distance as well!
+		Meeting at Gracie O'Malley's in Wicker Park, it's a neighborhood Irish sports bar with a
+		solid local beer selection, pub fare, and shareable appetizers. Plenty of room to grab a
+		table, and several other food options exist within walking distance as well!
 	</p>
 </EventPage>

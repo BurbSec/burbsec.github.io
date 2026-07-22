@@ -2,7 +2,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
 	import { SITE_URL } from '$lib/data/events.js';
-	import { nextOccurrence, formatLong, formatTime } from '$lib/utils/schedule.js';
+	import { nextOccurrence, formatLong, formatTime, utcOffset } from '$lib/utils/schedule.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
 	let {
@@ -28,7 +28,14 @@
 		children
 	} = $props();
 
+	// First-ever BurbSec meetup; offset is DST-aware for the event's own zone.
+	const FOUNDING_DATE = '2010-06-01';
+
 	let canonicalUrl = $derived(`${SITE_URL}${page.url.pathname}`);
+	let validFrom = $derived.by(() => {
+		const tz = schedule?.tz ?? structuredData?.tz ?? 'America/Chicago';
+		return `${FOUNDING_DATE}T00:00:00${utcOffset(tz, new Date(`${FOUNDING_DATE}T12:00:00Z`))}`;
+	});
 	let nextMeetup = $derived(schedule ? nextOccurrence(schedule) : null);
 	let venueAddress = $derived.by(() => {
 		if (!structuredData?.venueName || structuredData.venueName === 'Various Locations') return null;
@@ -84,7 +91,7 @@
 						price: '0',
 						priceCurrency: 'USD',
 						availability: 'https://schema.org/InStock',
-						validFrom: `2010-06-01T00:00:00${structuredData.timezone || '-06:00'}`,
+						validFrom,
 						url: eventbriteLink ?? meetupPage
 					},
 					audience: {

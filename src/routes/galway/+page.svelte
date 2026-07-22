@@ -15,7 +15,7 @@
 	</p>
 
 	<p>
-		Our Galway location meets at Murty Rabbit's, and offers a unique international perspective on cybersecurity.
+		Our Galway location meets at Murty Rabbitt's, and offers a unique international perspective on cybersecurity.
 		Whether you're a seasoned CISO or just starting your career in cybersecurity, you'll find a
 		welcoming community ready to share knowledge and experiences from across the pond.
 	</p>

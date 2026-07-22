@@ -1,7 +1,7 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
 	import { allEvents, SITE_URL } from '$lib/data/events.js';
-	import { nextOccurrence, formatShort } from '$lib/utils/schedule.js';
+	import { nextOccurrence, formatShort, utcOffset } from '$lib/utils/schedule.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 
 	let { data } = $props();
@@ -39,7 +39,7 @@
 		}))
 	});
 
-	const pageDescription = 'Join Burbsec, the premier information security meetup network! Weekly cybersecurity events in Chicago, Las Vegas, Galway & more. Connect with ethical hackers, security professionals, and infosec enthusiasts. Free networking events with hands-on training, CTFs, and industry talks.';
+	const pageDescription = 'Join BurbSec, the world\'s most fun information security meetup network! Free monthly cybersecurity meetups across Chicagoland, Minneapolis, Las Vegas, and Galway. No dues, no presentations, no sales pitches — just informal networking with hackers, security professionals, and infosec enthusiasts over food and drinks.';
 
 	const webPageJsonLd = JSON.stringify({
 		'@context': 'https://schema.org',
@@ -56,7 +56,7 @@
 				name: 'Cybersecurity Events',
 				itemListElement: allEvents.map((e) => ({
 					'@type': 'Offer',
-					validFrom: `2010-06-01T00:00:00${e.structuredData?.timezone || '-06:00'}`,
+					validFrom: `2010-06-01T00:00:00${utcOffset(e.schedule?.tz ?? e.structuredData?.tz ?? 'America/Chicago', new Date('2010-06-01T12:00:00Z'))}`,
 					itemOffered: {
 						'@type': 'Event',
 						name: e.title,
@@ -157,6 +157,9 @@
 								 alt="{event.cardTitle} shield"
 								 class="mb-3" width="80" height="80" loading="lazy" decoding="async">
 							<h5 class="card-title">{event.cardTitle}</h5>
+							{#if event.structuredData?.venueName && event.structuredData.venueName !== 'Various Locations'}
+								<p class="card-venue mb-1">{event.structuredData.venueName}</p>
+							{/if}
 							<p class="card-text mb-1">{event.cardSchedule}</p>
 							{#if event.schedule}
 								<p class="card-next-date">Next: {formatShort(nextOccurrence(event.schedule))}</p>

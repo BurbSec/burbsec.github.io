@@ -588,6 +588,12 @@ footer a:hover {
 .icon-xl { height: 1.5em; }
 .icon-2x { height: 2em; }
 
+/* Venue name on homepage cards */
+.card-venue {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
 /* Next-meetup date on homepage cards and event pages */
 .card-next-date {
   font-size: 0.9rem;
