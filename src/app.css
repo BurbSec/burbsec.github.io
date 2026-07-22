@@ -493,10 +493,10 @@ footer a:hover {
   --bs-btn-disabled-border-color: #00d4ff;
   --bs-btn-disabled-color: #0a1620;
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4), 0 0 20px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.6), 0 0 28px rgba(0, 212, 255, 0.35);
 }
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.4);
 }
 
 .btn-danger {
@@ -513,10 +513,10 @@ footer a:hover {
   --bs-btn-disabled-border-color: #ff3058;
   --bs-btn-disabled-color: #fff;
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(255, 48, 88, 0.4), 0 0 20px rgba(255, 48, 88, 0.2);
+  box-shadow: 0 0 14px rgba(255, 48, 88, 0.6), 0 0 28px rgba(255, 48, 88, 0.35);
 }
 .btn-danger:hover {
-  box-shadow: 0 0 15px rgba(255, 48, 88, 0.6), 0 0 30px rgba(255, 48, 88, 0.3);
+  box-shadow: 0 0 20px rgba(255, 48, 88, 0.8), 0 0 40px rgba(255, 48, 88, 0.4);
 }
 
 /* Lighter blue than Bootstrap's default #0d6efd — reads better on the dark cards */
@@ -529,17 +529,17 @@ footer a:hover {
   --bs-btn-active-bg: #6ea8fe;
   --bs-btn-active-border-color: #6ea8fe;
   --bs-btn-active-color: #15202b;
-  box-shadow: 0 0 8px rgba(110, 168, 254, 0.3);
+  box-shadow: 0 0 12px rgba(110, 168, 254, 0.55), 0 0 24px rgba(110, 168, 254, 0.28);
 }
 .btn-outline-primary:hover {
-  box-shadow: 0 0 15px rgba(110, 168, 254, 0.6), 0 0 30px rgba(110, 168, 254, 0.3);
+  box-shadow: 0 0 18px rgba(110, 168, 254, 0.75), 0 0 36px rgba(110, 168, 254, 0.4);
 }
 
 .btn-outline-light {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 0 24px rgba(255, 255, 255, 0.2);
 }
 .btn-outline-light:hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.65), 0 0 36px rgba(255, 255, 255, 0.35);
 }
 
 /* Section headings — smaller than the hero, with a neon underline bar */
