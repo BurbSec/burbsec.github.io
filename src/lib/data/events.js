@@ -22,7 +22,7 @@ const SITE_URL = 'https://burbsec.com';
  * @property {string} location      - Human-readable location
  * @property {string} eventImage    - Path to shield/logo in static/
  * @property {string} gmapsLink     - Google Maps link
- * @property {string} cardTitle     - Short name for homepage card
+ * @property {string} cardTitle     - Short name for homepage card and navbar, as "Name (City)"
  * @property {string} cardSchedule  - Short schedule for homepage card
  * @property {EventCategory} category
  * @property {{week: number|'last', weekday: number, time: string, tz: string}} [schedule]
@@ -55,7 +55,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'east',
-		cardTitle: 'Chicago',
+		cardTitle: 'East (Chicago)',
 		cardSchedule: 'Every Last Thursday',
 		category: 'chicagoland',
 		schedule: { week: 'last', weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -97,7 +97,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'north',
-		cardTitle: 'Wheeling',
+		cardTitle: 'North (Wheeling)',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -137,7 +137,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'south',
-		cardTitle: 'Hickory Hills',
+		cardTitle: 'South (Hickory Hills)',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -177,7 +177,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'prime',
-		cardTitle: 'Schaumburg',
+		cardTitle: 'Prime (Schaumburg)',
 		cardSchedule: 'Every First Thursday',
 		category: 'chicagoland',
 		schedule: { week: 1, weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -217,7 +217,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'northwest',
-		cardTitle: 'Crystal Lake',
+		cardTitle: 'Northwest (Crystal Lake)',
 		cardSchedule: 'Every Fourth Thursday',
 		category: 'chicagoland',
 		schedule: { week: 4, weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -257,7 +257,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'west',
-		cardTitle: 'Naperville',
+		cardTitle: 'West (Naperville)',
 		cardSchedule: 'Every Third Thursday',
 		category: 'chicagoland',
 		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -297,7 +297,7 @@ export const chicagolandEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'southeast',
-		cardTitle: 'Mishawaka, IN',
+		cardTitle: 'Southeast (Mishawaka, IN)',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/New_York' },
@@ -342,7 +342,7 @@ export const elsewhereEvents = [
 		eventbriteLink:
 			'https://www.eventbrite.com/e/burbsec-mpls-networking-meetup-tickets-1749486103029?aff=oddtdtcreator',
 		galleryFolder: 'mpls',
-		cardTitle: 'Minneapolis, MN',
+		cardTitle: 'MPLS (Fridley, MN)',
 		cardSchedule: 'Every Third Thursday',
 		category: 'elsewhere',
 		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
@@ -384,7 +384,7 @@ export const elsewhereEvents = [
 		meetupPage: 'https://www.meetup.com/burbsecvegas/',
 		eventbriteLink: null,
 		galleryFolder: 'lasvegas',
-		cardTitle: 'Las Vegas',
+		cardTitle: 'Las Vegas, NV',
 		cardSchedule: 'Monthly Meetup',
 		category: 'elsewhere',
 		seo: {
