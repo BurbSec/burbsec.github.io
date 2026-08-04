@@ -774,6 +774,21 @@ footer a:hover {
   60% { transform: translateY(-5px); }
 }
 
+/* Chat server picker modal — Bootstrap's default modal is light-themed */
+#chatModal .modal-content {
+  background-color: #15202b;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#chatModal .modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+#chatModal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
 /* Responsive design — large screens */
 @media (min-width: 992px) {
   .hero-section .display-3 { font-size: 5.4rem; }

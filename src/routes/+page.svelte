@@ -109,18 +109,18 @@
 					<h1 class="display-3 fw-bold mb-4 landingpage-title text-white">Burbsec|Network</h1>
 					<p class="lead mb-5 landingpage-subtitle text-white">The World's Most Fun InfoSec Meetup Events!</p>
 					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-						<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
-							<Icon name="discord" /> Join the discussion on Discord!
-						</a>
+						<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#chatModal">
+							<Icon name="comments" /> Join our Chat Servers!
+						</button>
 						<a href="https://www.meetup.com/burbsec/events/" class="btn btn-danger btn-lg" target="_blank" rel="noopener noreferrer">
 							<Icon name="meetup" /> Find your local Burbsec meet!
 						</a>
 					</div>
 					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
-						<a href="/sponsors" class="btn btn-outline-primary btn-lg">
+						<a href="/sponsors" class="btn btn-danger btn-lg">
 							<Icon name="hand-holding-medical" /> Sponsor a night of fun!
 						</a>
-						<a href="https://chicagoinfosecevents.github.io/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
+						<a href="https://chicagoinfosecevents.github.io/" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
 							<Icon name="calendar-days" /> Full Chicagoland Infosec Calendar
 						</a>
 					</div>
@@ -135,6 +135,28 @@
 		<div class="scroll-section text-center">
 			<p class="text-white mb-2">Scroll for more!</p>
 			<span class="scroll-indicator" aria-hidden="true"><span class="scroll-chevron"></span></span>
+		</div>
+	</div>
+
+	<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title h5" id="chatModalLabel">Join our Chat Servers</h2>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body d-flex flex-column gap-3">
+					<a href="irc://irc.burbsec.com:6697" class="btn btn-primary btn-lg">
+						<Icon name="server" /> IRC
+					</a>
+					<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+						<Icon name="discord" /> Discord
+					</a>
+					<a href="https://tinyurl.com/burbslack2" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+						<Icon name="slack" /> Slack
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 

@@ -72,10 +72,15 @@
 					</li>
 				{/if}
 
-				<li class="nav-item">
-					<a class="nav-link" href="https://tinyurl.com/burbchat" target="_blank" rel="noopener noreferrer">
-						<Icon name="discord" /> Discord
-					</a>
+				<li class="nav-item dropdown">
+					<button class="nav-link dropdown-toggle btn btn-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<Icon name="comments" /> Chat
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="irc://irc.burbsec.com:6697" onclick={closeMenu}><Icon name="server" /> IRC</a></li>
+						<li><a class="dropdown-item" href="https://tinyurl.com/burbchat" target="_blank" rel="noopener noreferrer" onclick={closeMenu}><Icon name="discord" /> Discord</a></li>
+						<li><a class="dropdown-item" href="https://tinyurl.com/burbslack2" target="_blank" rel="noopener noreferrer" onclick={closeMenu}><Icon name="slack" /> Slack</a></li>
+					</ul>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="https://www.meetup.com/burbsec/events/" target="_blank" rel="noopener noreferrer">

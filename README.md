@@ -17,6 +17,10 @@ This project uses a **data-driven architecture** where all event metadata lives 
 - **Sponsors** (`/sponsors`) — basic prospectus info 
 - **Error** (`+error.svelte`) — branded 404 / error page
 
+### Chat
+
+The navbar "Chat" dropdown and the homepage's chat-picker modal link out to BurbSec's IRC, Discord, and Slack. Links are hardcoded in `Navbar.svelte` and `+page.svelte`; per-event Discord invite links live on each event in `events.js` (`discordLink`).
+
 ## Development
 
 ### Prerequisites
@@ -37,10 +41,14 @@ This project uses a **data-driven architecture** where all event metadata lives 
    ```
 4. Open your browser and navigate to the URL provided
 
+```bash
+npm run thumbs   # Regenerate gallery thumbnails only (also runs automatically before dev/build)
+```
+
 ### Building for Production
 
 ```bash
-npm run build    # Outputs to build/ with Brotli + Gzip precompression
+npm run build    # Outputs to build/
 npm run preview  # Preview the production build locally
 ```
 
@@ -49,7 +57,7 @@ npm run preview  # Preview the production build locally
 - **Framework**: SvelteKit 2 + Svelte 5
 - **Build Tool**: Vite 7
 - **Styling**: Bootstrap 5.3.8 (CDN with SRI) + Custom CSS
-- **Icons**: Font Awesome 6.5.1 (CDN with SRI)
+- **Icons**: Inline SVGs (Font Awesome Free 6.7.2 path data) — no CDN, see `Icon.svelte`
 - **Deployment**: Static site generation → GitHub Pages (Node 22)
 - **Domain**: `burbsec.com` (via CNAME)
 
@@ -69,19 +77,25 @@ src/
 ├── app.css                 # Global styles + a11y focus indicators
 ├── lib/
 │   ├── data/
-│   │   └── events.js       # ★ Single source of truth for all event data
+│   │   ├── events.js       # ★ Single source of truth for all event data
+│   │   └── icons.js        # Inline SVG icon path data
 │   ├── server/
-│   │   └── gallery.js      # Build-time gallery image scanner
+│   │   ├── gallery.js      # Build-time gallery image scanner
+│   │   └── ics.js          # iCalendar (.ics) feed generation
+│   ├── utils/
+│   │   └── schedule.js     # Date math for recurring event schedules
 │   └── components/
 │       ├── EventPage.svelte # Reusable event page (auto-generates SEO + JSON-LD)
 │       ├── ImageGallery.svelte # Auto-scrolling image gallery ribbon
+│       ├── Icon.svelte      # Renders inline SVGs from icons.js
 │       ├── Footer.svelte    # Site footer
 │       └── Navbar.svelte    # Data-driven navigation bar
 └── routes/
     ├── +layout.svelte       # Layout (skip-link, org structured data)
     ├── +layout.js           # Prerender + trailing slash config
-    ├── +page.svelte         # Homepage (data-driven location cards)
+    ├── +page.svelte         # Homepage (data-driven location cards, chat picker modal)
     ├── +error.svelte        # Branded error / 404 page
+    ├── calendar/[file]/     # Prerendered .ics feeds (per-event + combined)
     ├── sponsors/            # Sponsors page (data-driven cards)
     ├── east/                # Chicago event page
     ├── north/               # Wheeling event page
@@ -94,6 +108,9 @@ src/
     ├── lasvegas/            # Las Vegas event page
     ├── galway/              # Galway, Ireland event page
     └── cigarsec/            # CigarSec special interest page
+
+scripts/
+└── generate-thumbnails.mjs # Generates gallery thumbnails into static/images/irl-thumbs/ (gitignored)
 
 static/
 ├── .well-known/
