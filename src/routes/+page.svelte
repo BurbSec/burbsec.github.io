@@ -148,10 +148,10 @@
 				</div>
 				<div class="modal-body d-flex flex-column gap-3">
 					<button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" onclick={openWebChat}>
-						<Icon name="comments" /> Web Client <span class="badge bg-info text-dark ms-1">no install</span>
+						<Icon name="comments" /> IRC Web Client <span class="badge bg-info text-dark ms-1">no install</span>
 					</button>
 					<a href="irc://irc.burbsec.com:6697" class="btn btn-primary btn-lg">
-						<Icon name="server" /> IRC
+						<Icon name="server" /> BYO IRC Client
 					</a>
 					<a href="https://tinyurl.com/burbchat" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
 						<Icon name="discord" /> Discord
