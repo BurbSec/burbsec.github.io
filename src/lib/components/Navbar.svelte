@@ -1,6 +1,7 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
 	import { chicagolandEvents, elsewhereEvents, specialEvents } from '$lib/data/events.js';
+	import { openWebChat } from '$lib/stores/webchat.svelte.js';
 
 	let isMenuOpen = $state(false);
 
@@ -77,6 +78,7 @@
 						<Icon name="comments" /> Chat
 					</button>
 					<ul class="dropdown-menu">
+						<li><button class="dropdown-item" type="button" onclick={() => { closeMenu(); openWebChat(); }}><Icon name="comments" /> Web Client</button></li>
 						<li><a class="dropdown-item" href="irc://irc.burbsec.com:6697" onclick={closeMenu}><Icon name="server" /> IRC</a></li>
 						<li><a class="dropdown-item" href="https://tinyurl.com/burbchat" target="_blank" rel="noopener noreferrer" onclick={closeMenu}><Icon name="discord" /> Discord</a></li>
 						<li><a class="dropdown-item" href="https://tinyurl.com/burbslack2" target="_blank" rel="noopener noreferrer" onclick={closeMenu}><Icon name="slack" /> Slack</a></li>

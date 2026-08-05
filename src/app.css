@@ -803,3 +803,288 @@ footer a:hover {
     height: 36px;
   }
 }
+
+
+/* ============================================================================
+   WebChat — in-browser IRC client (WebChat.svelte)
+   1980s green-phosphor CRT terminal aesthetic, full-screen & responsive.
+   ========================================================================== */
+.webchat-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #000;
+  font-family: "Courier New", "DejaVu Sans Mono", ui-monospace, monospace;
+}
+.webchat-window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background: #020a02;
+  color: #33ff66;
+  overflow: hidden;
+  text-shadow: 0 0 4px rgba(51, 255, 102, 0.55);
+  /* all-caps terminal look (can't load a custom uppercase font under CSP) */
+  text-transform: uppercase;
+  /* larger base so text stays readable through the scanline overlay */
+  font-size: 1.15rem;
+}
+/* Any lit (filled-green) control must have solid black, glow-free text so it
+   stays legible against the bright background. */
+.webchat-tabs button.active,
+.webchat-go,
+.webchat-badge,
+.webchat-input button:hover:not(:disabled),
+.webchat-x:hover {
+  color: #010601 !important;
+  text-shadow: none !important;
+  font-weight: 700;
+}
+/* keep what you actually type in its real case (values are case-sensitive) */
+.webchat-form input,
+.webchat-input input { text-transform: none; }
+
+.webchat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid #1f7a3a;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.webchat-title {
+  font-weight: 700;
+  color: #5fff8f;
+  text-shadow: 0 0 6px rgba(51, 255, 102, 0.8);
+}
+.webchat-x {
+  background: none;
+  border: 1px solid #1f7a3a;
+  color: #33ff66;
+  font-family: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.1rem 0.5rem;
+}
+.webchat-x:hover { background: #33ff66; color: #020a02; }
+
+.webchat-body { padding: 1.5rem; overflow-y: auto; color: #33ff66; }
+.webchat-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+/* login / register form */
+.webchat-form {
+  max-width: 440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+}
+.webchat-tabs { display: flex; gap: 0; border: 1px solid #1f7a3a; }
+.webchat-tabs button {
+  flex: 1;
+  padding: 0.55rem;
+  background: transparent;
+  border: none;
+  border-right: 1px solid #1f7a3a;
+  color: #2a9a4e;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.webchat-tabs button:last-child { border-right: none; }
+.webchat-tabs button.active {
+  background: #33ff66;
+  color: #020a02;
+  text-shadow: none;
+}
+.webchat-hint { font-size: 0.95em; color: #2a9a4e; margin: 0; }
+.webchat-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #2a9a4e;
+}
+.webchat-optional { color: #1f7a3a; }
+.webchat-form input {
+  padding: 0.55rem 0.6rem;
+  background: #010601;
+  border: 1px solid #1f7a3a;
+  border-radius: 0;
+  color: #5fff8f;
+  font-family: inherit;
+  text-shadow: 0 0 4px rgba(51, 255, 102, 0.5);
+}
+.webchat-form input:focus {
+  outline: none;
+  border-color: #33ff66;
+  box-shadow: 0 0 8px rgba(51, 255, 102, 0.4);
+}
+.webchat-go {
+  padding: 0.6rem;
+  background: #33ff66;
+  border: none;
+  border-radius: 0;
+  color: #020a02;
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  text-shadow: none;
+}
+.webchat-go:hover { background: #5fff8f; box-shadow: 0 0 12px rgba(51, 255, 102, 0.6); }
+.webchat-error { color: #ff5f5f; font-size: 0.9rem; margin: 0; text-shadow: 0 0 4px rgba(255, 60, 60, 0.5); }
+.webchat-fineprint { font-size: 0.75em; color: #1f7a3a; margin: 0; }
+
+/* blinking block cursor after the connecting status */
+.webchat-spinner {
+  width: 0.7em;
+  height: 1.1em;
+  background: #33ff66;
+  box-shadow: 0 0 8px rgba(51, 255, 102, 0.7);
+  animation: webchat-blink 1s steps(1) infinite;
+}
+@keyframes webchat-blink { 50% { opacity: 0; } }
+
+/* chat view */
+.webchat-chat { flex: 1; display: flex; min-height: 0; }
+.webchat-channels {
+  width: 220px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background: #010601;
+  border-right: 1px solid #1f7a3a;
+}
+.webchat-chan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.4rem 0.7rem;
+  background: none;
+  border: none;
+  color: #2a9a4e;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9em;
+  text-align: left;
+}
+.webchat-chan::before { content: ">"; margin-right: 0.4rem; opacity: 0; }
+.webchat-chan:hover { color: #33ff66; }
+.webchat-chan.active { color: #33ff66; text-shadow: 0 0 6px rgba(51, 255, 102, 0.8); }
+.webchat-chan.active::before { opacity: 1; }
+.webchat-chan-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.webchat-badge {
+  flex-shrink: 0;
+  min-width: 20px;
+  padding: 0 5px;
+  background: #33ff66;
+  color: #020a02;
+  font-size: 0.78em;
+  text-align: center;
+  text-shadow: none;
+}
+.webchat-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.webchat-messages { flex: 1; overflow-y: auto; padding: 0.9rem; font-size: 1em; line-height: 1.5; }
+.webchat-line { margin-bottom: 0.15rem; overflow-wrap: anywhere; }
+.webchat-from { color: #5fff8f; font-weight: 700; }
+.webchat-from::before { content: "<"; }
+.webchat-from::after { content: ">"; }
+.webchat-self .webchat-from { color: #b8ff5f; }
+.webchat-system { color: #1f9a4a; font-style: normal; opacity: 0.85; }
+.webchat-system em { font-style: normal; }
+.webchat-system em::before { content: "* "; }
+.webchat-text { color: #33ff66; }
+/* MOTD lines: preserve the ASCII-art spacing, keep original case so the shield
+   logo isn't mangled, and let long lines scroll rather than wrap. */
+.webchat-motd-line {
+  margin: 0;
+  font-family: inherit;
+  font-size: 0.85em;
+  line-height: 1.15;
+  color: #33ff66;
+  white-space: pre;
+  text-transform: none;
+  overflow-x: auto;
+}
+.webchat-input {
+  display: flex;
+  gap: 0;
+  padding: 0.5rem 0.7rem;
+  border-top: 1px solid #1f7a3a;
+  align-items: center;
+}
+.webchat-input::before {
+  content: ">";
+  color: #33ff66;
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+.webchat-input input {
+  flex: 1;
+  padding: 0.4rem 0.3rem;
+  background: transparent;
+  border: none;
+  color: #5fff8f;
+  font-family: inherit;
+  text-shadow: 0 0 4px rgba(51, 255, 102, 0.5);
+}
+.webchat-input input:focus { outline: none; }
+.webchat-input button {
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: 1px solid #1f7a3a;
+  color: #33ff66;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.webchat-input button:hover:not(:disabled) { background: #33ff66; color: #020a02; }
+.webchat-input button:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* terminal-green scrollbars */
+.webchat-channels::-webkit-scrollbar,
+.webchat-messages::-webkit-scrollbar,
+.webchat-body::-webkit-scrollbar { width: 10px; }
+.webchat-channels::-webkit-scrollbar-thumb,
+.webchat-messages::-webkit-scrollbar-thumb,
+.webchat-body::-webkit-scrollbar-thumb { background: #1f7a3a; }
+.webchat-channels::-webkit-scrollbar-track,
+.webchat-messages::-webkit-scrollbar-track,
+.webchat-body::-webkit-scrollbar-track { background: #010601; }
+
+@media (max-width: 560px) {
+  .webchat-channels { width: 132px; }
+  .webchat-header { letter-spacing: 0.08em; }
+  .webchat-body { padding: 1rem; }
+}
+
+/* Respect reduced-motion: kill the blinking cursor animation */
+@media (prefers-reduced-motion: reduce) {
+  .webchat-spinner { animation: none; }
+}

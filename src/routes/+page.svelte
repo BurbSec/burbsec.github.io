@@ -3,6 +3,7 @@
 	import { allEvents, SITE_URL } from '$lib/data/events.js';
 	import { nextOccurrence, formatShort, utcOffset } from '$lib/utils/schedule.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
+	import { openWebChat } from '$lib/stores/webchat.svelte.js';
 
 	let { data } = $props();
 
@@ -146,6 +147,9 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body d-flex flex-column gap-3">
+					<button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" onclick={openWebChat}>
+						<Icon name="comments" /> Web Client <span class="badge bg-info text-dark ms-1">no install</span>
+					</button>
 					<a href="irc://irc.burbsec.com:6697" class="btn btn-primary btn-lg">
 						<Icon name="server" /> IRC
 					</a>
