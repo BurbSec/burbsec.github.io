@@ -10,6 +10,9 @@
     "dev": "vite dev",
     "preview": "vite preview"
   },
+  "overrides": {
+    "cookie": "^0.7.2"
+  },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.69.3",
