@@ -319,10 +319,10 @@ export const chicagolandEvents = [
 		},
 		sponsor: {
 			when: 'Every THIRD Thursday',
-			attendance: '25-50 active and prospective IT and Infosec professionals and enthusiasts',
+			attendance: '50-75 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Moderately experienced',
 			venueName: 'Granite City Food & Brewery in Naperville',
-			avgSponsorship: '$500'
+			avgSponsorship: '$800'
 		}
 	},
 	{
