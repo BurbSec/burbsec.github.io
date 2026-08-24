@@ -86,6 +86,46 @@ export const chicagolandEvents = [
 		}
 	},
 	{
+		slug: 'pilsen',
+		title: 'BurbSec|Pilsen',
+		subtitle: 'Meets Every Second Thursday of the Month',
+		location: 'Chicago, IL',
+		eventImage: '/images/pilsen_shield.png',
+		gmapsLink: 'https://www.google.com/maps/search/?api=1&query=Monochrome+Brewing%2C+2101+S+Carpenter+St%2C+Chicago%2C+IL+60608',
+		blueskyHandle: 'burbsecpilsen.bsky.social',
+		discordLink: 'https://tinyurl.com/burbchat',
+		meetupPage: 'https://www.meetup.com/burbsec/events/',
+		eventbriteLink: null,
+		galleryFolder: 'pilsen',
+		cardTitle: 'Pilsen (Chicago)',
+		cardSchedule: 'Every Second Thursday',
+		category: 'chicagoland',
+		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
+		seo: {
+			title: 'BurbSec Pilsen Chicago | Information Security Meetup Every Second Thursday',
+			description: 'Join BurbSec Pilsen in Chicago, IL - an informal information security meetup for cybersecurity enthusiasts, ethical hackers, and IT professionals. Every second Thursday at Monochrome Brewing in Pilsen. No dues, no presentations, just networking!',
+			keywords: 'pilsen information security, pilsen cybersecurity meetup, chicago infosec, lower west side tech meetup, monochrome brewing pilsen, chicago security professionals, cybersecurity networking chicago, ethical hacking chicago, south side chicago infosec',
+			image: `${SITE_URL}/images/pilsen_shield.png`
+		},
+		structuredData: {
+			venueName: 'Monochrome Brewing',
+			streetAddress: '2101 S Carpenter St',
+			addressLocality: 'Chicago',
+			addressRegion: 'IL',
+			postalCode: '60608',
+			addressCountry: 'US',
+			latitude: '41.8534',
+			longitude: '-87.6527'
+		},
+		sponsor: {
+			when: 'Every SECOND Thursday',
+			attendance: '~10 active and prospective IT and Infosec professionals and enthusiasts',
+			crowd: null,
+			venueName: 'Monochrome Brewing in Pilsen, Chicago',
+			avgSponsorship: '$150'
+		}
+	},
+	{
 		slug: 'north',
 		title: 'BurbSec|North',
 		subtitle: 'Meets Every Second Thursday of the Month',
