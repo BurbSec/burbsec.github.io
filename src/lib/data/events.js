@@ -246,46 +246,6 @@ export const chicagolandEvents = [
 		}
 	},
 	{
-		slug: 'northwest',
-		title: 'BurbSec|Northwest',
-		subtitle: 'Meets Every Fourth Thursday of the Month',
-		location: 'Crystal Lake, IL',
-		eventImage: '/images/northwest_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/3sPARGKDgtfDEUct7',
-		blueskyHandle: 'northwest.burbsec.com',
-		discordLink: 'https://tinyurl.com/burbchat',
-		meetupPage: 'https://www.meetup.com/burbsec/events/',
-		eventbriteLink: null,
-		galleryFolder: 'northwest',
-		cardTitle: 'Northwest (Crystal Lake)',
-		cardSchedule: 'Every Fourth Thursday',
-		category: 'chicagoland',
-		schedule: { week: 4, weekday: 4, time: '18:00', tz: 'America/Chicago' },
-		seo: {
-			title: 'BurbSec Northwest Crystal Lake | Information Security Meetup Every Fourth Thursday',
-			description: 'Join BurbSec Northwest in Crystal Lake, IL - an informal information security meetup at Crystal Lake Brewing. Every fourth Thursday. Connect with cybersecurity professionals in the northwest suburbs.',
-			keywords: 'crystal lake information security, crystal lake cybersecurity meetup, northwest suburbs infosec, mchenry county tech meetup, cybersecurity networking crystal lake',
-			image: `${SITE_URL}/images/northwest_shield.png`
-		},
-		structuredData: {
-			venueName: 'Crystal Lake Brewing',
-			streetAddress: '150 N Main St',
-			addressLocality: 'Crystal Lake',
-			addressRegion: 'IL',
-			postalCode: '60014',
-			addressCountry: 'US',
-			latitude: '42.2455',
-			longitude: '-88.3165'
-		},
-		sponsor: {
-			when: 'Every FOURTH Thursday',
-			attendance: '5-10 active and prospective IT and Infosec professionals and enthusiasts',
-			crowd: null,
-			venueName: 'Crystal Lake Brewing in Crystal Lake',
-			avgSponsorship: '$300'
-		}
-	},
-	{
 		slug: 'west',
 		title: 'BurbSec|West',
 		subtitle: 'Meets Every Third Thursday of the Month',
