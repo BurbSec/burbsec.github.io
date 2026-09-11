@@ -102,6 +102,7 @@ src/
     ├── south/               # Hickory Hills event page
     ├── west/                # Naperville event page
     ├── prime/               # Schaumburg event page
+    ├── northwest/           # Crystal Lake event page
     ├── southeast/           # South Bend event page
     ├── minneapolis/         # Minneapolis event page
     ├── lasvegas/            # Las Vegas event page
@@ -122,6 +123,7 @@ static/
 │       ├── lasvegas/
 │       ├── mpls/
 │       ├── north/
+│       ├── northwest/
 │       ├── prime/
 │       ├── south/
 │       ├── southeast/
@@ -145,6 +147,7 @@ Each event location has an image gallery powered by `ImageGallery.svelte`. Galle
    | Wheeling (North) | `static/images/irl/north/` |
    | Hickory Hills (South) | `static/images/irl/south/` |
    | Schaumburg (Prime) | `static/images/irl/prime/` |
+   | Crystal Lake (Northwest) | `static/images/irl/northwest/` |
    | Naperville (West) | `static/images/irl/west/` |
    | South Bend (Southeast) | `static/images/irl/southeast/` |
    | Minneapolis | `static/images/irl/mpls/` |
