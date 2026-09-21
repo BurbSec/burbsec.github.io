@@ -495,9 +495,6 @@ export const elsewhereEvents = [
 		}
 	},
 	{
-		/** @type {BurbSecEvent[]} */
-export const elsewhereEvents = [
-	{
 		slug: 'milwaukee',
 		title: 'BurbSec|Milwaukee',
 		subtitle: 'Meets every Third Thursday of the Month',
@@ -519,7 +516,7 @@ export const elsewhereEvents = [
 				'BurbSec Milwaukee: an informal infosec meetup every third Thursday at The Explorium Brewpub Greendale in Greendale, WI. No dues, no presentations.',
 			keywords:
 				'milwaukee information security, milwaukee cybersecurity meetup, milwaukee infosec, milwaukee hacking meetup, milwaukee security professionals, wisconsin cybersecurity, wisconsin infosec, mke tech meetup, cybersecurity networking milwaukee, ethical hacking milwaukee, IT security milwaukee, wisconsin security meetup',
-			image: null
+			image: `${SITE_URL}/images/Mke_shield.png`
 		},
 		structuredData: {
 			venueName: 'The Explorium Brewpub Greendale',
@@ -535,7 +532,7 @@ export const elsewhereEvents = [
 			when: 'Every THIRD Thursday',
 			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: null,
-			venueName: 'The Explorium Brewpub Greendale in Greendale, WI,
+			venueName: 'The Explorium Brewpub Greendale in Greendale, WI',
 			avgSponsorship: '$300'
 		}
 	}
