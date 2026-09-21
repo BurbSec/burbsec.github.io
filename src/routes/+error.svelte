@@ -23,9 +23,7 @@
 				{#if page.status === 404}
 					Ope! We're really sorry about this. You went looking for a page and we
 					just don't have it. That's on us.
-					<br /><br />
-					Can we get you a beer while we figure out where it went?
-				{:else if page.error?.message}
+					<br /><br />				{:else if page.error?.message}
 					{page.error.message}
 				{:else}
 					An unexpected error occurred. Please try again later.
