@@ -493,6 +493,51 @@ export const elsewhereEvents = [
 			venueName: "Murty Rabbitt's in Galway, Ireland (Yes, Ireland)",
 			avgSponsorship: '€200'
 		}
+	},
+	{
+		/** @type {BurbSecEvent[]} */
+export const elsewhereEvents = [
+	{
+		slug: 'milwaukee',
+		title: 'BurbSec|Milwaukee',
+		subtitle: 'Meets every Third Thursday of the Month',
+		location: 'Milwaukee, WI',
+		eventImage: '/images/Mke_shield.png',
+		gmapsLink: 'https://maps.app.goo.gl/ef5DM3o1KhdHxn1o8',
+		blueskyHandle: null,
+		discordLink: 'https://tinyurl.com/burbchat',
+		meetupPage: 'https://www.meetup.com/burbsec/events/',
+		eventbriteLink: null,
+		galleryFolder: 'mke',
+		cardTitle: 'Milwaukee, WI',
+		cardSchedule: 'Every Third Thursday',
+		category: 'elsewhere',
+		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
+		seo: {
+			title: 'BurbSec Milwaukee | Information Security Meetup in Milwaukee',
+			description:
+				'BurbSec Milwaukee: an informal infosec meetup every third Thursday at The Explorium Brewpub Greendale in Greendale, WI. No dues, no presentations.',
+			keywords:
+				'milwaukee information security, milwaukee cybersecurity meetup, milwaukee infosec, milwaukee hacking meetup, milwaukee security professionals, wisconsin cybersecurity, wisconsin infosec, mke tech meetup, cybersecurity networking milwaukee, ethical hacking milwaukee, IT security milwaukee, wisconsin security meetup',
+			image: null
+		},
+		structuredData: {
+			venueName: 'The Explorium Brewpub Greendale',
+			streetAddress: '5300 S 76th St',
+			addressLocality: 'Greendale',
+			addressRegion: 'WI',
+			postalCode: '53129',
+			addressCountry: 'US',
+			latitude: '42.94849',
+			longitude: '-88.0089'
+		},
+		sponsor: {
+			when: 'Every THIRD Thursday',
+			attendance: '25-40 active and prospective IT and Infosec professionals and enthusiasts',
+			crowd: null,
+			venueName: 'The Explorium Brewpub Greendale in Greendale, WI,
+			avgSponsorship: '$300'
+		}
 	}
 ];
 
