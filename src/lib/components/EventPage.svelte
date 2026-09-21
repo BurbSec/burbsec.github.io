@@ -51,6 +51,24 @@
 	let pageDescription = $derived(seo?.description ?? `${title} - ${subtitle}`);
 	let ogImage = $derived(seo?.image ?? `${SITE_URL}${eventImage}`);
 
+	/**
+	 * geo.* meta tags for this event's actual city, not a sitewide default.
+	 * Falls back to Chicago (network HQ) only for events with no fixed venue
+	 * coordinates, e.g. CigarSec's "Various Locations".
+	 */
+	let geo = $derived.by(() => {
+		const sd = structuredData;
+		if (!sd?.latitude || !sd?.longitude) {
+			return { region: 'US-IL', placename: 'Chicago, Illinois', position: '41.8781;-87.6298' };
+		}
+		const region = sd.addressCountry === 'US' ? `US-${sd.addressRegion}` : sd.addressCountry;
+		return {
+			region,
+			placename: `${sd.addressLocality}, ${sd.addressRegion}`,
+			position: `${sd.latitude};${sd.longitude}`
+		};
+	});
+
 	let jsonLd = $derived(
 		structuredData
 			? JSON.stringify({
@@ -125,6 +143,12 @@
 	<meta name="twitter:description" content={pageDescription} />
 	<meta name="twitter:image" content={ogImage} />
 
+	<!-- Geo (this event's actual city, overriding no sitewide default) -->
+	<meta name="geo.region" content={geo.region} />
+	<meta name="geo.placename" content={geo.placename} />
+	<meta name="geo.position" content={geo.position} />
+	<meta name="ICBM" content={geo.position.replace(';', ', ')} />
+
 	<!-- Structured Data -->
 	{#if jsonLd}
 		{@html `<script type="application/ld+json">${jsonLd}</script>`}
@@ -177,7 +201,7 @@
 					</div>
 				{/if}
 				<div class="col-sm d-flex flex-column mb-2">
-					<a href={gmapsLink} class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+					<a href={gmapsLink} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
 						<Icon name="map-location-dot" size="xl" />
 						{location}
 					</a>
@@ -197,7 +221,7 @@
 				</div>
 				{#if schedule && slug}
 					<div class="col-sm d-flex flex-column mb-2">
-						<a href="/calendar/{slug}.ics" class="btn btn-outline-primary" download>
+						<a href="/calendar/{slug}.ics" class="btn btn-primary" download>
 							<Icon name="calendar" size="xl" />
 							Add to Calendar
 						</a>

@@ -20,20 +20,24 @@
 				{/if}
 			</h2>
 			<p class="lead mb-4">
-				{#if page.error?.message}
+				{#if page.status === 404}
+					Ope! We're really sorry about this. You went looking for a page and we
+					just don't have it. That's on us.
+					<br /><br />
+					Can we get you a beer while we figure out where it went?
+				{:else if page.error?.message}
 					{page.error.message}
-				{:else if page.status === 404}
-					The page you're looking for doesn't exist or has been moved.
 				{:else}
 					An unexpected error occurred. Please try again later.
 				{/if}
 			</p>
-			<div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+			<div class="d-flex justify-content-center">
 				<a href="/" class="btn btn-primary btn-lg">
-					<Icon name="house" /> Back to Home
-				</a>
-				<a href="https://tinyurl.com/burbchat" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener noreferrer">
-					<Icon name="discord" /> Get Help on Discord
+					{#if page.status === 404}
+						WELP, it's about time we headed home
+					{:else}
+						Back to Home
+					{/if}
 				</a>
 			</div>
 		</div>

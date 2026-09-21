@@ -476,9 +476,9 @@ footer a:hover {
    Sponsors Page  (sponsors/+page.svelte)
    ------------------------------------------------------- */
 
-/* Glowing buttons — the site uses three button styles:
+/* Glowing buttons — all solid fills, no outline/ghost variants:
    .btn-primary (filled neon blue), .btn-danger (filled neon red, one key
-   action per page), .btn-outline-primary (ghost, secondary actions). */
+   action per page). */
 .btn-primary {
   --bs-btn-bg: #00d4ff;
   --bs-btn-border-color: #00d4ff;
@@ -517,29 +517,6 @@ footer a:hover {
 }
 .btn-danger:hover {
   box-shadow: 0 0 20px rgba(255, 48, 88, 0.8), 0 0 40px rgba(255, 48, 88, 0.4);
-}
-
-/* Lighter blue than Bootstrap's default #0d6efd — reads better on the dark cards */
-.btn-outline-primary {
-  --bs-btn-color: #6ea8fe;
-  --bs-btn-border-color: #6ea8fe;
-  --bs-btn-hover-bg: #6ea8fe;
-  --bs-btn-hover-border-color: #6ea8fe;
-  --bs-btn-hover-color: #15202b;
-  --bs-btn-active-bg: #6ea8fe;
-  --bs-btn-active-border-color: #6ea8fe;
-  --bs-btn-active-color: #15202b;
-  box-shadow: 0 0 12px rgba(110, 168, 254, 0.55), 0 0 24px rgba(110, 168, 254, 0.28);
-}
-.btn-outline-primary:hover {
-  box-shadow: 0 0 18px rgba(110, 168, 254, 0.75), 0 0 36px rgba(110, 168, 254, 0.4);
-}
-
-.btn-outline-light {
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 0 24px rgba(255, 255, 255, 0.2);
-}
-.btn-outline-light:hover {
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.65), 0 0 36px rgba(255, 255, 255, 0.35);
 }
 
 /* Section headings — smaller than the hero, with a neon underline bar */
@@ -1087,4 +1064,11 @@ footer a:hover {
 /* Respect reduced-motion: kill the blinking cursor animation */
 @media (prefers-reduced-motion: reduce) {
   .webchat-spinner { animation: none; }
+}
+
+/* Composes .section-heading (gets the gradient underline bar for free)
+   and .neon-blue; only the size/spacing delta for a subsection is new. */
+.location-group-heading {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
 }
