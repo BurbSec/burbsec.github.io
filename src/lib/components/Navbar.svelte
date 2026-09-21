@@ -85,11 +85,6 @@
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://www.meetup.com/burbsec/events/" target="_blank" rel="noopener noreferrer">
-						<Icon name="meetup" /> Next Meetups
-					</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" href="https://www.linkedin.com/groups/4081253/" target="_blank" rel="noopener noreferrer">
 						<Icon name="linkedin" /> LinkedIn
 					</a>

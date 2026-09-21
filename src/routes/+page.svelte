@@ -1,6 +1,6 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
-	import { allEvents, SITE_URL } from '$lib/data/events.js';
+	import { allEvents, chicagolandEvents, elsewhereEvents, specialEvents, SITE_URL } from '$lib/data/events.js';
 	import { nextOccurrence, formatShort, utcOffset } from '$lib/utils/schedule.js';
 	import ImageGallery from '$lib/components/ImageGallery.svelte';
 	import { openWebChat } from '$lib/stores/webchat.svelte.js';
@@ -40,7 +40,7 @@
 		}))
 	});
 
-	const pageDescription = 'Join BurbSec, the world\'s most fun information security meetup network! Free monthly cybersecurity meetups across Chicagoland, Minneapolis, Las Vegas, and Galway. No dues, no presentations, no sales pitches — just informal networking with hackers, security professionals, and infosec enthusiasts over food and drinks.';
+	const pageDescription = 'BurbSec: free monthly infosec meetups across Chicagoland, Minneapolis, Las Vegas, and Galway. No dues, no presentations — just informal networking.';
 
 	const webPageJsonLd = JSON.stringify({
 		'@context': 'https://schema.org',
@@ -77,7 +77,7 @@
 <svelte:head>
 	<title>Burbsec | The World's Most Fun InfoSec Meetup Events!</title>
 	<meta name="description" content={pageDescription} />
-	<link rel="canonical" href={SITE_URL} />
+	<link rel="canonical" href={`${SITE_URL}/`} />
 
 	<!-- Page-specific Open Graph Tags -->
 	<meta property="og:title" content="Burbsec | The World's Most Fun InfoSec Meetup Events!" />
@@ -93,6 +93,12 @@
 	<meta name="twitter:description" content={pageDescription} />
 	<meta name="twitter:image" content={`${SITE_URL}/images/hacker_shield.png`} />
 	<meta name="twitter:image:alt" content="Burbsec - The World's Most Fun InfoSec Meetup Network" />
+
+	<!-- Geo: network HQ (Chicago); individual event pages set their own city -->
+	<meta name="geo.region" content="US-IL" />
+	<meta name="geo.placename" content="Chicago, Illinois" />
+	<meta name="geo.position" content="41.8781;-87.6298" />
+	<meta name="ICBM" content="41.8781, -87.6298" />
 
 	{@html `<script type="application/ld+json">${webPageJsonLd}</script>`}
 	{@html `<script type="application/ld+json">${faqJsonLd}</script>`}
@@ -113,8 +119,8 @@
 						<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#chatModal">
 							<Icon name="comments" /> Join our Chat Servers!
 						</button>
-						<a href="https://www.meetup.com/burbsec/events/" class="btn btn-danger btn-lg" target="_blank" rel="noopener noreferrer">
-							<Icon name="meetup" /> Find your local Burbsec meet!
+						<a href="#locations" class="btn btn-danger btn-lg">
+							<Icon name="calendar-days" /> Find your local Burbsec meet!
 						</a>
 					</div>
 					<div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
@@ -165,7 +171,7 @@
 	</div>
 
 	<div class="content-band">
-	<div class="container my-5">
+	<div class="container my-5" id="locations">
 
 		<div class="row">
 			<div class="col-12 text-center mb-5 mt-4">
@@ -174,28 +180,40 @@
 			</div>
 		</div>
 
-		<div class="row g-4">
-			{#each allEvents as event (event.slug)}
-				<div class="col-md-6 col-lg-4">
-					<div class="card event-card h-100">
-						<div class="card-body text-center">
-							<img src={event.eventImage}
-								 alt="{event.cardTitle} shield"
-								 class="mb-3" width="80" height="80" loading="lazy" decoding="async">
-							<h5 class="card-title">{event.cardTitle}</h5>
-							{#if event.structuredData?.venueName && event.structuredData.venueName !== 'Various Locations'}
-								<p class="card-venue mb-1">{event.structuredData.venueName}</p>
-							{/if}
-							<p class="card-text mb-1">{event.cardSchedule}</p>
-							{#if event.schedule}
-								<p class="card-next-date">Next: {formatShort(nextOccurrence(event.schedule))}</p>
-							{:else}
-								<p class="card-next-date">See Discord for dates</p>
-							{/if}
-							<a href="/{event.slug}" class="btn btn-outline-primary">Learn More</a>
-						</div>
+		{#snippet locationCard(event)}
+			<div class="col-md-6 col-lg-4">
+				<div class="card event-card h-100">
+					<div class="card-body text-center">
+						<img src={event.eventImage}
+							 alt="{event.cardTitle} shield"
+							 class="mb-3" width="80" height="80" loading="lazy" decoding="async">
+						<h5 class="card-title">{event.cardTitle}</h5>
+						{#if event.structuredData?.venueName && event.structuredData.venueName !== 'Various Locations'}
+							<p class="card-venue mb-1">{event.structuredData.venueName}</p>
+						{/if}
+						<p class="card-text mb-1">{event.cardSchedule}</p>
+						{#if event.schedule}
+							<p class="card-next-date">Next: {formatShort(nextOccurrence(event.schedule))}</p>
+						{:else}
+							<p class="card-next-date">See Discord for dates</p>
+						{/if}
+						<a href="/{event.slug}" class="btn btn-primary">Learn More</a>
 					</div>
 				</div>
+			</div>
+		{/snippet}
+
+		<h3 class="section-heading neon-blue location-group-heading">Chicagoland</h3>
+		<div class="row g-4 mb-5">
+			{#each [...chicagolandEvents, ...specialEvents] as event (event.slug)}
+				{@render locationCard(event)}
+			{/each}
+		</div>
+
+		<h3 class="section-heading neon-blue location-group-heading">Global</h3>
+		<div class="row g-4">
+			{#each elsewhereEvents as event (event.slug)}
+				{@render locationCard(event)}
 			{/each}
 		</div>
 

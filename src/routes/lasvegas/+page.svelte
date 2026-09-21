@@ -22,6 +22,6 @@
 	</p>
 
 	<p>
-		Keep an eye on this specific recurring event on our <a href="https://www.meetup.com/burbsec/events/vegas/" target="_blank" rel="noopener noreferrer">Meetup Page</a>
+		Find the exact venue for the next meetup on our <a href="https://www.meetup.com/burbsecvegas/" target="_blank" rel="noopener noreferrer">Meetup page</a>.
 	</p>
 </EventPage>

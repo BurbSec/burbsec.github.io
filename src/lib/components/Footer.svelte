@@ -10,7 +10,10 @@
 				<p class="mb-0">The World's Most Fun Information Security Meetup Network</p>
 			</div>
 			<div class="col-md-6">
-				<div class="d-flex justify-content-md-end justify-content-start mt-3 mt-md-0">
+				<div class="d-flex flex-column flex-md-row gap-2 gap-md-4 justify-content-md-end justify-content-start mt-3 mt-md-0">
+					<a href="/calendar/burbsec.ics" class="text-light" download aria-label="Download all BurbSec meetups as a calendar file">
+						<Icon name="calendar" /> Add all meetups to calendar
+					</a>
 					<a href="https://github.com/BurbSec/burbsec.github.io" class="text-light" target="_blank" rel="noopener noreferrer" aria-label="BurbSec source code on GitHub">
 						<Icon name="github" /> Repo on GitHub
 					</a>

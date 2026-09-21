@@ -15,6 +15,25 @@ const BYDAY_CODES = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
  * Keyed by IANA zone name as used in events.js schedules.
  */
 const VTIMEZONES = {
+	'America/Los_Angeles': [
+		'BEGIN:VTIMEZONE',
+		'TZID:America/Los_Angeles',
+		'BEGIN:DAYLIGHT',
+		'TZOFFSETFROM:-0800',
+		'TZOFFSETTO:-0700',
+		'TZNAME:PDT',
+		'DTSTART:20070311T020000',
+		'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU',
+		'END:DAYLIGHT',
+		'BEGIN:STANDARD',
+		'TZOFFSETFROM:-0700',
+		'TZOFFSETTO:-0800',
+		'TZNAME:PST',
+		'DTSTART:20071104T020000',
+		'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU',
+		'END:STANDARD',
+		'END:VTIMEZONE'
+	],
 	'America/Chicago': [
 		'BEGIN:VTIMEZONE',
 		'TZID:America/Chicago',

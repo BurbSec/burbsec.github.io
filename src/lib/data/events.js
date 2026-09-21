@@ -62,7 +62,7 @@ export const chicagolandEvents = [
 		seo: {
 			title: 'BurbSec East Chicago | Information Security Meetup Every Last Thursday',
 			description:
-				'Join BurbSec East Chicago - an informal information security meetup for cybersecurity enthusiasts, ethical hackers, and IT professionals. Every last Thursday at Gracie O\'Malley\'s in Wicker Park. A welcoming community for Chicago\'s infosec professionals seeking networking opportunities. No dues, no presentations, just networking!',
+				'BurbSec East: Chicago\'s informal infosec meetup, every last Thursday at Gracie O\'Malley\'s in Wicker Park. No dues, no presentations, just networking.',
 			keywords:
 				'chicago information security, chicago cybersecurity meetup, chicago infosec, chicago hacking meetup, chicago security professionals, gracie omalleys wicker park, chicago tech meetup, cybersecurity networking chicago, ethical hacking chicago, IT security chicago, dc312 chicago, dcg312 chicago, chicago 2600, defcon chicago, chicago hacker community, chicago security community, chicago infosec networking',
 			image: `${SITE_URL}/images/east_shield.png`
@@ -103,7 +103,7 @@ export const chicagolandEvents = [
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec Pilsen Chicago | Information Security Meetup Every Second Thursday',
-			description: 'Join BurbSec Pilsen in Chicago, IL - an informal information security meetup for cybersecurity enthusiasts, ethical hackers, and IT professionals. Every second Thursday at Monochrome Brewing in Pilsen. No dues, no presentations, just networking!',
+			description: 'BurbSec Pilsen: Chicago\'s informal infosec meetup, every second Thursday at Monochrome Brewing. No dues, no presentations, just networking.',
 			keywords: 'pilsen information security, pilsen cybersecurity meetup, chicago infosec, lower west side tech meetup, monochrome brewing pilsen, chicago security professionals, cybersecurity networking chicago, ethical hacking chicago, south side chicago infosec',
 			image: `${SITE_URL}/images/pilsen_shield.png`
 		},
@@ -143,7 +143,7 @@ export const chicagolandEvents = [
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec North Wheeling | Information Security Meetup Every Second Thursday',
-			description: 'Join BurbSec North in Wheeling, IL - an informal information security meetup for cybersecurity enthusiasts and IT professionals. Every second Thursday at D\'Agostino\'s Pizzeria. No dues, no presentations, just great networking!',
+			description: 'BurbSec North: an informal infosec meetup in Wheeling, IL, every second Thursday at D\'Agostino\'s Pizzeria. No dues, no presentations, just networking.',
 			keywords: 'wheeling information security, wheeling cybersecurity meetup, north suburbs infosec, chicagoland security meetup, wheeling tech meetup, cybersecurity networking wheeling',
 			image: `${SITE_URL}/images/north_shield.png`
 		},
@@ -183,7 +183,7 @@ export const chicagolandEvents = [
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec South Hickory Hills | Information Security Meetup Every Second Thursday',
-			description: 'Join BurbSec South in Hickory Hills, IL - an informal information security meetup for cybersecurity enthusiasts, students, and IT professionals. Every second Thursday at The Sock Bar & Grill.',
+			description: 'BurbSec South: an informal infosec meetup in Hickory Hills, IL, every second Thursday at The Sock Bar & Grill. No dues, no presentations, just networking.',
 			keywords: 'hickory hills information security, south suburbs cybersecurity meetup, chicagoland infosec, hickory hills tech meetup, south side security meetup, cybersecurity networking south suburbs',
 			image: `${SITE_URL}/images/south_shield.png`
 		},
@@ -223,7 +223,7 @@ export const chicagolandEvents = [
 		schedule: { week: 1, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec Prime Schaumburg | Information Security Meetup Every First Thursday',
-			description: 'Join BurbSec Prime in Schaumburg, IL - the flagship information security meetup at Enterrium in Woodfield Mall. Every first Thursday. Connect with experienced cybersecurity professionals.',
+			description: 'BurbSec Prime: the flagship infosec meetup in Schaumburg, IL, every first Thursday at Enterrium in Woodfield Mall. No dues, no presentations.',
 			keywords: 'schaumburg information security, schaumburg cybersecurity meetup, woodfield mall tech meetup, chicagoland infosec, schaumburg security professionals, cybersecurity networking schaumburg',
 			image: `${SITE_URL}/images/prime_shield.png`
 		},
@@ -263,7 +263,7 @@ export const chicagolandEvents = [
 		schedule: { week: 4, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec Northwest Crystal Lake | Information Security Meetup Every Fourth Thursday',
-			description: 'Join BurbSec Northwest in Crystal Lake, IL - an informal information security meetup at Crystal Lake Brewing. Every fourth Thursday. Connect with cybersecurity professionals in the northwest suburbs.',
+			description: 'BurbSec Northwest: an informal infosec meetup in Crystal Lake, IL, every fourth Thursday at Crystal Lake Brewing. No dues, no presentations.',
 			keywords: 'crystal lake information security, crystal lake cybersecurity meetup, northwest suburbs infosec, mchenry county tech meetup, cybersecurity networking crystal lake',
 			image: `${SITE_URL}/images/northwest_shield.png`
 		},
@@ -303,7 +303,7 @@ export const chicagolandEvents = [
 		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'BurbSec West Naperville | Information Security Meetup Every Third Thursday',
-			description: 'Join BurbSec West in Naperville, IL - an informal information security meetup at Granite City Food & Brewery. Every third Thursday. Network with cybersecurity professionals in the western suburbs.',
+			description: 'BurbSec West: an informal infosec meetup in Naperville, IL, every third Thursday at Granite City Food & Brewery. No dues, no presentations.',
 			keywords: 'naperville information security, naperville cybersecurity meetup, west suburbs infosec, dupage county tech meetup, cybersecurity networking naperville, naperville security professionals',
 			image: `${SITE_URL}/images/west_shield.png`
 		},
@@ -343,7 +343,7 @@ export const chicagolandEvents = [
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/New_York' },
 		seo: {
 			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Thursday',
-			description: 'Join BurbSec Southeast in Mishawaka, IN - an informal information security meetup for cybersecurity enthusiasts in Northern Indiana. Every second Thursday at Hop Station.',
+			description: 'BurbSec Southeast: an informal infosec meetup in Mishawaka, IN, every second Thursday at Hop Station. No dues, no presentations, just networking.',
 			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
 			image: `${SITE_URL}/images/southeast_shield.png`
 		},
@@ -389,7 +389,7 @@ export const elsewhereEvents = [
 		seo: {
 			title: 'BurbSec Minneapolis | Information Security Meetup in Minnesota',
 			description:
-				'Join BurbSec Minneapolis - information security meetup in Minnesota! Connect with cybersecurity professionals, ethical hackers, and infosec enthusiasts. Monthly networking events at Forgotten Star Brewing Co.',
+				'BurbSec Minneapolis: an informal infosec meetup every third Thursday at Forgotten Star Brewing Co. in Fridley, MN. No dues, no presentations.',
 			keywords:
 				'minneapolis information security, minneapolis cybersecurity meetup, minneapolis infosec, minneapolis hacking meetup, minneapolis security professionals, minnesota cybersecurity, minnesota infosec, twin cities tech meetup, cybersecurity networking minneapolis, ethical hacking minneapolis, IT security minneapolis, minnesota security meetup',
 			image: null
@@ -415,7 +415,7 @@ export const elsewhereEvents = [
 	{
 		slug: 'lasvegas',
 		title: 'BurbSec|Las Vegas',
-		subtitle: 'Monthly Meetup',
+		subtitle: 'Meets Every Second Thursday of the Month',
 		location: 'Las Vegas, NV',
 		eventImage: '/images/vegas_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/FiRoGYPdMi1nB5SeA',
@@ -425,12 +425,13 @@ export const elsewhereEvents = [
 		eventbriteLink: null,
 		galleryFolder: 'lasvegas',
 		cardTitle: 'Las Vegas, NV',
-		cardSchedule: 'Monthly Meetup',
+		cardSchedule: 'Every Second Thursday',
 		category: 'elsewhere',
+		schedule: { week: 2, weekday: 4, time: '17:30', tz: 'America/Los_Angeles' },
 		seo: {
 			title: 'BurbSec Las Vegas | Information Security Meetup in Sin City',
 			description:
-				'Join BurbSec Las Vegas - information security meetup in Sin City! Connect with cybersecurity professionals, ethical hackers, and infosec enthusiasts in the entertainment capital. Monthly networking events.',
+				'BurbSec Las Vegas: an informal infosec meetup for cybersecurity pros in Sin City. Monthly networking, no dues, no presentations, just connections.',
 			keywords:
 				'las vegas information security, las vegas cybersecurity meetup, las vegas infosec, las vegas hacking meetup, las vegas security professionals, sin city cybersecurity, nevada infosec, vegas tech meetup, cybersecurity networking las vegas, ethical hacking las vegas, IT security las vegas, nevada security meetup',
 			image: `${SITE_URL}/images/vegas_shield.png`
@@ -445,7 +446,7 @@ export const elsewhereEvents = [
 			tz: 'America/Los_Angeles'
 		},
 		sponsor: {
-			when: 'Monthly',
+			when: 'Every SECOND Thursday',
 			attendance: '20-40 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Experienced, diverse mix of professionals',
 			venueName: 'Various locations in Las Vegas, NV',
@@ -455,7 +456,7 @@ export const elsewhereEvents = [
 	{
 		slug: 'galway',
 		title: 'BurbSec|Galway',
-		subtitle: 'Monthly Meetup',
+		subtitle: 'Meets Every Last Thursday of the Month',
 		location: 'Galway, Ireland',
 		eventImage: '/images/galway_road_sign.jpg',
 		gmapsLink: 'https://maps.app.goo.gl/xQZRj9i17up8gyQ49',
@@ -465,11 +466,12 @@ export const elsewhereEvents = [
 		eventbriteLink: null,
 		galleryFolder: 'galway',
 		cardTitle: 'Galway, Ireland',
-		cardSchedule: 'Monthly Meetup',
+		cardSchedule: 'Every Last Thursday',
 		category: 'elsewhere',
+		schedule: { week: 'last', weekday: 4, time: '18:00', tz: 'Europe/Dublin' },
 		seo: {
 			title: 'BurbSec Galway Ireland | Information Security Meetup',
-			description: 'Join BurbSec Galway - information security meetup in Ireland! Connect with cybersecurity professionals and infosec enthusiasts in the west of Ireland. Monthly networking events.',
+			description: 'BurbSec Galway: an informal infosec meetup for cybersecurity pros in the west of Ireland. Monthly networking, no dues, no presentations.',
 			keywords: 'galway information security, ireland cybersecurity meetup, galway infosec, ireland hacking meetup, galway security professionals, irish cybersecurity community, galway tech meetup',
 			image: `${SITE_URL}/images/galway_road_sign.jpg`
 		},
@@ -485,7 +487,7 @@ export const elsewhereEvents = [
 			tz: 'Europe/Dublin'
 		},
 		sponsor: {
-			when: null,
+			when: 'Every LAST Thursday',
 			attendance: '5-7 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: null,
 			venueName: "Murty Rabbitt's in Galway, Ireland (Yes, Ireland)",
@@ -511,9 +513,10 @@ export const specialEvents = [
 		cardTitle: 'CigarSec',
 		cardSchedule: 'Special Interest Group',
 		category: 'special',
+		schedule: { week: 1, weekday: 4, time: '14:00', tz: 'America/Chicago' },
 		seo: {
 			title: 'CigarSec | InfoSec Meets Cigars - BurbSec Special Interest Group',
-			description: 'CigarSec is a BurbSec special interest group combining premium cigars with information security discussions. Join security professionals for co-working, networking, and great conversation.',
+			description: 'CigarSec: BurbSec\'s special interest group pairing premium cigars with infosec talk, co-working, and networking.',
 			keywords: 'cigarsec, cigar security meetup, infosec cigars, cybersecurity networking, security professionals cigars, burbsec special interest',
 			image: `${SITE_URL}/images/cigar_shield.png`
 		}

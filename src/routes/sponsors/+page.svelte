@@ -18,6 +18,12 @@
 	<meta name="twitter:title" content="Sponsor BurbSec | Support the InfoSec Community" />
 	<meta name="twitter:description" content="Sponsor BurbSec - Support the world's most fun InfoSec meetup network. Get brand visibility with cybersecurity professionals across multiple locations." />
 	<meta name="twitter:image" content={`${SITE_URL}/images/hacker_shield.png`} />
+
+	<!-- Geo: network HQ (Chicago); individual event pages set their own city -->
+	<meta name="geo.region" content="US-IL" />
+	<meta name="geo.placename" content="Chicago, Illinois" />
+	<meta name="geo.position" content="41.8781;-87.6298" />
+	<meta name="ICBM" content="41.8781, -87.6298" />
 </svelte:head>
 
 <div class="sponsor-page">
@@ -26,15 +32,7 @@
 		<div class="container-xl">
 			<img src="/images/hacker_shield.png" alt="BurbSec shield" width="100" height="100" class="mb-3" />
 			<h1 class="display-4 fw-bold">Sponsor BurbSec</h1>
-			<p class="lead mb-4">Support the World's Most Fun InfoSec Meetup Network</p>
-			<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-				<a href="https://www.meetup.com/burbsec/events/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
-					<Icon name="calendar" /> Find an Event to Sponsor
-				</a>
-				<a href="mailto:sponsors@burbsec.com" class="btn btn-danger btn-lg">
-					<Icon name="envelope" /> Contact Us
-				</a>
-			</div>
+			<p class="lead mb-4">Scroll to the bottom to discover how to get started!</p>
 		</div>
 	</div>
 
@@ -113,33 +111,45 @@
 					Here's a brief rundown of all our gatherings and their stats so you can easily choose who you'd like to help:
 				</p>
 
-				<div class="row g-4 justify-content-center">
-					{#each sponsorEvents as event (event.slug)}
-						<div class="col-md-6 col-xl-4">
-							<a href="/{event.slug}" class="text-decoration-none">
-								<div class="sponsor-card rounded-3 h-100 card-hover">
-									<div class="p-3 d-flex flex-column">
-										<div>
-											<h5 class="card-title mb-2">{event.title}</h5>
-											<p class="card-text small mb-0">
-												{#if event.sponsor.when}
-													<Icon name="calendar-outline" class="me-1 neon-blue" /> {event.sponsor.when}<br>
-												{/if}
-												<Icon name="user-group" class="me-1 neon-blue" /> {event.sponsor.attendance}<br>
-												{#if event.sponsor.crowd}
-													<Icon name="people-group" class="me-1 neon-blue" /> {event.sponsor.crowd}<br>
-												{/if}
-												<Icon name="location-dot" class="me-1 neon-red" /> {event.sponsor.venueName}<br>
-												<span class="sponsor-amount"><Icon name="hand-holding-dollar" class="me-1" /> {event.sponsor.avgSponsorship}</span>
-											</p>
-										</div>
-										<div class="text-center mt-auto pt-3">
-											<img src={event.eventImage} alt="{event.title} shield" width="60" height="60" loading="lazy" decoding="async" />
-										</div>
+				{#snippet sponsorCard(event)}
+					<div class="col-md-6 col-xl-4">
+						<a href="/{event.slug}" class="text-decoration-none">
+							<div class="sponsor-card rounded-3 h-100 card-hover">
+								<div class="p-3 d-flex flex-column">
+									<div>
+										<h5 class="card-title mb-2">{event.title}</h5>
+										<p class="card-text small mb-0">
+											{#if event.sponsor.when}
+												<Icon name="calendar-outline" class="me-1 neon-blue" /> {event.sponsor.when}<br>
+											{/if}
+											<Icon name="user-group" class="me-1 neon-blue" /> {event.sponsor.attendance}<br>
+											{#if event.sponsor.crowd}
+												<Icon name="people-group" class="me-1 neon-blue" /> {event.sponsor.crowd}<br>
+											{/if}
+											<Icon name="location-dot" class="me-1 neon-red" /> {event.sponsor.venueName}<br>
+											<span class="sponsor-amount"><Icon name="hand-holding-dollar" class="me-1" /> {event.sponsor.avgSponsorship}</span>
+										</p>
+									</div>
+									<div class="text-center mt-auto pt-3">
+										<img src={event.eventImage} alt="{event.title} shield" width="60" height="60" loading="lazy" decoding="async" />
 									</div>
 								</div>
-							</a>
-						</div>
+							</div>
+						</a>
+					</div>
+				{/snippet}
+
+				<h3 class="section-heading neon-blue location-group-heading">Chicagoland</h3>
+				<div class="row g-4 justify-content-center mb-5">
+					{#each sponsorEvents.filter((e) => e.category !== 'elsewhere') as event (event.slug)}
+						{@render sponsorCard(event)}
+					{/each}
+				</div>
+
+				<h3 class="section-heading neon-blue location-group-heading">Global</h3>
+				<div class="row g-4 justify-content-center">
+					{#each sponsorEvents.filter((e) => e.category === 'elsewhere') as event (event.slug)}
+						{@render sponsorCard(event)}
 					{/each}
 				</div>
 			</section>
@@ -147,11 +157,21 @@
 			<!-- CTA -->
 			<section class="text-center my-5 py-4">
 				<h3 class="mb-3">Ready to Sponsor?</h3>
-				<p class="mb-4">Pick an event that fits your goals and budget, then reach out!</p>
+				<p class="mb-4">Pick an event that fits your goals and budget, use the links below to see which dates currently need sponsors, and then click Contact Us to let us know your choices!</p>
 				<div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-					<a href="https://www.meetup.com/burbsec/events/" class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer">
-						<Icon name="calendar" /> Find an Event
+					<a href="https://www.meetup.com/burbsec/events/" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+						<Icon name="calendar" /> Chicagoland Events
 					</a>
+					<div class="btn-group">
+					<button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+						<Icon name="globe" /> Other Locations
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="https://www.meetup.com/burbsecvegas/" target="_blank" rel="noopener noreferrer">Las Vegas</a></li>
+						<li><a class="dropdown-item" href="https://www.meetup.com/burbsec-galway/" target="_blank" rel="noopener noreferrer">Galway</a></li>
+						<li><a class="dropdown-item" href="https://www.eventbrite.com/e/burbsec-mpls-networking-meetup-tickets-1749486103029?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer">Minneapolis</a></li>
+					</ul>
+				</div>
 					<a href="mailto:sponsors@burbsec.com" class="btn btn-danger btn-lg">
 						<Icon name="envelope" /> Contact Us
 					</a>
