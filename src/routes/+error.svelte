@@ -1,10 +1,9 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
 </script>
 
 <svelte:head>
-	<title>Page Not Found | Burbsec</title>
+	<title>{page.status === 404 ? 'Page Not Found' : 'Something Went Wrong'} | Burbsec</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
