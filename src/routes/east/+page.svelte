@@ -17,8 +17,9 @@
 	</p>
 
 	<p>
-		Meeting at Gracie O'Malley's in Wicker Park, it's a neighborhood Irish sports bar with a
-		solid local beer selection, pub fare, and shareable appetizers. Plenty of room to grab a
-		table, and several other food options exist within walking distance as well!
+		Meeting at Pilot Project Brewing in Logan Square, it's a brewery and taproom with
+		up to two dozen rotating taps, plus cocktails, wine, coffee, and tea. The kitchen does
+		sandwiches, salads, and pub classics, and there's a patio when the weather cooperates.
+		Several other food options exist within walking distance as well!
 	</p>
 </EventPage>

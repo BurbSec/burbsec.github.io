@@ -49,7 +49,7 @@ export const chicagolandEvents = [
 		subtitle: 'Meets Every Last Thursday of the Month',
 		location: 'Chicago, IL',
 		eventImage: '/images/east_shield.png',
-		gmapsLink: 'https://maps.app.goo.gl/1xS3JNrfDjvBfLoeA',
+		gmapsLink: 'https://maps.app.goo.gl/t5CYkov5a85HCYQm6',
 		blueskyHandle: 'east.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
@@ -62,26 +62,26 @@ export const chicagolandEvents = [
 		seo: {
 			title: 'BurbSec East Chicago | Information Security Meetup Every Last Thursday',
 			description:
-				'BurbSec East: Chicago\'s informal infosec meetup, every last Thursday at Gracie O\'Malley\'s in Wicker Park. No dues, no presentations, just networking.',
+				'BurbSec East: Chicago\'s informal infosec meetup, every last Thursday at Pilot Project Brewing in Logan Square. No dues, no presentations, just networking.',
 			keywords:
-				'chicago information security, chicago cybersecurity meetup, chicago infosec, chicago hacking meetup, chicago security professionals, gracie omalleys wicker park, chicago tech meetup, cybersecurity networking chicago, ethical hacking chicago, IT security chicago, dc312 chicago, dcg312 chicago, chicago 2600, defcon chicago, chicago hacker community, chicago security community, chicago infosec networking',
+				'chicago information security, chicago cybersecurity meetup, chicago infosec, chicago hacking meetup, chicago security professionals, pilot project brewing logan square, chicago tech meetup, cybersecurity networking chicago, ethical hacking chicago, IT security chicago, dc312 chicago, dcg312 chicago, chicago 2600, defcon chicago, chicago hacker community, chicago security community, chicago infosec networking',
 			image: `${SITE_URL}/images/east_shield.png`
 		},
 		structuredData: {
-			venueName: "Gracie O'Malley's",
-			streetAddress: '1635 N Milwaukee Ave',
+			venueName: 'Pilot Project Brewing',
+			streetAddress: '2140 N Milwaukee Ave',
 			addressLocality: 'Chicago',
 			addressRegion: 'IL',
 			postalCode: '60647',
 			addressCountry: 'US',
-			latitude: '41.9113',
-			longitude: '-87.6785'
+			latitude: '41.9199',
+			longitude: '-87.6930'
 		},
 		sponsor: {
 			when: 'Every LAST (Fourth or Fifth) Thursday',
 			attendance: '70-100 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students. Many looking to begin or switch careers',
-			venueName: "Gracie O'Malley's in Wicker Park, Chicago",
+			venueName: 'Pilot Project Brewing in Logan Square, Chicago',
 			avgSponsorship: '$2000'
 		}
 	},
