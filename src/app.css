@@ -332,6 +332,14 @@ footer a:hover {
    Image Gallery  (ImageGallery.svelte)
    ------------------------------------------------------- */
 
+/* Positioning context for the scroll buttons. They must sit OUTSIDE
+   .gallery-ribbon — its mask-image fades descendants out at exactly the
+   left/right edges where the buttons belong. */
+.gallery-shell {
+  position: relative;
+  width: 100%;
+}
+
 .gallery-ribbon {
   width: 100%;
   overflow: hidden;
@@ -339,12 +347,6 @@ footer a:hover {
   /* Fade the scrolling images out at the edges instead of hard-clipping */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 60px, #000 calc(100% - 60px), transparent);
   mask-image: linear-gradient(to right, transparent, #000 60px, #000 calc(100% - 60px), transparent);
-}
-
-/* When not looping, center the images */
-.gallery-ribbon.static-ribbon {
-  display: flex;
-  justify-content: center;
 }
 
 .gallery-track {
@@ -357,6 +359,8 @@ footer a:hover {
   animation: scroll-loop linear infinite;
 }
 
+/* No-JS baseline only: once the rAF loop takes over, .animate is removed and
+   the pause/speed logic lives in ImageGallery.svelte. */
 .gallery-ribbon:hover .gallery-track.animate {
   animation-play-state: paused;
 }
@@ -407,6 +411,9 @@ footer a:hover {
 .gallery-modal-backdrop {
   position: fixed;
   inset: 0;
+  /* Let the browser keep vertical panning, but leave horizontal drags to the
+     swipe handler in ImageGallery.svelte. */
+  touch-action: pan-y;
   z-index: 9999;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
@@ -439,10 +446,108 @@ footer a:hover {
 }
 
 .gallery-modal-image {
+  -webkit-user-drag: none;
+  user-select: none;
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
   border-radius: 0.5rem;
+}
+
+/* Ribbon scroll buttons — hold to accelerate, either direction */
+.gallery-scroll {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  /* Solid enough to stay legible over both bright and dark photos */
+  background: rgba(0, 0, 0, 0.72);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35), 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.gallery-scroll:hover,
+.gallery-scroll:focus-visible {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.gallery-scroll:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+.gallery-scroll:active {
+  background: #0d6efd;
+}
+
+.gallery-scroll-left {
+  left: 0.25rem;
+}
+
+.gallery-scroll-right {
+  right: 0.25rem;
+}
+
+/* Modal prev/next */
+.gallery-modal-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.gallery-modal-nav:hover,
+.gallery-modal-nav:focus-visible {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.gallery-modal-nav:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+.gallery-modal-prev {
+  left: 1rem;
+}
+
+.gallery-modal-next {
+  right: 1rem;
+}
+
+.gallery-modal-counter {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 576px) {
@@ -454,6 +559,26 @@ footer a:hover {
   .hero-gallery .gallery-item {
     width: 90px;
     height: 135px;
+  }
+
+  .gallery-scroll {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .gallery-modal-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .gallery-modal-prev {
+    left: 0.25rem;
+  }
+
+  .gallery-modal-next {
+    right: 0.25rem;
   }
 }
 
