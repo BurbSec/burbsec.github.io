@@ -503,7 +503,7 @@ export const elsewhereEvents = [
 		gmapsLink: 'https://maps.app.goo.gl/ef5DM3o1KhdHxn1o8',
 		blueskyHandle: null,
 		discordLink: 'https://tinyurl.com/burbchat',
-		meetupPage: 'https://www.meetup.com/burbsec/events/',
+		meetupPage: 'https://www.meetup.com/burbsec-mke/events/',
 		eventbriteLink: null,
 		galleryFolder: 'mke',
 		cardTitle: 'MKE (Greendale, WI)',
