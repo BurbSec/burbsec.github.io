@@ -506,7 +506,7 @@ export const elsewhereEvents = [
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
 		galleryFolder: 'mke',
-		cardTitle: 'Milwaukee, WI',
+		cardTitle: 'MKE (Greendale, WI)',
 		cardSchedule: 'Every Third Thursday',
 		category: 'elsewhere',
 		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
