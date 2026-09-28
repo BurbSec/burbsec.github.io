@@ -82,7 +82,7 @@ export const chicagolandEvents = [
 			attendance: '70-100 active and prospective IT and Infosec professionals and enthusiasts',
 			crowd: 'Younger crowd, some students. Many looking to begin or switch careers',
 			venueName: 'Pilot Project Brewing in Logan Square, Chicago',
-			avgSponsorship: '$2000'
+			avgSponsorship: '$2500'
 		}
 	},
 	{
