@@ -499,7 +499,7 @@ export const elsewhereEvents = [
 		title: 'BurbSec|Milwaukee',
 		subtitle: 'Meets every Third Thursday of the Month',
 		location: 'Milwaukee, WI',
-		eventImage: '/images/Mke_shield.png',
+		eventImage: '/images/mke_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/ef5DM3o1KhdHxn1o8',
 		blueskyHandle: null,
 		discordLink: 'https://tinyurl.com/burbchat',
@@ -516,7 +516,7 @@ export const elsewhereEvents = [
 				'BurbSec Milwaukee: an informal infosec meetup every third Thursday at The Explorium Brewpub Greendale in Greendale, WI. No dues, no presentations.',
 			keywords:
 				'milwaukee information security, milwaukee cybersecurity meetup, milwaukee infosec, milwaukee hacking meetup, milwaukee security professionals, wisconsin cybersecurity, wisconsin infosec, mke tech meetup, cybersecurity networking milwaukee, ethical hacking milwaukee, IT security milwaukee, wisconsin security meetup',
-			image: `${SITE_URL}/images/Mke_shield.png`
+			image: `${SITE_URL}/images/mke_shield.png`
 		},
 		structuredData: {
 			venueName: 'The Explorium Brewpub Greendale',
