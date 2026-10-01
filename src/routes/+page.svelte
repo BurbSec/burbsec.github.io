@@ -40,7 +40,7 @@
 		}))
 	});
 
-	const pageDescription = 'BurbSec: free monthly infosec meetups across Chicagoland, Minneapolis, Las Vegas, and Galway. No dues, no presentations — just informal networking.';
+	const pageDescription = 'BurbSec: free monthly infosec meetups across Chicagoland, Minneapolis, Las Vegas, Milwaukee, and Galway. No dues, no presentations — just informal networking.';
 
 	const webPageJsonLd = JSON.stringify({
 		'@context': 'https://schema.org',

@@ -170,6 +170,7 @@
 						<li><a class="dropdown-item" href="https://www.meetup.com/burbsecvegas/" target="_blank" rel="noopener noreferrer">Las Vegas</a></li>
 						<li><a class="dropdown-item" href="https://www.meetup.com/burbsec-galway/" target="_blank" rel="noopener noreferrer">Galway</a></li>
 						<li><a class="dropdown-item" href="https://www.eventbrite.com/e/burbsec-mpls-networking-meetup-tickets-1749486103029?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer">Minneapolis</a></li>
+						<li><a class="dropdown-item" href="https://www.meetup.com/burbsec-mke/events/" target="_blank" rel="noopener noreferrer">Milwaukee</a></li>
 					</ul>
 				</div>
 					<a href="mailto:sponsors@burbsec.com" class="btn btn-danger btn-lg">
