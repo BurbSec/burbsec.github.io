@@ -34,7 +34,8 @@
 			{ '@type': 'City', name: 'Chicago', addressRegion: 'IL', addressCountry: 'US' },
 			{ '@type': 'City', name: 'Las Vegas', addressRegion: 'NV', addressCountry: 'US' },
 			{ '@type': 'City', name: 'Galway', addressCountry: 'IE' },
-			{ '@type': 'City', name: 'Minneapolis', addressRegion: 'MN', addressCountry: 'US' }
+			{ '@type': 'City', name: 'Minneapolis', addressRegion: 'MN', addressCountry: 'US' },
+			{ '@type': 'City', name: 'Milwaukee', addressRegion: 'WI', addressCountry: 'US' }
 		],
 		keywords: 'information security, cybersecurity, hacking, infosec, meetup, chicago, security professionals, ethical hacking, penetration testing, cybersecurity community, security events, networking, CISSP, CEH, security training, vulnerability assessment, incident response, malware analysis, digital forensics, security awareness, chicago hacker meetup, chicago security community, defcon chicago, chicago infosec community'
 	});
