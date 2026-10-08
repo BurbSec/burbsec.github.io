@@ -330,7 +330,7 @@ export const chicagolandEvents = [
 		title: 'BurbSec|Southeast',
 		subtitle: 'Meets Every Second Thursday of the Month',
 		location: 'Mishawaka, IN',
-		eventImage: '/images/southeast_shield.png',
+		eventImage: '/images/southbend.png',
 		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
 		blueskyHandle: 'southeast.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
@@ -345,7 +345,7 @@ export const chicagolandEvents = [
 			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Thursday',
 			description: 'BurbSec Southeast: an informal infosec meetup in Mishawaka, IN, every second Thursday at Hop Station. No dues, no presentations, just networking.',
 			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
-			image: `${SITE_URL}/images/southeast_shield.png`
+			image: `${SITE_URL}/images/southbend.png`
 		},
 		structuredData: {
 			venueName: 'Hop Station',
