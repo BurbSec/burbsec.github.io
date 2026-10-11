@@ -103,7 +103,8 @@ src/
     ├── west/                # Naperville event page
     ├── prime/               # Schaumburg event page
     ├── northwest/           # Crystal Lake event page
-    ├── southeast/           # South Bend event page
+    ├── southbend/           # South Bend (Mishawaka) event page
+    ├── southeast/           # Redirect to /southbend/ (former name)
     ├── minneapolis/         # Minneapolis event page
     ├── lasvegas/            # Las Vegas event page
     ├── galway/              # Galway, Ireland event page
@@ -126,7 +127,7 @@ static/
 │       ├── northwest/
 │       ├── prime/
 │       ├── south/
-│       ├── southeast/
+│       ├── southbend/
 │       └── west/
 ├── videos/                 # Background video
 ├── sitemap.xml             # Site map for search engines
@@ -149,7 +150,7 @@ Each event location has an image gallery powered by `ImageGallery.svelte`. Galle
    | Schaumburg (Prime) | `static/images/irl/prime/` |
    | Crystal Lake (Northwest) | `static/images/irl/northwest/` |
    | Naperville (West) | `static/images/irl/west/` |
-   | South Bend (Southeast) | `static/images/irl/southeast/` |
+   | South Bend | `static/images/irl/southbend/` |
    | Minneapolis | `static/images/irl/mpls/` |
    | Las Vegas | `static/images/irl/lasvegas/` |
    | Galway, Ireland | `static/images/irl/galway/` |

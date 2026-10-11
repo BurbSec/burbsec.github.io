@@ -4,12 +4,12 @@
 
 	let { data } = $props();
 
-	const event = getEventProps('southeast');
+	const event = getEventProps('southbend');
 </script>
 
 <EventPage {...event} galleryImages={data.galleryImages}>
 	<p>
-		BurbSec Southeast brings the fun and networking of our signature meetup format to the southeast suburbs.
+		BurbSec South Bend brings the fun and networking of our signature meetup format to Michiana.
 		Join fellow information security professionals for an evening of great conversation, networking,
 		and community building in a relaxed atmosphere.
 	</p>

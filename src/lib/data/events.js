@@ -17,6 +17,7 @@ const SITE_URL = 'https://burbsec.com';
 /**
  * @typedef {Object} BurbSecEvent
  * @property {string} slug          - URL path segment (e.g. 'east')
+ * @property {string[]} [formerSlugs] - Retired slugs; /<old>/ redirects here and /calendar/<old>.ics keeps serving this feed
  * @property {string} title         - Display title (e.g. 'BurbSec|East')
  * @property {string} subtitle      - Meeting cadence
  * @property {string} location      - Human-readable location
@@ -326,26 +327,27 @@ export const chicagolandEvents = [
 		}
 	},
 	{
-		slug: 'southeast',
-		title: 'BurbSec|Southeast',
+		slug: 'southbend',
+		formerSlugs: ['southeast'],
+		title: 'BurbSec|South Bend',
 		subtitle: 'Meets Every Second Thursday of the Month',
 		location: 'Mishawaka, IN',
-		eventImage: '/images/southeast_shield.png',
+		eventImage: '/images/southbend_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/bFbsxvJKv3vBvg7b8',
 		blueskyHandle: 'southeast.burbsec.com',
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
-		galleryFolder: 'southeast',
-		cardTitle: 'Southeast (Mishawaka, IN)',
+		galleryFolder: 'southbend',
+		cardTitle: 'South Bend (Mishawaka, IN)',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
 		schedule: { week: 2, weekday: 4, time: '18:00', tz: 'America/New_York' },
 		seo: {
-			title: 'BurbSec Southeast Mishawaka | Information Security Meetup Every Second Thursday',
-			description: 'BurbSec Southeast: an informal infosec meetup in Mishawaka, IN, every second Thursday at Hop Station. No dues, no presentations, just networking.',
-			keywords: 'mishawaka information security, indiana cybersecurity meetup, south bend area infosec, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
-			image: `${SITE_URL}/images/southeast_shield.png`
+			title: 'BurbSec South Bend | Information Security Meetup Every Second Thursday',
+			description: 'BurbSec South Bend: an informal infosec meetup in Mishawaka, IN, every second Thursday at Hop Station. No dues, no presentations, just networking.',
+			keywords: 'south bend information security, south bend cybersecurity meetup, mishawaka information security, indiana cybersecurity meetup, mishawaka tech meetup, indiana security professionals, cybersecurity networking indiana',
+			image: `${SITE_URL}/images/southbend_shield.png`
 		},
 		structuredData: {
 			venueName: 'Hop Station',
