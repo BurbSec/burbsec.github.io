@@ -338,7 +338,7 @@ export const chicagolandEvents = [
 		discordLink: 'https://tinyurl.com/burbchat',
 		meetupPage: 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink: null,
-		galleryFolder: 'southeast',
+		galleryFolder: 'southbend',
 		cardTitle: 'South Bend (Mishawaka, IN)',
 		cardSchedule: 'Every Second Thursday',
 		category: 'chicagoland',
