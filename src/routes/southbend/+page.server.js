@@ -2,7 +2,7 @@ import { getGalleryImages } from '$lib/server/gallery.js';
 import { getEvent } from '$lib/data/events.js';
 
 export function load() {
-	const event = getEvent('southeast');
+	const event = getEvent('southbend');
 	return {
 		galleryImages: getGalleryImages(event?.galleryFolder)
 	};
