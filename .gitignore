@@ -40,7 +40,6 @@ creative_templates/
 sponsors.txt
 
 # Claude Code
-CLAUDE.md
 .claude/
 
 # Generated gallery thumbnails (rebuilt by scripts/generate-thumbnails.mjs)

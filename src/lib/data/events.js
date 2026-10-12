@@ -1,13 +1,10 @@
 /**
  * Centralized event data for the BurbSec Network.
  *
- * Adding a new event location:
- *  1. Add an entry to the appropriate array below (chicagoland, elsewhere, or special).
- *  2. Create a minimal route page at src/routes/<slug>/+page.svelte that imports
- *     the event via getEventProps() and renders <EventPage>.
- *  3. Drop the shield image into static/images/.
- *  4. That's it — the homepage cards, navbar, sitemap, and sponsors page all
- *     pull from this single file automatically.
+ * The homepage cards, navbar, sitemap, sponsors page, per-page SEO, and .ics
+ * feeds are generated from this file. Adding, changing, or renaming a location
+ * also touches a few hand-maintained spots, so follow the checklists in
+ * README.md ("Adding a New Meetup Location" / "Modifying an Existing Location").
  */
 
 const SITE_URL = 'https://burbsec.com';
@@ -374,7 +371,7 @@ export const elsewhereEvents = [
 	{
 		slug: 'minneapolis',
 		title: 'BurbSec|Minneapolis',
-		subtitle: 'Meets every Third Thursday of the Month',
+		subtitle: 'Meets Every Third Thursday of the Month',
 		location: 'Minneapolis, MN',
 		eventImage: '/images/mpls_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/MqP9s8EGQvQefiMu9',
@@ -499,7 +496,7 @@ export const elsewhereEvents = [
 	{
 		slug: 'milwaukee',
 		title: 'BurbSec|Milwaukee',
-		subtitle: 'Meets every Third Thursday of the Month',
+		subtitle: 'Meets Every Third Thursday of the Month',
 		location: 'Milwaukee, WI',
 		eventImage: '/images/mke_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/ef5DM3o1KhdHxn1o8',
