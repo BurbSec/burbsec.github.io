@@ -1,0 +1,89 @@
+name: Require signed commits
+
+# Flags PRs containing unsigned/unverified commits and tells the author how to
+# fix them. Sets a `signed-commits` commit status on the PR head, which the
+# "Signed commits on PRs" ruleset requires before merging.
+#
+# pull_request_target is used so this can comment on PRs from forks. It is safe
+# here because the PR's code is never checked out or executed: the job only
+# reads commit verification data from the GitHub API.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  statuses: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check commit signatures
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const MARKER = '<!-- signed-commits-check -->';
+            const { owner, repo } = context.repo;
+            const pr = context.payload.pull_request;
+
+            const commits = await github.paginate(github.rest.pulls.listCommits, {
+              owner, repo, pull_number: pr.number, per_page: 100
+            });
+            const bad = commits.filter((c) => !c.commit.verification?.verified);
+
+            await github.rest.repos.createCommitStatus({
+              owner, repo,
+              sha: pr.head.sha,
+              context: 'signed-commits',
+              state: bad.length ? 'failure' : 'success',
+              description: bad.length
+                ? `${bad.length} of ${commits.length} commit(s) not signed`
+                : `All ${commits.length} commit(s) signed`,
+              target_url: `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`
+            });
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number: pr.number, per_page: 100
+            });
+            const existing = comments.find(
+              (c) => c.user.type === 'Bot' && c.body.includes(MARKER)
+            );
+
+            let body;
+            if (bad.length) {
+              const list = bad
+                .map((c) => `- \`${c.sha.slice(0, 7)}\` (${c.commit.verification?.reason ?? 'unsigned'})`)
+                .join('\n');
+              body = [
+                MARKER,
+                '### ⚠️ Unsigned commits',
+                '',
+                'This repository only accepts signed commits, so this PR can\'t be merged yet. These commits aren\'t verified:',
+                '',
+                list,
+                '',
+                '**To fix:**',
+                '1. [Set up commit signing](https://docs.github.com/en/authentication/managing-commit-signature-verification) (an SSH key you already use with GitHub works) and add the key to GitHub as a **Signing key**.',
+                `2. Re-sign your commits and force-push:`,
+                '   ```bash',
+                `   git fetch origin ${pr.base.ref}`,
+                `   git rebase --exec 'git commit --amend --no-edit -S' origin/${pr.base.ref}`,
+                '   git push --force-with-lease',
+                '   ```',
+                '',
+                'This check re-runs automatically when you push.'
+              ].join('\n');
+            } else if (existing) {
+              body = `${MARKER}\n### ✅ All commits signed\n\nThanks! Every commit in this PR is now verified.`;
+            }
+
+            if (body && existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else if (body) {
+              await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body });
+            }
+
+            if (bad.length) core.setFailed(`${bad.length} unsigned commit(s)`);
