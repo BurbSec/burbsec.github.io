@@ -497,7 +497,7 @@ export const elsewhereEvents = [
 		slug: 'milwaukee',
 		title: 'BurbSec|Milwaukee',
 		subtitle: 'Meets Every Third Thursday of the Month',
-		location: 'Milwaukee, WI',
+		location: 'Greendale, WI (Milwaukee area)',
 		eventImage: '/images/mke_shield.png',
 		gmapsLink: 'https://maps.app.goo.gl/ef5DM3o1KhdHxn1o8',
 		blueskyHandle: null,
@@ -510,11 +510,11 @@ export const elsewhereEvents = [
 		category: 'elsewhere',
 		schedule: { week: 3, weekday: 4, time: '18:00', tz: 'America/Chicago' },
 		seo: {
-			title: 'BurbSec Milwaukee | Information Security Meetup in Milwaukee',
+			title: 'BurbSec Milwaukee | Information Security Meetup in Greendale, WI',
 			description:
-				'BurbSec Milwaukee: an informal infosec meetup every third Thursday at The Explorium Brewpub Greendale in Greendale, WI. No dues, no presentations.',
+				'BurbSec Milwaukee: an informal infosec meetup every third Thursday at The Explorium Brewpub in Greendale, WI (not the Milwaukee location). No dues, no presentations.',
 			keywords:
-				'milwaukee information security, milwaukee cybersecurity meetup, milwaukee infosec, milwaukee hacking meetup, milwaukee security professionals, wisconsin cybersecurity, wisconsin infosec, mke tech meetup, cybersecurity networking milwaukee, ethical hacking milwaukee, IT security milwaukee, wisconsin security meetup',
+				'greendale wi cybersecurity meetup, greendale infosec, explorium greendale, milwaukee information security, milwaukee cybersecurity meetup, milwaukee infosec, milwaukee hacking meetup, milwaukee security professionals, wisconsin cybersecurity, wisconsin infosec, mke tech meetup, cybersecurity networking milwaukee, ethical hacking milwaukee, IT security milwaukee, wisconsin security meetup',
 			image: `${SITE_URL}/images/mke_shield.png`
 		},
 		structuredData: {
