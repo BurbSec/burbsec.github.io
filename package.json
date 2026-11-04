@@ -10,16 +10,16 @@
     "dev": "vite dev",
     "preview": "vite preview"
   },
-  "overrides": {
-    "cookie": "^0.7.2"
-  },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.69.3",
-    "@sveltejs/vite-plugin-svelte": "^7.2.0",
-    "sharp": "^0.35.4",
-    "svelte": "^5.56.5",
-    "vite": "^8.1.4"
+    "@sveltejs/adapter-static": "^4.0.1",
+    "@sveltejs/kit": "^3.1.1",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "sharp": "^0.35.5",
+    "svelte": "^5.57.3",
+    "vite": "^8.3.5"
   },
-  "type": "module"
+  "type": "module",
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  }
 }

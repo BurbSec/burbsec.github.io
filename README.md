@@ -208,8 +208,8 @@ Create `src/routes/<slug>/` with two files:
 
 `+page.server.js`, which loads gallery images at build time:
 ```js
-import { getGalleryImages } from '$lib/server/gallery.js';
-import { getEvent } from '$lib/data/events.js';
+import { getGalleryImages } from '#lib/server/gallery.js';
+import { getEvent } from '#lib/data/events.js';
 
 export function load() {
   const event = getEvent('your-slug');
@@ -222,8 +222,8 @@ export function load() {
 `+page.svelte`, which renders the event page:
 ```svelte
 <script>
-  import EventPage from '$lib/components/EventPage.svelte';
-  import { getEventProps } from '$lib/data/events.js';
+  import EventPage from '#lib/components/EventPage.svelte';
+  import { getEventProps } from '#lib/data/events.js';
 
   let { data } = $props();
   const event = getEventProps('your-slug');

@@ -1,5 +1,5 @@
-import { getGalleryImages } from '$lib/server/gallery.js';
-import { getEvent } from '$lib/data/events.js';
+import { getGalleryImages } from '#lib/server/gallery.js';
+import { getEvent } from '#lib/data/events.js';
 
 export function load() {
 	const event = getEvent('west');

@@ -1,9 +1,9 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
+	import Icon from '#lib/components/Icon.svelte';
 	import { page } from '$app/state';
-	import { SITE_URL } from '$lib/data/events.js';
-	import { nextOccurrence, formatLong, formatTime, utcOffset } from '$lib/utils/schedule.js';
-	import ImageGallery from '$lib/components/ImageGallery.svelte';
+	import { SITE_URL } from '#lib/data/events.js';
+	import { nextOccurrence, formatLong, formatTime, utcOffset } from '#lib/utils/schedule.js';
+	import ImageGallery from '#lib/components/ImageGallery.svelte';
 
 	let {
 		slug = null,
@@ -17,13 +17,13 @@
 		meetupPage = 'https://www.meetup.com/burbsec/events/',
 		eventbriteLink = null,
 		irlImage = null,
-		/** @type {import('$lib/data/events.js').BurbSecEvent['schedule']|null} */
+		/** @type {import('#lib/data/events.js').BurbSecEvent['schedule']|null} */
 		schedule = null,
-		/** @type {import('$lib/server/gallery.js').GalleryImage[]} */
+		/** @type {import('#lib/server/gallery.js').GalleryImage[]} */
 		galleryImages = [],
-		/** @type {import('$lib/data/events.js').BurbSecEvent['seo']|null} */
+		/** @type {import('#lib/data/events.js').BurbSecEvent['seo']|null} */
 		seo = null,
-		/** @type {import('$lib/data/events.js').BurbSecEvent['structuredData']|null} */
+		/** @type {import('#lib/data/events.js').BurbSecEvent['structuredData']|null} */
 		structuredData = null,
 		children
 	} = $props();

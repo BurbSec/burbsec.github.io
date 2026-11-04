@@ -2,7 +2,7 @@
  * Date math for recurring meetup schedules ("nth Thursday of the month").
  * Pure functions, safe on both server (prerender, ICS generation) and client.
  *
- * @typedef {import('$lib/data/events.js').BurbSecEvent['schedule']} Schedule
+ * @typedef {import('#lib/data/events.js').BurbSecEvent['schedule']} Schedule
  */
 
 /**

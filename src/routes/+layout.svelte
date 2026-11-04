@@ -1,11 +1,11 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/state';
-	import Navbar from '$lib/components/Navbar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import LaserLinesBackground from '$lib/components/LaserLinesBackground.svelte';
-	import WebChat from '$lib/components/WebChat.svelte';
-	import { SITE_URL } from '$lib/data/events.js';
+	import Navbar from '#lib/components/Navbar.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import LaserLinesBackground from '#lib/components/LaserLinesBackground.svelte';
+	import WebChat from '#lib/components/WebChat.svelte';
+	import { SITE_URL } from '#lib/data/events.js';
 
 	let { children } = $props();
 

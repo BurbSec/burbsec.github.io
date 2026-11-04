@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { allEvents } from '$lib/data/events.js';
-import { buildCalendar } from '$lib/server/ics.js';
+import { allEvents } from '#lib/data/events.js';
+import { buildCalendar } from '#lib/server/ics.js';
 
 /**
  * Prerendered .ics calendar files: /calendar/<slug>.ics per event with a

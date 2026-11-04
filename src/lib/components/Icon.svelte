@@ -1,5 +1,5 @@
 <script>
-	import { icons } from '$lib/data/icons.js';
+	import { icons } from '#lib/data/icons.js';
 
 	/**
 	 * Inline SVG icon, sized to the surrounding text like Font Awesome's

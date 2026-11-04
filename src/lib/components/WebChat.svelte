@@ -8,8 +8,8 @@
 	// channel with LIST and JOIN them all. Passwords are NOT persisted — a
 	// returning user re-enters theirs each session (deliberate: this is a
 	// security community's own site; we don't stash IRC creds in localStorage).
-	import Icon from '$lib/components/Icon.svelte';
-	import { webchat, closeWebChat } from '$lib/stores/webchat.svelte.js';
+	import Icon from '#lib/components/Icon.svelte';
+	import { webchat, closeWebChat } from '#lib/stores/webchat.svelte.js';
 
 	const WS_URL = 'wss://irc.burbsec.com/webirc';
 
