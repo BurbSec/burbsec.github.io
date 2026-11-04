@@ -54,7 +54,7 @@ npm run preview  # Preview the production build locally
 
 ## Technology Stack
 
-- **Framework**: SvelteKit 2 + Svelte 5
+- **Framework**: SvelteKit 3 + Svelte 5
 - **Build Tool**: Vite 7
 - **Styling**: Bootstrap 5.3.8 (CDN with SRI) + Custom CSS
 - **Icons**: Inline SVGs (Font Awesome Free 6.7.2 path data) — no CDN, see `Icon.svelte`
@@ -208,8 +208,8 @@ Create `src/routes/<slug>/` with two files:
 
 `+page.server.js`, which loads gallery images at build time:
 ```js
-import { getGalleryImages } from '$lib/server/gallery.js';
-import { getEvent } from '$lib/data/events.js';
+import { getGalleryImages } from '#lib/server/gallery.js';
+import { getEvent } from '#lib/data/events.js';
 
 export function load() {
   const event = getEvent('your-slug');
@@ -222,8 +222,8 @@ export function load() {
 `+page.svelte`, which renders the event page:
 ```svelte
 <script>
-  import EventPage from '$lib/components/EventPage.svelte';
-  import { getEventProps } from '$lib/data/events.js';
+  import EventPage from '#lib/components/EventPage.svelte';
+  import { getEventProps } from '#lib/data/events.js';
 
   let { data } = $props();
   const event = getEventProps('your-slug');

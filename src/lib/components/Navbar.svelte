@@ -1,7 +1,7 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
-	import { chicagolandEvents, elsewhereEvents, specialEvents } from '$lib/data/events.js';
-	import { openWebChat } from '$lib/stores/webchat.svelte.js';
+	import Icon from '#lib/components/Icon.svelte';
+	import { chicagolandEvents, elsewhereEvents, specialEvents } from '#lib/data/events.js';
+	import { openWebChat } from '#lib/stores/webchat.svelte.js';
 
 	let isMenuOpen = $state(false);
 

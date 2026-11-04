@@ -1,9 +1,9 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
-	import { allEvents, chicagolandEvents, elsewhereEvents, specialEvents, SITE_URL } from '$lib/data/events.js';
-	import { nextOccurrence, formatShort, utcOffset } from '$lib/utils/schedule.js';
-	import ImageGallery from '$lib/components/ImageGallery.svelte';
-	import { openWebChat } from '$lib/stores/webchat.svelte.js';
+	import Icon from '#lib/components/Icon.svelte';
+	import { allEvents, chicagolandEvents, elsewhereEvents, specialEvents, SITE_URL } from '#lib/data/events.js';
+	import { nextOccurrence, formatShort, utcOffset } from '#lib/utils/schedule.js';
+	import ImageGallery from '#lib/components/ImageGallery.svelte';
+	import { openWebChat } from '#lib/stores/webchat.svelte.js';
 
 	let { data } = $props();
 

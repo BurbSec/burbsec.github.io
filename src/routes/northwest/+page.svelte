@@ -1,6 +1,6 @@
 <script>
-	import EventPage from '$lib/components/EventPage.svelte';
-	import { getEventProps } from '$lib/data/events.js';
+	import EventPage from '#lib/components/EventPage.svelte';
+	import { getEventProps } from '#lib/data/events.js';
 
 	let { data } = $props();
 

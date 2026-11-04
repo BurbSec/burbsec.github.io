@@ -1,4 +1,4 @@
-import { allEvents, SITE_URL } from '$lib/data/events.js';
+import { allEvents, SITE_URL } from '#lib/data/events.js';
 
 export const prerender = true;
 

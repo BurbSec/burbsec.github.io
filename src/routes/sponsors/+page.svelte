@@ -1,6 +1,6 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
-	import { getSponsorEvents, SITE_URL } from '$lib/data/events.js';
+	import Icon from '#lib/components/Icon.svelte';
+	import { getSponsorEvents, SITE_URL } from '#lib/data/events.js';
 
 	const sponsorEvents = getSponsorEvents();
 </script>

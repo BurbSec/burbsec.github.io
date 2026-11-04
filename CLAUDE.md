@@ -15,7 +15,7 @@ No test runner or linter is configured.
 
 ## Architecture
 
-Static SvelteKit 2 + Svelte 5 site deployed to GitHub Pages via `@sveltejs/adapter-static`. All pages are prerendered at build time — there is no client-side data fetching.
+Static SvelteKit 3 + Svelte 5 site deployed to GitHub Pages via `@sveltejs/adapter-static`. All pages are prerendered at build time — there is no client-side data fetching.
 
 ### Data-Driven Pattern
 
@@ -63,6 +63,8 @@ README.md ("Adding a New Meetup Location" / "Modifying an Existing Location") ha
 ## Conventions
 
 - Svelte 5 runes (`$props()`, `$state()`, `$derived()`) — not Svelte 4 stores
+- Import from `src/lib/` with the `#lib/...` subpath alias (declared in `package.json` `imports`), including the file extension. `$lib` no longer exists in SvelteKit 3
+- SvelteKit and adapter config lives in `vite.config.js`; there is no `svelte.config.js`
 - Prerender enabled globally in `src/routes/+layout.js` with `trailingSlash: 'always'`
 - External CDN resources (Bootstrap) use SRI hashes — update hashes when changing versions; icons are inline SVGs via `Icon.svelte`, not a CDN
 - Gallery images: `.webp` preferred for file size; sorted alphabetically by filename; ribbon thumbnails are auto-generated (never commit `static/images/irl-thumbs/`)

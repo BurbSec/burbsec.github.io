@@ -1,5 +1,5 @@
-import { nextOccurrence } from '$lib/utils/schedule.js';
-import { SITE_URL } from '$lib/data/events.js';
+import { nextOccurrence } from '#lib/utils/schedule.js';
+import { SITE_URL } from '#lib/data/events.js';
 
 /**
  * iCalendar (.ics) generation for recurring meetups. Runs at build time only;
@@ -150,7 +150,7 @@ function vevent(event, dtstamp) {
 
 /**
  * Build a complete VCALENDAR for one or more events.
- * @param {import('$lib/data/events.js').BurbSecEvent[]} events - Must all have `schedule`
+ * @param {import('#lib/data/events.js').BurbSecEvent[]} events - Must all have `schedule`
  * @param {string} calName - X-WR-CALNAME shown by calendar apps
  * @returns {string}
  */
