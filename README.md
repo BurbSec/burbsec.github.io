@@ -54,7 +54,7 @@ npm run preview  # Preview the production build locally
 
 ## Technology Stack
 
-- **Framework**: SvelteKit 2 + Svelte 5
+- **Framework**: SvelteKit 3 + Svelte 5
 - **Build Tool**: Vite 7
 - **Styling**: Bootstrap 5.3.8 (CDN with SRI) + Custom CSS
 - **Icons**: Inline SVGs (Font Awesome Free 6.7.2 path data) — no CDN, see `Icon.svelte`
