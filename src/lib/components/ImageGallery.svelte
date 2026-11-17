@@ -1,10 +1,26 @@
 <script>
+	import { onMount } from 'svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	/** @type {{ images?: Array<{ thumb: string, full: string }>, alt?: string }} */
 	let {
-		images = [],
+		images: source = [],
 		alt = 'Gallery image'
 	} = $props();
+
+	/**
+	 * Pages are prerendered, so build-time order is fixed (alphabetical). Shuffle
+	 * in the browser after hydration so every visit gets a different ribbon.
+	 * Starts in build order so SSR and hydration markup match.
+	 */
+	let images = $state.raw(source);
+	onMount(() => {
+		const a = [...source];
+		for (let i = a.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[a[i], a[j]] = [a[j], a[i]];
+		}
+		images = a;
+	});
 
 	/** Index into `images` of the photo shown in the modal, or null when closed. */
 	let modalIndex = $state(null);
